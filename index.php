@@ -65,13 +65,15 @@
                         <div class="form-group">
                             <label for="inputEmail3" class="col-sm-3 control-label">Email</label>
                             <div class="col-sm-9">
-                                <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+                                <input type="email" class="form-control"
+                                       id="inputEmail3" placeholder="Email" required="required">
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="inputPassword3" class="col-sm-3 control-label">Password</label>
                             <div class="col-sm-9">
-                                <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+                                <input type="password" class="form-control"
+                                       id="inputPassword3" placeholder="Password" required="required">
                             </div>
                         </div>
                         <div class="form-group">
