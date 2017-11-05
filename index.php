@@ -37,8 +37,8 @@
                 <form class="navbar-form navbar-left">
                     <div class="form-group">
                         <input type="text" class="form-control" placeholder="Search">
+                        <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span> </button>
                     </div>
-                    <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span> </button>
                 </form>
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
@@ -87,11 +87,11 @@
                         </div>
                         <div class="form-group">
                             <div class="col-sm-offset-4 col-sm-8">
-                                <button type="submit" class="btn btn-primary">Sign in</button>
+                                <button type="submit" class="btn btn-primary">Sign up</button>
                                 <br />
                             </div>
                         </div>
-                        <caption>By clicking "Sign up", you agree to our terms of service and privacy policy. We’ll occasionally send you account related emails.</caption>
+                        <small>By clicking "Sign up", you agree to our terms of service and privacy policy. We’ll occasionally send you account related emails.</small>
                     </form>
                 </div>
             </div>
