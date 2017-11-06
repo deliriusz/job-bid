@@ -12,7 +12,7 @@ $f3->config('config.ini');
 
     $f3->route ('GET /',
         function () {
-            echo View::instance()->render('ui/index_template.html');
+            echo View::instance()->render('index_template.html');
         }
     );
 
