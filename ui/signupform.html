@@ -1,16 +1,31 @@
 <form class="form-horizontal" id="signupForm">
     <div class="form-group">
-        <label for="inputEmail3" class="col-sm-3 control-label">Email</label>
+        <label for="inputUsername" class="col-sm-3 control-label">Username</label>
         <div class="col-sm-9">
-            <input type="email" class="form-control"
-                   id="inputEmail3" placeholder="Email" required="required">
+            <input type="text" class="form-control"
+                   id="inputUsername" placeholder="Username" required="required"
+                   onkeyup="validateFormUsernameAcceptable()">
         </div>
     </div>
     <div class="form-group">
-        <label for="inputPassword3" class="col-sm-3 control-label">Password</label>
+        <label for="inputEmail" class="col-sm-3 control-label">Email</label>
+        <div class="col-sm-9">
+            <input type="email" class="form-control"
+                   id="inputEmail" placeholder="Email" required="required">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="inputPassword" class="col-sm-3 control-label">Password</label>
         <div class="col-sm-9">
             <input type="password" class="form-control"
-                   id="inputPassword3" placeholder="Password" required="required">
+                   id="inputPassword" placeholder="Password" required="required">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="inputRepeatPassword" class="col-sm-3 control-label">Repeat password</label>
+        <div class="col-sm-9">
+            <input type="password" class="form-control"
+                   id="inputRepeatPassword" placeholder="Password" required="required">
         </div>
     </div>
     <div class="form-group">
