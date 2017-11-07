@@ -13,20 +13,31 @@ $f3->set('DEBUG',3);
 
     $f3->set('AUTOLOAD', 'controller/'); // new dirs after ; sign
 
-    $f3->route ('GET @login: /login', 'Controller\Login->view');
-    $f3->route ('GET @register: /register', 'Controller\Register->view');
-
-    $f3->route ('GET /',
+    $f3->route ('GET @register: /register',
         function ($f3) {
-
-            $f3->set('content', 'start.html');
-
+            $f3->set('content', 'register.html');
             echo Template::instance()->render('template.html');
         }
     );
 
-    $f3->route ('GET /about', function () {
-       echo 'This is about page';
+
+    $f3->route ('GET @login: /login',
+        function ($f3) {
+            $f3->set('content', 'login.html');
+            echo Template::instance()->render('template.html');
+        }
+    );
+
+    $f3->route ('GET /',
+        function ($f3) {
+            $f3->set('content', 'start.html');
+            echo Template::instance()->render('template.html');
+        }
+    );
+
+    $f3->route ('GET /about', function ($f3) {
+        $f3->set('content', 'about.html');
+        echo Template::instance()->render('template.html');
     });
 
 $f3->run();

@@ -13,7 +13,7 @@ use View;
 
 class Register
 {
-    function view () {
-        echo  View::instance()->render('template.html');
+    function view ($f3) {
+
     }
 }
