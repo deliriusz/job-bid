@@ -16,12 +16,12 @@ $f3->set('DEBUG',3);
     $f3->route ('GET @login: /login', 'Controller\Login->view');
     $f3->route ('GET @register: /register', 'Controller\Register->view');
 
-    $f3->route ('GET / /index.php',
+    $f3->route ('GET /',
         function ($f3) {
 
             $f3->set('content', 'start.html');
 
-            echo View::instance()->render('template.html');
+            echo Template::instance()->render('template.html');
         }
     );
 
