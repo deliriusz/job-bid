@@ -6,9 +6,6 @@
  * Time: 21:27
  */
 
-namespace Controller;
-
-
 class Index
 {
     function view ($f3) {

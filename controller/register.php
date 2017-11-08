@@ -6,14 +6,10 @@
  * Time: 22:20
  */
 
-namespace Controller;
-
-
-use View;
-
 class Register
 {
     function view ($f3) {
-
+        $f3->set('content', 'register.html');
+        echo Template::instance()->render('template.html');
     }
 }

@@ -6,17 +6,10 @@
  * Time: 19:46
  */
 
-namespace Controller;
-
-
-//$f3=require('lib/base.php');
-
-use View;
-
 class Login
 {
     function view ($f3) {
-        echo  View::instance()->render('template.html');
-
+        $f3->set('content', 'login.html');
+        echo Template::instance()->render('template.html');
     }
 }
