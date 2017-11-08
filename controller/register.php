@@ -12,4 +12,8 @@ class Register
         $f3->set('content', 'register.html');
         echo Template::instance()->render('template.html');
     }
+
+    function registerNewUser ($f3) {
+        echo 'posting new user';
+    }
 }

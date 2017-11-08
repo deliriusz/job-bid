@@ -12,4 +12,8 @@ class Login
         $f3->set('content', 'login.html');
         echo Template::instance()->render('template.html');
     }
+
+    function processLoginRequest ($f3) {
+        echo 'processing login request';
+    }
 }
