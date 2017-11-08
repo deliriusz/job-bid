@@ -14,6 +14,8 @@ require('controller/register.php');
         }
     );
 
+    $f3->set('DB', new DB\SQL('mysql:host=localhost;port=3306;dbname=pai',
+    'root'));
 
     $f3->route ('GET @login: /login',
         function ($f3) {

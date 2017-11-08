@@ -15,7 +15,7 @@ use View;
 
 class Login
 {
-    function view () {
+    function view ($f3) {
         echo  View::instance()->render('template.html');
 
     }
