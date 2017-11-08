@@ -40,10 +40,19 @@
                             <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span> </button>
                         </div>
                     </form>
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a href="/PAI-proj/register"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-                        <li><a href="/PAI-proj/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-                    </ul>
+                    <check if="{{ @SESSION['username'] }}">
+                        <true>
+                            <ul class="nav navbar-nav navbar-right">
+                                <li><a href="/PAI-proj/logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+                            </ul>
+                        </true>
+                        <false>
+                            <ul class="nav navbar-nav navbar-right">
+                                <li><a href="/PAI-proj/register"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                                <li><a href="/PAI-proj/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                            </ul>
+                        </false>
+                    </check>
                 </div>
             </nav>
         </div>
