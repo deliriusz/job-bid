@@ -6,18 +6,19 @@ SET time_zone = "+00:00";
 --
 -- Database: `pai`
 --
-CREATE DATABASE  IF NOT EXISTS db_name
+CREATE DATABASE  IF NOT EXISTS pai;
+USE pai;
 -- --------------------------------------------------------
 
 --
 -- Table structure for table `bid`
 --
 
-CREATE TABLE `bid` (
+CREATE TABLE IF NOT EXISTS `bid` (
   `id` int(11) AUTO_INCREMENT PRIMARY KEY,
   `user_id` int(11) NOT NULL,
   `job_id` int(11) NOT NULL,
-  `time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `time` datetime NOT NULL ,
   `value` double UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -27,12 +28,12 @@ CREATE TABLE `bid` (
 -- Table structure for table `job`
 --
 
-CREATE TABLE `job` (
+CREATE TABLE IF NOT EXISTS `job` (
   `id` int(11) AUTO_INCREMENT PRIMARY KEY,
   `userid` int(11) NOT NULL,
-  `name` varchar(180) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `description` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `creation_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `name` varchar(180) NOT NULL,
+  `description` text NOT NULL,
+  `creation_time` datetime NOT NULL ,
   `job_start_time` datetime NOT NULL,
   `job_end_time` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -43,7 +44,7 @@ CREATE TABLE `job` (
 -- Table structure for table `user`
 --
 
-CREATE TABLE `user` (
+CREATE TABLE IF NOT EXISTS `user` (
   `id` int(11) AUTO_INCREMENT PRIMARY KEY,
   `username` varchar(30) NOT NULL,
   `password` text NOT NULL,
