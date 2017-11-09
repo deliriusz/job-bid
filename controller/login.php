@@ -10,6 +10,12 @@ class Login
 {
     private $f3;
 
+    function lostPassword ($f3) {
+        $this->f3 = $f3;
+        $f3->set('content', 'lostpasswordform.html');
+        echo Template::instance()->render('template.html');
+    }
+
     function view ($f3) {
         $this->f3 = $f3;
         $f3->set('content', 'login.html');

@@ -43,6 +43,7 @@
                     <check if="{{ @SESSION['username'] }}">
                         <true>
                             <ul class="nav navbar-nav navbar-right">
+                                <li><a href="/PAI-proj/register"><span class="glyphicon glyphicon-user"></span> {{ @SESSION['username'] }}</a></li>
                                 <li><a href="/PAI-proj/logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
                             </ul>
                         </true>
