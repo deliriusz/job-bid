@@ -28,10 +28,10 @@ class Login
             die ('Not passed all login parameters'); //TODO change this to some more meaningful error handling
         }
         $user = $this->getUserData($_POST['inputUsername']);
-        $calculatedPass = hash('sha256', $user['salt'] . $_POST['inputPassword']);
+        $calculatedPass = hash('sha256', $user->salt . $_POST['inputPassword']);
 
-        if ($user['username'] === $_POST['inputUsername'] &&
-            $user['password'] === $calculatedPass) {
+        if ($user->username === $_POST['inputUsername'] &&
+            $user->password === $calculatedPass) {
 
             $f3->set('SESSION.username', $user['username']);
 
