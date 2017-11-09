@@ -12,7 +12,7 @@ class Login
 
     function lostPassword ($f3) {
         $this->f3 = $f3;
-        $f3->set('content', 'lostpasswordform.html');
+        $f3->set('content', 'lostpassword.html');
         echo Template::instance()->render('template.html');
     }
 
@@ -27,7 +27,7 @@ class Login
         if (! (isset($_POST['inputUsername']) && isset($_POST['inputPassword'])) ) {
             die ('Not passed all login parameters'); //TODO change this to some more meaningful error handling
         }
-        $user = $this->getUser($_POST['inputUsername']);
+        $user = $this->getUserData($_POST['inputUsername']);
         $calculatedPass = hash('sha256', $user['salt'] . $_POST['inputPassword']);
 
         if ($user['username'] === $_POST['inputUsername'] &&
@@ -46,7 +46,7 @@ class Login
         $f3->reroute('/');
     }
 
-    private function getUser ($username) {
+    private function getUserData ($username) {
         $userMapper = new DB\SQL\Mapper($this->f3->get('DB'), 'user');
         return $userMapper->load(array('username=?', $username));
     }
