@@ -26,13 +26,15 @@ class Jobs
     function viewUserJobsPage ($f3)
     {
         $this->f3 = $f3;
-        $jobid = $f3->get('PARAMS.jobid');
         $username = $f3->get('PARAMS.username');
-        $job = $this->getJobs(array('id = ?', $jobid), NULL);
+        $jobs = $this->getJobs(
+            array('userid = ?', $this->getUserIdFromUsername($username)),
+            NULL
+        );
         $content = '';
-        if (count($job)) {
-            $f3->set('job', $job[0]);
-            $content = 'job.html';
+        if (count($jobs)) {
+            $f3->set('jobs', $jobs);
+            $content = 'jobs.html';
         }
         $f3->set('content', $content);
         echo Template::instance()->render('template.html');
@@ -43,7 +45,11 @@ class Jobs
         $this->f3 = $f3;
         $jobid = $f3->get('PARAMS.jobid');
         $username = $f3->get('PARAMS.username');
-        $job = $this->getJobs(array('id = ?', $jobid), NULL);
+        $job = $this->getJobs(
+            array('id = ? AND userid = ?', $jobid,
+                $this->getUserIdFromUsername($username)),
+            NULL
+        );
         $content = '';
         if (count($job)) {
             $f3->set('job', $job[0]);
@@ -102,6 +108,19 @@ class Jobs
             $jobsMapper->next();
         }
         return $jobArray;
+    }
+
+    private function getUserIdFromUsername ($username) {
+
+        echo $this->f3->get('DB')->log();
+        $userController = new Users();
+        $userController->setF3($this->f3);
+        $users = $userController->getUsers(array('username = ?', $username), NULL);
+        $userid = -1;
+        if (count($users) > 0)
+            $userid = $users[0]->id;
+
+        return $userid;
     }
 
     private function jobMapperToJob ($m) {
