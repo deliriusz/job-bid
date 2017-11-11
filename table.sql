@@ -33,6 +33,7 @@ CREATE TABLE IF NOT EXISTS `job` (
   `userid` int(11) NOT NULL,
   `name` varchar(180) NOT NULL,
   `description` text NOT NULL,
+  `initial_price` double UNSIGNED NOT NULL,
   `creation_time` datetime NOT NULL ,
   `job_start_time` datetime NOT NULL,
   `job_end_time` datetime NOT NULL
@@ -93,3 +94,6 @@ ALTER TABLE `bid`
 ALTER TABLE `job`
   ADD CONSTRAINT `job_ibfk_1` FOREIGN KEY (`userid`) REFERENCES `user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 COMMIT;
+
+
+ALTER TABLE `job` CHANGE `initial_price` `initial_price` DOUBLE UNSIGNED NOT NULL;

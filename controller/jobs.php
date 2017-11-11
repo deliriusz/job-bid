@@ -23,6 +23,36 @@ class Jobs
         echo Template::instance()->render('template.html');
     }
 
+    function viewUserJobsPage ($f3)
+    {
+        $this->f3 = $f3;
+        $jobid = $f3->get('PARAMS.jobid');
+        $username = $f3->get('PARAMS.username');
+        $job = $this->getJobs(array('id = ?', $jobid), NULL);
+        $content = '';
+        if (count($job)) {
+            $f3->set('job', $job[0]);
+            $content = 'job.html';
+        }
+        $f3->set('content', $content);
+        echo Template::instance()->render('template.html');
+    }
+
+    function viewSpecificJobForUser ($f3)
+    {
+        $this->f3 = $f3;
+        $jobid = $f3->get('PARAMS.jobid');
+        $username = $f3->get('PARAMS.username');
+        $job = $this->getJobs(array('id = ?', $jobid), NULL);
+        $content = '';
+        if (count($job)) {
+            $f3->set('job', $job[0]);
+            $content = 'job.html';
+        }
+        $f3->set('content', $content);
+        echo Template::instance()->render('template.html');
+    }
+
     function viewSpecificJob ($f3) {
         $this->f3 = $f3;
         $jobid = $f3->get('PARAMS.jobid');
@@ -80,6 +110,7 @@ class Jobs
             $m->userid,
             $m->name,
             $m->description,
+            $m->initial_price,
             $m->creation_time,
             $m->job_start_time,
             $m->job_end_time
@@ -96,6 +127,7 @@ class Job {
     public $creation_time;
     public $job_start_time;
     public $job_end_time;
+    public $initial_price;
 
     /**
      * Job constructor.
@@ -107,12 +139,14 @@ class Job {
      * @param $job_start_time
      * @param $job_end_time
      */
-    public function __construct($id, $userId, $name, $description, $creation_time, $job_start_time, $job_end_time)
+    public function __construct($id, $userId, $name, $description, $initial_price,
+                                $creation_time, $job_start_time, $job_end_time)
     {
         $this->id = $id;
         $this->userId = $userId;
         $this->name = $name;
         $this->description = $description;
+        $this->initial_price = $initial_price;
         $this->creation_time = $creation_time;
         $this->job_start_time = $job_start_time;
         $this->job_end_time = $job_end_time;
