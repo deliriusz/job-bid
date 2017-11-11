@@ -10,11 +10,18 @@ class Jobs
 {
     private $f3;
 
-    function view ($f3) {
+    function viewJobsPage ($f3) {
         $this->f3 = $f3;
+        $f3->set('jobs', $this->getJobs());
         $f3->set('content', 'jobs.html');
-//        echo Template::instance()->render('template.html');
+        echo Template::instance()->render('template.html');
         $this->getJobs();
+    }
+
+    function viewSpecificJob ($f3) {
+        echo $f3->get('jobid');
+
+        echo Template::instance()->render('template.html');
     }
 
     function donotusenow ($f3) { //TODO change to something useful
@@ -43,7 +50,6 @@ class Jobs
         for ($i =  0; $i < $jobsMapper->loaded(); $i++) {
             $jobArray[$i] = $this->jobMapperToJob($jobsMapper);
         }
-        var_dump($jobArray);
         return $jobArray;
     }
 

@@ -34,7 +34,6 @@ class Index
                 // Write to custom log
                 $log->write($addr.' '.$line);
             }
-        $f3->set('inc','error.htm');
     }
 
 }

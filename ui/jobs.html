@@ -10,27 +10,19 @@
                 <table class="table table-hover">
                     <thead>
                     <tr>
-                        <th>Localization</th>
-                        <th>Job offer</th>
-                        <th>Prognozed payment</th>
+                        <th>Job Id</th>
+                        <th>Job name</th>
+                        <th>Job creation date</th>
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <td>Massetchusets</td>
-                        <td>Housekeeping</td>
-                        <td>$20.00</td>
-                    </tr>
-                    <tr>
-                        <td>Myszyniec</td>
-                        <td>Gangbang</td>
-                        <td>$120.00</td>
-                    </tr>
-                    <tr>
-                        <td>Ohio</td>
-                        <td>Killing Trump</td>
-                        <td>$152590.99</td>
-                    </tr>
+                    <repeat group="{{ @jobs }}" value="{{ @job }}">
+                        <tr class="clickable-row" data-href="/PAI-proj/job/{{ @job->id }}">
+                            <td>{{@job->id}}</td>
+                            <td>{{@job->name}}</td>
+                            <td>{{@job->creation_time}}</td>
+                        </tr>
+                    </repeat>
                     </tbody>
                 </table>
             </div>
