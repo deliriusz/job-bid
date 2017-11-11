@@ -12,21 +12,28 @@ class Jobs
 
     function viewJobsPage ($f3) {
         $this->f3 = $f3;
-        $pageToDisplay = isset($_QUERY['p']) ? $_QUERY['p'] - 1 : 0;
+        $pageToDisplay = $f3->get('GET.p') != NULL ? $f3->get('GET.p') - 1 : 0;
         $itemsPerPage = $f3->get('itemsperpage');
 
         $f3->set('jobs', $this->getJobs(NULL, array(
             'offset' => $pageToDisplay * $itemsPerPage,
             'limit' => $itemsPerPage
         )));
-        var_dump($f3->get('jobs'));
         $f3->set('content', 'jobs.html');
         echo Template::instance()->render('template.html');
     }
 
     function viewSpecificJob ($f3) {
-        echo $f3->get('jobid');
+        $this->f3 = $f3;
+        $jobid = $f3->get('PARAMS.jobid');
+        $job = $this->getJobs(array ('id = ?', $jobid), NULL);
+        $content = '';
+        if (count($job)) {
+            $f3->set ('job', $job[0]);
+            $content = 'job.html';
+        }
 
+        $f3->set('content', $content);
         echo Template::instance()->render('template.html');
     }
 
