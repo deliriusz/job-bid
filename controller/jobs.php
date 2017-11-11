@@ -12,10 +12,16 @@ class Jobs
 
     function viewJobsPage ($f3) {
         $this->f3 = $f3;
-        $f3->set('jobs', $this->getJobs());
+        $pageToDisplay = isset($_QUERY['p']) ? $_QUERY['p'] - 1 : 0;
+        $itemsPerPage = $f3->get('itemsperpage');
+
+        $f3->set('jobs', $this->getJobs(NULL, array(
+            'offset' => $pageToDisplay * $itemsPerPage,
+            'limit' => $itemsPerPage
+        )));
+        var_dump($f3->get('jobs'));
         $f3->set('content', 'jobs.html');
         echo Template::instance()->render('template.html');
-        $this->getJobs();
     }
 
     function viewSpecificJob ($f3) {
@@ -43,12 +49,20 @@ class Jobs
         }
     }
 
-    private function getJobs () {
+    //f3 mapper accepts second parameter for pagination, that is:
+    // e.g.
+    // array(
+    // 'order'=>'userID DESC',
+    // 'offset'=>5,
+    // 'limit'=>3
+    // )
+    private function getJobs ($constrainsArr = NULL, $paginationSettings = NULL) {
         $jobsMapper = new DB\SQL\Mapper($this->f3->get('DB'), 'job');
-        $jobsMapper->load();
+        $jobsMapper->load($constrainsArr, $paginationSettings);
         $jobArray = array();
         for ($i =  0; $i < $jobsMapper->loaded(); $i++) {
             $jobArray[$i] = $this->jobMapperToJob($jobsMapper);
+            $jobsMapper->next();
         }
         return $jobArray;
     }
