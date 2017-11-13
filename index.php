@@ -3,6 +3,7 @@
     $f3=require('lib/base.php');
 
     $f3->config('config.ini');
+    $f3->config('../config.ini');
     $f3->config('routes.ini');
 
     $f3->set('DB', new DB\SQL($f3->get('dburl'),
