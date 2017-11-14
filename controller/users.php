@@ -6,7 +6,7 @@
  * Time: 22:45
  */
 
-class Users
+class Users extends Controller
 {
 
     private $f3;

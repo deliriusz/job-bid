@@ -6,20 +6,18 @@
  * Time: 19:46
  */
 
-class Login
+class Login extends Controller
 {
     private $f3;
 
     function lostPassword ($f3) {
         $this->f3 = $f3;
         $f3->set('content', 'lostpassword.html');
-        echo Template::instance()->render('template.html');
     }
 
     function view ($f3) {
         $this->f3 = $f3;
         $f3->set('content', 'login.html');
-        echo Template::instance()->render('template.html');
     }
 
     function handleLogin ($f3) {
@@ -34,7 +32,7 @@ class Login
             $user->password === $calculatedPass) {
 
             $f3->set('SESSION.username', $user->username);
-            $f3->set('SESSION.userid', $user->id); 
+            $f3->set('SESSION.userid', $user->id);
 
             $f3->reroute('/register/welcome');
         } else {

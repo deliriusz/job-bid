@@ -6,7 +6,7 @@
  * Time: 19:46
  */
 
-class Jobs
+class Jobs extends Controller
 {
     private $f3;
 
@@ -20,7 +20,6 @@ class Jobs
             'limit' => $itemsPerPage
         )));
         $f3->set('content', 'jobs.html');
-        echo Template::instance()->render('template.html');
     }
 
     function viewUserJobsPage ($f3)
@@ -37,7 +36,6 @@ class Jobs
             $content = 'jobs.html';
         }
         $f3->set('content', $content);
-        echo Template::instance()->render('template.html');
     }
 
     function viewSpecificJobForUser ($f3)
@@ -57,7 +55,6 @@ class Jobs
             $content = 'job.html';
         }
         $f3->set('content', $content);
-        echo Template::instance()->render('template.html');
     }
 
     function viewSpecificJob ($f3) {
@@ -71,7 +68,6 @@ class Jobs
         }
 
         $f3->set('content', $content);
-        echo Template::instance()->render('template.html');
     }
 
     function postNewJob ($f3) {
@@ -102,7 +98,6 @@ class Jobs
         $this->f3 = $f3;
 
         $f3->set('content', 'newjobeditor.html');
-        echo Template::instance()->render('template.html');
     }
 
     function donotusenow ($f3) { //TODO change to something useful

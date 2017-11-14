@@ -7,11 +7,10 @@
  */
 
 
-class Register
+class Register extends Controller
 {
     function view ($f3) {
         $f3->set('content', 'register.html');
-        echo Template::instance()->render('template.html');
     }
 
     function registerNewUser ($f3) {
@@ -40,6 +39,5 @@ class Register
 
     function welcome ($f3) {
         $f3->set('content', 'start.html');
-        echo Template::instance()->render('template.html');
     }
 }

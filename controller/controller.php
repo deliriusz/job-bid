@@ -9,5 +9,7 @@
 // base controller
 class Controller
 {
-
+  function afterroute() {
+    echo Template::instance()->render('template.html');
+  }
 }

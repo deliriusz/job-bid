@@ -1,1 +1,13 @@
-.bottom-buffer { margin-bottom:20px; }
+.bottom-buffer {
+  margin-bottom:20px;
+ }
+
+.text-muted {
+  color: #636c72!important;
+ }
+
+.pai-footer {
+  font-size: 85%;
+  text-align: center;
+  background-color: #f7f7f7;
+ }
