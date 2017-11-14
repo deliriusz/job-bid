@@ -1,75 +1,80 @@
 <!DOCTYPE html>
 <?php
 /**
- * Created by PhpStorm.
- * User: kalinowr
- * Date: 05.11.2017
- * Time: 19:45
- */
+* Created by PhpStorm.
+* User: kalinowr
+* Date: 05.11.2017
+* Time: 19:45
+*/
 ?>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>PAI projekt</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PAI projekt</title>
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.js"></script>
-    <script src="/PAI-proj/js/validators.js"></script>
-    <script src="/PAI-proj/js/jquery-helpers.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/PAI-proj/ui/css/main.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.js"></script>
+  <script src="/PAI-proj/js/validators.js"></script>
+  <script src="/PAI-proj/js/jquery-helpers.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/PAI-proj/ui/css/main.css">
 </head>
 <body>
-<div class="container">
+  <div class="container">
     <div class="row col-xs-12 bottom-buffer">
-        <nav class="navbar navbar-default">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <a class="navbar-brand" href="/PAI-proj/">PAI project</a>
-                </div>
-                <ul class="nav navbar-nav">
-                    <li><a href="/PAI-proj/jobs">Jobs</a></li>
-                    <li><a href="#">Page 2</a></li>
-                    <li><a href="#">About us</a></li>
-                </ul>
-                <form class="navbar-form navbar-left">
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Search">
-                        <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span> </button>
-                    </div>
-                </form>
-                <check if="{{ @SESSION['username'] }}">
-                    <true>
-                        <!--look at https://codepen.io/Gnex77/pen/aZOWxR-->
-                        <ul class="nav navbar-nav navbar-right">
-                            <li class="dropdown">
-                                <a class="dropdown-toggle" data-toggle="dropdown" href="#"> {{ @SESSION['username'] }}
-                                    <span class="caret"></span></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#">My account</a></li>
-                                    <li><a href="#">My bids</a></li>
-                                    <li><a href="/PAI-proj/user/{{@SESSION.username}}/jobs">My jobs</a></li>
-                                    <li><a href="/PAI-proj/jobs/add">Create new job</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="/PAI-proj/logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
-                        </ul>
-                    </true>
-                    <false>
-                        <ul class="nav navbar-nav navbar-right">
-                            <li><a href="/PAI-proj/register"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-                            <li><a href="/PAI-proj/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-                        </ul>
-                    </false>
-                </check>
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="/PAI-proj/">PAI project</a>
+          </div>
+          <ul class="nav navbar-nav">
+            <li><a href="/PAI-proj/jobs">Jobs</a></li>
+            <li><a href="#">Page 2</a></li>
+            <li><a href="#">About us</a></li>
+          </ul>
+          <form class="navbar-form navbar-left">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Search">
+              <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span> </button>
             </div>
+          </form>
+          <check if="{{ @SESSION['username'] }}">
+            <true>
+              <!--look at https://codepen.io/Gnex77/pen/aZOWxR-->
+              <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                  <a class="dropdown-toggle" data-toggle="dropdown" href="#"> {{ @SESSION['username'] }}
+                    <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                      <li><a href="#">My account</a></li>
+                      <li><a href="#">My bids</a></li>
+                      <li><a href="/PAI-proj/user/{{@SESSION.username}}/jobs">My jobs</a></li>
+                      <li><a href="/PAI-proj/jobs/add">Create new job</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="/PAI-proj/logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+                </ul>
+              </true>
+              <false>
+                <ul class="nav navbar-nav navbar-right">
+                  <li><a href="/PAI-proj/register"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                  <li><a href="/PAI-proj/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                </ul>
+              </false>
+            </check>
+          </div>
         </nav>
-    </div>
-    <include href="{{ @content }}" ></include>
-</div>
+      </div>
+      <include href="{{ @content }}" ></include>
 
-</body>
-</html>
+      <div class="row col-md-12">
+          <div class="well text-muted">
+            <p>© 2017, Rafał Kalinowski, All rights reserved</p>
+        </div>
+      </footer>
+    </div>
+  </body>
+  </html>
