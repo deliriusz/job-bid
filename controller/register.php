@@ -44,7 +44,7 @@ class Register extends Controller
         array_push($errors, 'Birth date is not valid');
       }
 
-      if ($f3->get('POST.password') !== $f3->get('post.repeated_password')) {
+      if ($f3->get('POST.password') !== $f3->get('POST.repeated_password')) {
         array_push($errors, 'password confirmation does not match pasword');
       }
 
@@ -62,12 +62,11 @@ class Register extends Controller
         echo json_encode ($returnData);
       } else {
         echo json_encode ($returnData);
-        registerNewUser();
-        $f3->reroute('/register/welcome');
+        $this->registerNewUser($f3);
       }
     }
 
-    function registerNewUser () {
+    function registerNewUser ($f3) {
         $saltLength = random_int(170, 180);
         $saltForUser = bin2hex(random_bytes($saltLength));
         $pass = $_POST['password'];

@@ -22,12 +22,13 @@ jQuery(document).ready(function($) {
         encode: true
       })
         .done (function(data){
-          if (!data.success) {
+          if (data.success === false) {
             $(".error-placeholder").html ( "<div class=\"alert alert-danger\"><strong>Please correct registration form</strong><br/>"
             + data.errors.map (x => "<p><i class=\"fa fa-close\" aria-hidden=\"true\"></i> " + x + "</p>")
             + "</div>" );
+          } else {
+              location.href = "/register/welcome";
           }
-          console.log(data);
 
         });
 
