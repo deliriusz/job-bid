@@ -1,56 +1,60 @@
-<div class="row col-xs-12 bottom-buffer">
-    <div class="col-md-7">
+<check if="{{ @SESSION['username'] }}">
+  <false>
+    <div class="row col-xs-12 bottom-buffer">
+      <div class="col-md-7">
         <h1>Looking for a job? <br/>
-            <small>Fuck that, be a nigga and do nothing</small>
+          <small>Fuck that, be a nigga and do nothing</small>
         </h1>
-    </div>
-    <div class="col-md-5">
+      </div>
+      <div class="col-md-5">
         <div class="panel panel-default">
-            <div class="panel-heading">
-                <h4>
-                    <i class="fa fa-user"> Register now! </i>
-                </h4>
-            </div>
-            <div class="panel-body">
-                <include href='registerform.html' />
-            </div>
+          <div class="panel-heading">
+            <h4>
+              <i class="fa fa-user"> Register now! </i>
+            </h4>
+          </div>
+          <div class="panel-body">
+            <include href='registerform.html' />
+          </div>
         </div>
+      </div>
     </div>
-</div>
+  </false>
+</check>
 
 <div class="row col-xs-12">
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            <h4>Find jobs around</h4>
-        </div>
-        <div class="panel-body">
-            <table class="table table-hover">
-                <caption>Find some of the best job offers in our system</caption>
-                <thead>
-                <tr>
-                    <th>Localization</th>
-                    <th>Job offer</th>
-                    <th>Prognozed payment</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>Massetchusets</td>
-                    <td>Housekeeping</td>
-                    <td>$20.00</td>
-                </tr>
-                <tr>
-                    <td>Myszyniec</td>
-                    <td>Gangbang</td>
-                    <td>$120.00</td>
-                </tr>
-                <tr>
-                    <td>Ohio</td>
-                    <td>Killing Trump</td>
-                    <td>$152590.99</td>
-                </tr>
-                </tbody>
-            </table>
-        </div>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4>Find jobs around</h4>
     </div>
+    <div class="panel-body">
+      <table class="table table-hover">
+        <caption>Find some of the best job offers in our system</caption>
+        <thead>
+          <tr>
+            <th>Localization</th>
+            <th>Job offer</th>
+            <th>Prognozed payment</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Massetchusets</td>
+            <td>Housekeeping</td>
+            <td>$20.00</td>
+          </tr>
+          <tr>
+            <td>Myszyniec</td>
+            <td>Gangbang</td>
+            <td>$120.00</td>
+          </tr>
+          <tr>
+            <td>Ohio</td>
+            <td>Killing Trump</td>
+            <td>$152590.99</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
 </div>
