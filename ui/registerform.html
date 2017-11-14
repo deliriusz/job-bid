@@ -1,4 +1,5 @@
 <form class="form-horizontal" id="signupForm" action="/PAI-proj/register" method="post">
+	<div class="error-placeholder"></div>
 	 <div class="form-group">
         <label for="inputFirstName" class="col-sm-3 control-label">First name</label>
         <div class="col-sm-9">
@@ -24,8 +25,7 @@
         <label for="inputUsername" class="col-sm-3 control-label">Username</label>
         <div class="col-sm-9">
             <input type="text" class="form-control"
-                   name="inputUsername" id="inputUsername" placeholder="Username" required="required"
-                   onkeyup="validateFormUsernameAcceptable()">
+                   name="inputUsername" id="inputUsername" placeholder="Username" required="required" >
         </div>
     </div>
     <div class="form-group">
@@ -46,7 +46,7 @@
         <label for="inputRepeatPassword" class="col-sm-3 control-label">Repeat password</label>
         <div class="col-sm-9">
             <input type="password" class="form-control"
-                   id="inputRepeatPassword" placeholder="Password" required="required">
+                   id="inputRepeatPassword" name="inputRepeatPassword" placeholder="Password" required="required">
         </div>
     </div>
     <div class="form-group">
@@ -60,7 +60,7 @@
     </div>
     <div class="form-group">
         <div class="col-sm-offset-4 col-sm-8">
-            <button type="submit" class="btn btn-primary">Sign up</button>
+            <button type="submit" id="submitRegisterForm" class="btn btn-primary">Sign up</button>
             <br />
         </div>
     </div>

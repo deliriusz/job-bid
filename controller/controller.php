@@ -9,7 +9,11 @@
 // base controller
 class Controller
 {
+  protected $doRender = true;
+
   function afterroute() {
-    echo Template::instance()->render('template.html');
+    if ($this->doRender) {
+      echo Template::instance()->render('template.html');
+    }
   }
 }
