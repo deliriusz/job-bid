@@ -42,6 +42,7 @@ class Jobs
 
     function viewSpecificJobForUser ($f3)
     {
+        //Login::handleUserShouldBeLogged($f3);
         $this->f3 = $f3;
         $jobid = $f3->get('PARAMS.jobid');
         $username = $f3->get('PARAMS.username');
@@ -70,6 +71,37 @@ class Jobs
         }
 
         $f3->set('content', $content);
+        echo Template::instance()->render('template.html');
+    }
+
+    function postNewJob ($f3) {
+        $this->f3 = $f3;
+        $jobsMapper = new DB\SQL\Mapper($this->f3->get('DB'), 'job');
+        $currentTime = time();
+        $currentDate = date("Y-m-d H:M:S",$currentTime);
+        $jobName = $_POST['jobName'];
+        $jobStartDate = $_POST['jobStartDate'];
+        $jobEndDate = $_POST['jobEndDate'];
+        $jobInitialPayment = $_POST['jobInitialPayment'];
+        $jobDescription = $_POST['jobDescription'];
+
+        $jobsMapper->userid = $f3->get('SESSION.userid');
+        $jobsMapper->name = $jobName;
+        $jobsMapper->description = $jobDescription;
+        $jobsMapper->initial_price = $jobInitialPayment;
+        $jobsMapper->creation_time = $currentDate;
+        $jobsMapper->job_start_time = $jobStartDate;
+        $jobsMapper->job_end_time = $jobEndDate;
+
+        $jobsMapper->save();
+
+        $f3->reroute('/user/' . $f3->get('SESSION.username') . '/job/' . $jobsMapper->id);
+    }
+
+    function showNewJobEditor ($f3) {
+        $this->f3 = $f3;
+
+        $f3->set('content', 'newjobeditor.html');
         echo Template::instance()->render('template.html');
     }
 

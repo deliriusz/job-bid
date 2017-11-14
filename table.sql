@@ -76,7 +76,8 @@ ALTER TABLE `job`
 ALTER TABLE `user`
   ADD UNIQUE KEY `username` (`username`),
   ADD UNIQUE KEY `email` (`email`);
-
+  
+ALTER TABLE `user` ADD `first_name` VARCHAR(40) NOT NULL AFTER `username`, ADD `last_name` VARCHAR(40) NOT NULL AFTER `first_name`, ADD `birth_date` DATE NOT NULL AFTER `last_name`;
 --
 -- Constraints for dumped tables
 --

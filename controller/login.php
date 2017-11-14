@@ -33,7 +33,8 @@ class Login
         if ($user->username === $_POST['inputUsername'] &&
             $user->password === $calculatedPass) {
 
-            $f3->set('SESSION.username', $user['username']);
+            $f3->set('SESSION.username', $user->username);
+            $f3->set('SESSION.userid', $user->id); 
 
             $f3->reroute('/register/welcome');
         } else {
@@ -44,6 +45,12 @@ class Login
     function handleLogout ($f3)  {
         $f3->clear('SESSION');
         $f3->reroute('/');
+    }
+
+    static function handleUserShouldBeLogged ($f3) {
+      if ($f3->get('SESSION.username') === NULL) {
+        $f3->reroute ('/login');
+      }
     }
 
     private function getUserData ($username) {
