@@ -8,10 +8,7 @@
 
 class Jobs extends Controller
 {
-    private $f3;
-
     function viewJobsPage ($f3) {
-        $this->f3 = $f3;
         $pageToDisplay = $f3->get('GET.p') != NULL ? $f3->get('GET.p') - 1 : 0;
         $itemsPerPage = $f3->get('itemsperpage');
 
@@ -24,7 +21,6 @@ class Jobs extends Controller
 
     function viewUserJobsPage ($f3)
     {
-        $this->f3 = $f3;
         $username = $f3->get('PARAMS.username');
         $jobs = $this->getJobs(
             array('userid = ?', $this->getUserIdFromUsername($username)),
@@ -41,7 +37,6 @@ class Jobs extends Controller
     function viewSpecificJobForUser ($f3)
     {
         //Login::handleUserShouldBeLogged($f3);
-        $this->f3 = $f3;
         $jobid = $f3->get('PARAMS.jobid');
         $username = $f3->get('PARAMS.username');
         $job = $this->getJobs(
@@ -58,7 +53,6 @@ class Jobs extends Controller
     }
 
     function viewSpecificJob ($f3) {
-        $this->f3 = $f3;
         $jobid = $f3->get('PARAMS.jobid');
         $job = $this->getJobs(array ('id = ?', $jobid), NULL);
         $content = '';
@@ -71,8 +65,7 @@ class Jobs extends Controller
     }
 
     function postNewJob ($f3) {
-        $this->f3 = $f3;
-        $jobsMapper = new DB\SQL\Mapper($this->f3->get('DB'), 'job');
+        $jobsMapper = new DB\SQL\Mapper($this->db, 'job');
         $currentTime = time();
         $currentDate = date("Y-m-d H:M:S",$currentTime);
         $jobName = $_POST['jobName'];
@@ -95,13 +88,10 @@ class Jobs extends Controller
     }
 
     function showNewJobEditor ($f3) {
-        $this->f3 = $f3;
-
         $f3->set('content', 'newjobeditor.html');
     }
 
     function donotusenow ($f3) { //TODO change to something useful
-        $this->f3 = $f3;
         if (! (isset($_POST['inputUsername']) && isset($_POST['inputPassword'])) ) {
             die ('Not passed all login parameters');
         }
@@ -127,7 +117,7 @@ class Jobs extends Controller
     // 'limit'=>3
     // )
     private function getJobs ($constrainsArr = NULL, $paginationSettings = NULL) {
-        $jobsMapper = new DB\SQL\Mapper($this->f3->get('DB'), 'job');
+        $jobsMapper = new DB\SQL\Mapper($this->db, 'job');
         $jobsMapper->load($constrainsArr, $paginationSettings);
         $jobArray = array();
         for ($i =  0; $i < $jobsMapper->loaded(); $i++) {
@@ -138,8 +128,6 @@ class Jobs extends Controller
     }
 
     private function getUserIdFromUsername ($username) {
-
-        echo $this->f3->get('DB')->log();
         $userController = new Users();
         $userController->setF3($this->f3);
         $users = $userController->getUsers(array('username = ?', $username), NULL);

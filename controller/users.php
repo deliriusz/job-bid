@@ -8,13 +8,13 @@
 
 class Users extends Controller
 {
-
-    private $f3;
-    function setF3 ($f3) {
-        $this->f3 = $f3;
+    function setF3($f3) {
+      $this->f3 = $f3;
+      $this->db = $f3->get('DB');
     }
+
     function getUsers ($constrainsArr = NULL, $paginationSettings = NULL) {
-        $usersMapper = new DB\SQL\Mapper($this->f3->get('DB'), 'user');
+        $usersMapper = new DB\SQL\Mapper($this->db, 'user');
         $usersMapper->load($constrainsArr, $paginationSettings);
         $usersArray = array();
         for ($i =  0; $i < $usersMapper->loaded(); $i++) {
