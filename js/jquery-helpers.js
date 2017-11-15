@@ -16,7 +16,7 @@ jQuery(document).ready(function($) {
 
       $.ajax({
         type: 'POST',
-        url: '/register/formsubmit',
+        url: '/register',
         data: formData,
         dataType: 'json',
         encode: true
@@ -28,6 +28,32 @@ jQuery(document).ready(function($) {
             + "</div>" );
           } else {
               location.href = "/register/welcome";
+          }
+
+        });
+
+        event.preventDefault();
+    });
+
+    $("#submitLoginForm").click (function (event){
+      var formData = {
+        'username': $('input[name=inputUsername]').val(),
+        'password': $('input[name=inputPassword]').val()
+      };
+
+      $.ajax({
+        type: 'POST',
+        url: '/login',
+        data: formData,
+        dataType: 'json',
+        encode: true
+      })
+        .done (function(data){
+          if (data.success === false) {
+            $(".error-placeholder").html ( "<div class=\"alert alert-danger\"><strong><i class=\"fa fa-close\" aria-hidden=\"true\"></i> Username or password not matched</strong><br/>"
+            + "</div>" );
+          } else {
+              location.href = "/PAI-proj/";
           }
 
         });

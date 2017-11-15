@@ -1,4 +1,5 @@
 <form class="form-horizontal" id="loginForm" method="post" action="/login">
+	<div class="error-placeholder"></div>
     <div class="form-group">
         <label for="inputUsername" class="col-sm-3 control-label">Username or Email</label>
         <div class="col-sm-9">
@@ -25,7 +26,7 @@
     </div>
     <div class="form-group">
         <div class="col-sm-offset-4 col-sm-8">
-            <button type="submit" class="btn btn-primary">Log in</button>
+            <button type="submit" class="btn btn-primary" id="submitLoginForm">Log in</button>
             <br />
             <br />
 				<small><a href="/PAI-proj/lostpassword">Lost password?</a></small>

@@ -10,6 +10,12 @@
 class Controller
 {
   protected $doRender = true;
+  protected $f3, $db;
+
+  function beforeroute ($f3) {
+    $this->f3 = $f3;
+    $this->db = $f3->get('DB');
+  }
 
   function afterroute() {
     if ($this->doRender) {
