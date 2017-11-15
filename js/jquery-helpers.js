@@ -60,4 +60,31 @@ jQuery(document).ready(function($) {
 
         event.preventDefault();
     });
+
+    $("#placeBidForm").click (function (event){
+      var formData = {
+        'bid': $('input[name=value]').val(),
+        'job_id': $('input[name=jobid]').val()
+      };
+
+      $.ajax({
+        type: 'POST',
+        url: '/bid/' + formData.job_id,
+        data: formData,
+        dataType: 'json',
+        encode: true
+      })
+        .done (function(data){
+          if (data.success === false) {
+            $(".error-placeholder").html ( "<div class=\"alert alert-danger\"><strong>Please correct following errors: </strong><br/>"
+            + data.errors.map (x => "<p><i class=\"fa fa-close\" aria-hidden=\"true\"></i> " + x + "</p>")
+            + "</div>" );
+          } else {
+              location.reload();
+          }
+
+        });
+
+        event.preventDefault();
+    });
 });

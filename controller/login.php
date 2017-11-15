@@ -29,10 +29,10 @@ class Login extends Controller
     if ($user->username === $username &&
     $user->password === $calculatedPass) {
 
-      $f3->set('SESSION.username', $user->username);
-      $f3->set('SESSION.userid', $user->id);
+    $f3->set('SESSION.username', $user->username);
+    $f3->set('SESSION.userid', $user->id);
 
-      $returnData['success'] = true;
+    $returnData['success'] = true;
 
     } else {
       $returnData['success'] = false;

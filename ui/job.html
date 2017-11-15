@@ -12,6 +12,7 @@
           <div class="panel-heading">
             <div class="col-md-6">
               <p>Current price: {{@job->initial_price}} $</p>
+              <p>Created by: {{ @SESSION.username }} </p>
             </div>
             <div class="col-md-6">
               <p>Creation time: {{@job->creation_time}}</p>
@@ -19,6 +20,19 @@
             </div>
           </div>
           <div class="panel-body">
+            <check if="{{ isset(@SESSION.username) }}">
+              <span>
+                <form class="form-inline">
+  	                <div class="error-placeholder"></div>
+                    <div class="form-group">
+                      <input type="hidden" name="jobid" value="{{ @job->id }}">
+                      <label for="value">Place your bid: </label>
+                      <input type="number" id="value" class="form-control" name="value"></input>
+                    </div>
+                    <button type="submit" class="btn btn-default" id="placeBidForm">Submit</button>
+                  </form>
+              </span>
+            </check>
             <p>{{@job->description}}</p>
             <hr></hr>
             <div class="panel-body">
