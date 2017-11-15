@@ -10,6 +10,8 @@
 		$f3->get('dbuser'),
 		$f3->get('dbpassword')) );
 
+    //new DB\SQL\Session($f3->get('DB')); 
+
     $f3->route ('GET /',
         function ($f3) {
             $f3->set('content', 'start.html');

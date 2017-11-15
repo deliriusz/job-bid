@@ -62,14 +62,16 @@ jQuery(document).ready(function($) {
     });
 
     $("#placeBidForm").click (function (event){
+      event.preventDefault();
       var formData = {
         'bid': $('input[name=value]').val(),
         'job_id': $('input[name=jobid]').val()
       };
 
+      //WHEN I ADDED VAR TO /bid, PHP SESSION changed, which caused serious problems!
       $.ajax({
         type: 'POST',
-        url: '/bid/' + formData.job_id,
+        url: '/bid',
         data: formData,
         dataType: 'json',
         encode: true
@@ -85,6 +87,5 @@ jQuery(document).ready(function($) {
 
         });
 
-        event.preventDefault();
     });
 });

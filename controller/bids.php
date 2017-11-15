@@ -9,9 +9,8 @@ class Bids extends Controller {
     $errors = array();
     $returnData = array();
     $username = $f3->get('SESSION.username');
-    $jobid = $f3->get('PARAMS.jobid');
+    $jobid = $f3->get('POST.job_id');
     $bid = $f3->get('POST.bid');
-
 
     if (!preg_match('/^[0-9]{0,}[.]{0,1}[0-9]{0,2}$/', $bid)) {
       array_push($errors, 'Bid provided is not proper value');
