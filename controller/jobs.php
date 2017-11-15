@@ -86,7 +86,7 @@ class Jobs extends Controller
 
         $jobsMapper->save();
 
-        $f3->reroute('/PAI-proj/user/' . $f3->get('SESSION.username') . '/job/' . $jobsMapper->id);
+        $f3->reroute('/user/' . $f3->get('SESSION.username') . '/job/' . $jobsMapper->id);
     }
 
     function showNewJobEditor ($f3) {

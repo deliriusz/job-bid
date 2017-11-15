@@ -42,7 +42,7 @@ class Login extends Controller
 
     function handleLogout ($f3)  {
       $f3->clear('SESSION');
-      $f3->reroute('/PAI-proj/');
+      $f3->reroute('/');
     }
 
     static function handleUserShouldBeLogged ($f3) {
