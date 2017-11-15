@@ -27,7 +27,7 @@ jQuery(document).ready(function($) {
             + data.errors.map (x => "<p><i class=\"fa fa-close\" aria-hidden=\"true\"></i> " + x + "</p>")
             + "</div>" );
           } else {
-              location.href = "/register/welcome";
+              location.href = "/PAI-proj/register/welcome";
           }
 
         });
