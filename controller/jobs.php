@@ -29,8 +29,9 @@ class Jobs extends Controller
         $content = '';
         if (count($jobs)) {
             $f3->set('jobs', $jobs);
-            $content = 'jobs.html';
         }
+        
+        $content = 'jobs.html';
         $f3->set('content', $content);
     }
 

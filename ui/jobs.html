@@ -7,6 +7,8 @@
                 </h4>
             </div>
             <div class="panel-body">
+              <check if="{{ isset(@jobs) }}">
+                <true>
                 <table class="table table-hover">
                     <thead>
                     <tr>
@@ -25,8 +27,14 @@
                     </repeat>
                     </tbody>
                 </table>
+              </true>
+              <false>
+                <div class="jumbotron"><h2>Seems that there is no jobs matching given search criteria.</h2>
+                  <br/> <h4> Please change search criteria or create job yourself! </h4>
+                </div>
+              </false>
+            </check>
             </div>
         </div>
     </div>
 </div>
-
