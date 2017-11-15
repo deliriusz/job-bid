@@ -20,6 +20,25 @@
           </div>
           <div class="panel-body">
             <p>{{@job->description}}</p>
+            <hr></hr>
+            <div class="panel-body">
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th>Bid value</th>
+                  <th>Bid time</th>
+                </tr>
+              </thead>
+              <tbody>
+                <repeat group="{{ @job->bids }}" value="{{ @bid }}">
+                  <tr>
+                    <td>{{@bid->value}}</td>
+                    <td>{{@bid->time}}</td>
+                  </tr>
+                </repeat>
+              </tbody>
+            </table>
+            </div>
           </div>
         </div>
       </div>

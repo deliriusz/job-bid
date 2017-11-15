@@ -6,6 +6,7 @@
  * Time: 19:46
  */
 
+require ('controller/bids.php');
 class Jobs extends Controller
 {
     function viewJobsPage ($f3) {
@@ -122,6 +123,21 @@ class Jobs extends Controller
     }
 
     private function jobMapperToJob ($m) {
+        $bidsMapper = new DB\SQL\Mapper($this->db, 'bid');
+        $bidsMapper->load(array ('job_id = ?', $m->id), NULL);
+        $bidsArray = array();
+
+        for ($i = 0; $i < $bidsMapper->loaded(); $i++) {
+            $bidsArray[$i] = new Bid(
+              $bidsMapper->id,
+              $bidsMapper->job_id,
+              $bidsMapper->user_id,
+              $bidsMapper->time,
+              $bidsMapper->value
+            );
+            $bidsMapper->next();
+        }
+
         $j = new Job(
             $m->id,
             $m->userid,
@@ -130,7 +146,8 @@ class Jobs extends Controller
             $m->initial_price,
             $m->creation_time,
             $m->job_start_time,
-            $m->job_end_time
+            $m->job_end_time,
+            $bidsArray
         );
         return $j;
     }
@@ -145,6 +162,7 @@ class Job {
     public $job_start_time;
     public $job_end_time;
     public $initial_price;
+    public $bids;
 
     /**
      * Job constructor.
@@ -155,9 +173,10 @@ class Job {
      * @param $creation_time
      * @param $job_start_time
      * @param $job_end_time
+     * @param $bids
      */
     public function __construct($id, $userId, $name, $description, $initial_price,
-                                $creation_time, $job_start_time, $job_end_time)
+                                $creation_time, $job_start_time, $job_end_time, $bids)
     {
         $this->id = $id;
         $this->userId = $userId;
@@ -167,6 +186,7 @@ class Job {
         $this->creation_time = $creation_time;
         $this->job_start_time = $job_start_time;
         $this->job_end_time = $job_end_time;
+        $this->bids = $bids;
     }
 
 }
