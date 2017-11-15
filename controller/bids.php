@@ -4,22 +4,28 @@ require('controller/utils.php');
 class Bids extends Controller {
 
   //ajax request
-  //TODO problem with auto logging out
-  function placeBid ($f3) {
-    $errors = array();
-    $returnData = array();
-    $username = $f3->get('SESSION.username');
-    $jobid = $f3->get('POST.job_id');
-    $bid = $f3->get('POST.bid');
+  function placeBid ($f3)
+  {
+      $errors = array();
+      $returnData = array();
+      $username = $f3->get('SESSION.username');
+      $jobid = $f3->get('POST.job_id');
+      $bid = $f3->get('POST.bid');
 
-    if (!preg_match('/^[0-9]{0,}[.]{0,1}[0-9]{0,2}$/', $bid)) {
-      array_push($errors, 'Bid provided is not proper value');
-    }
+      if (!preg_match('/^-{0,1}[0-9]{1,}[.]{0,1}[0-9]{0,2}$/', $bid)) {
+          array_push($errors, 'Bid provided is not proper value');
+      } else {
+          if ($bid < 1) {
+              array_push($errors, 'You cannot bid beneath 1');
+          }
+      }
 
-    $errorsFromCreateBid = $this->createBid($jobid, $bid, $username);
-    foreach ($errorsFromCreateBid as $key => $value) {
-      array_push($errors, $value);
-    }
+      if (count($errors) === 0) {
+          $errorsFromCreateBid = $this->createBid($jobid, $bid, $username);
+          foreach ($errorsFromCreateBid as $key => $value) {
+              array_push($errors, $value);
+          }
+      }
 
     $this->doRender = false;
     $isSuccess = empty($errors);
@@ -40,14 +46,26 @@ class Bids extends Controller {
     $usersMapper = new DB\SQL\Mapper($this->db, 'user');
     $errors = array();
 
-    $usersMapper->load(array('username = ?', $username));
     $jobsMapper->load(array('id = ?', $jobid));
+
+    $bidsMapper->load(array('job_id  = ?', $jobid), array(
+        'order' => 'value ASC',
+        'limit' => '1'
+    ));
+
+    $usersMapper->load(array('username = ?', $username));
+
     if ($jobsMapper->loaded() === 0) {
       array_push($errors, 'No matching job found');
     } else if ($usersMapper->loaded() === 0 ) {
       array_push($errors, 'Username not found. Please logout and login again');
+    } else if ($bidsMapper->loaded() > 0 && $bidsMapper->value <= $bid){
+        array_push($errors, 'Your offer is not the lowest one');
+    } else if ($jobsMapper->initial_price < $bid) {
+        array_push($errors, 'You cannot bid for higher value than initial price');
     } else {
-      $bidsMapper->job_id = $jobsMapper->id;
+        $bidsMapper->reset();
+      $bidsMapper->job_id = $jobid;
       $bidsMapper->user_id = $usersMapper->id;
       $bidsMapper->time = Utils::getCurrentDateTime();
       $bidsMapper->value = $bid;

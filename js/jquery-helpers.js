@@ -16,7 +16,7 @@ jQuery(document).ready(function($) {
 
       $.ajax({
         type: 'POST',
-        url: '/register',
+        url: '/PAI-proj/register',
         data: formData,
         dataType: 'json',
         encode: true
@@ -43,7 +43,7 @@ jQuery(document).ready(function($) {
 
       $.ajax({
         type: 'POST',
-        url: '/login',
+        url: '/PAI-proj/login',
         data: formData,
         dataType: 'json',
         encode: true
@@ -61,17 +61,16 @@ jQuery(document).ready(function($) {
         event.preventDefault();
     });
 
-    $("#placeBidForm").click (function (event){
+    $("#placeBidForm").submit (function (event){
       event.preventDefault();
       var formData = {
         'bid': $('input[name=value]').val(),
         'job_id': $('input[name=jobid]').val()
       };
 
-      //WHEN I ADDED VAR TO /bid, PHP SESSION changed, which caused serious problems!
       $.ajax({
         type: 'POST',
-        url: '/bid',
+        url: '/PAI-proj/bid',
         data: formData,
         dataType: 'json',
         encode: true

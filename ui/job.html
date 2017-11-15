@@ -22,19 +22,19 @@
           <div class="panel-body">
             <check if="{{ isset(@SESSION.username) }}">
               <span>
-                <form class="form-inline">
+                <form class="form-inline" id="placeBidForm">
   	                <div class="error-placeholder"></div>
                     <div class="form-group">
                       <input type="hidden" name="jobid" value="{{ @job->id }}">
                       <label for="value">Place your bid: </label>
-                      <input type="number" id="value" class="form-control" name="value"></input>
+                      <input type="number" step="0.01" id="value" class="form-control" name="value">
                     </div>
-                    <button type="submit" class="btn btn-default" id="placeBidForm">Submit</button>
+                    <button type="submit" class="btn btn-default" >Submit</button>
                   </form>
               </span>
             </check>
             <p>{{@job->description}}</p>
-            <hr></hr>
+            <hr>
             <div class="panel-body">
             <table class="table table-hover">
               <thead>
