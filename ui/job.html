@@ -1,24 +1,42 @@
-<div class="row col-xs-12 bottom-buffer">
-    <div class="panel panel-default panel-body">
+<div>
+<check if="{{ isset(@job) }}">
+  <true>
+    <div class="row col-xs-12 bottom-buffer">
+      <div class="panel panel-default panel-body">
         <h1>{{@job->name}}</h1>
+      </div>
     </div>
-</div>
-<div class="row col-xs-12 bottom-buffer">
-    <div class="col-md-12">
+    <div class="row col-xs-12 bottom-buffer">
+      <div class="col-md-12">
         <div class="panel panel-default">
-            <div class="panel-heading">
-                <div class="col-md-6">
-                    <p>Current price: {{@job->initial_price}} $</p>
-                </div>
-                <div class="col-md-6">
-                    <p>Creation time: {{@job->creation_time}}</p>
-                    <p>Start time: {{@job->job_start_time}}</p>
-                </div>
+          <div class="panel-heading">
+            <div class="col-md-6">
+              <p>Current price: {{@job->initial_price}} $</p>
             </div>
-            <div class="panel-body">
-                <p>{{@job->description}}</p>
+            <div class="col-md-6">
+              <p>Creation time: {{@job->creation_time}}</p>
+              <p>Start time: {{@job->job_start_time}}</p>
             </div>
+          </div>
+          <div class="panel-body">
+            <p>{{@job->description}}</p>
+          </div>
         </div>
+      </div>
     </div>
+  </true>
+  <false>
+    <div class="row col-xs-12 bottom-buffer">
+      <check if="{{ isset(@PARAMS.username) }}">
+        <true>
+          <div class="jumbotron"><h2>Job not found for user {{ @PARAMS.username }}</h2>
+        </true>
+        <false>
+          <div class="jumbotron"><h2>Job not found</h2>
+        </false>
+      </check>
+      </div>
+    </div>
+  </false>
+</check>
 </div>
-

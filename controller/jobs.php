@@ -26,11 +26,11 @@ class Jobs extends Controller
             array('userid = ?', $this->getUserIdFromUsername($username)),
             NULL
         );
-        $content = '';
+
         if (count($jobs)) {
             $f3->set('jobs', $jobs);
         }
-        
+
         $content = 'jobs.html';
         $f3->set('content', $content);
     }
@@ -45,22 +45,22 @@ class Jobs extends Controller
                 $this->getUserIdFromUsername($username)),
             NULL
         );
-        $content = '';
+
         if (count($job)) {
             $f3->set('job', $job[0]);
-            $content = 'job.html';
         }
+
+        $content = 'job.html';
         $f3->set('content', $content);
     }
 
     function viewSpecificJob ($f3) {
         $jobid = $f3->get('PARAMS.jobid');
         $job = $this->getJobs(array ('id = ?', $jobid), NULL);
-        $content = '';
         if (count($job)) {
             $f3->set ('job', $job[0]);
-            $content = 'job.html';
         }
+        $content = 'job.html';
 
         $f3->set('content', $content);
     }
@@ -90,24 +90,6 @@ class Jobs extends Controller
 
     function showNewJobEditor ($f3) {
         $f3->set('content', 'newjobeditor.html');
-    }
-
-    function donotusenow ($f3) { //TODO change to something useful
-        if (! (isset($_POST['inputUsername']) && isset($_POST['inputPassword'])) ) {
-            die ('Not passed all login parameters');
-        }
-        $user = $this->getUserData($_POST['inputUsername']);
-        $calculatedPass = hash('sha256', $user['salt'] . $_POST['inputPassword']);
-
-        if ($user['username'] === $_POST['inputUsername'] &&
-            $user['password'] === $calculatedPass) {
-
-            $f3->set('SESSION.username', $user['username']);
-
-            $f3->reroute('/register/welcome');
-        } else {
-            echo 'username not matched!!';
-        }
     }
 
     //f3 mapper accepts second parameter for pagination, that is:
