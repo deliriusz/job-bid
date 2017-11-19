@@ -1,5 +1,8 @@
 <?php
 
+    //TODO expire session
+    //TODO check if user is logged in to perform operation
+
     $f3=require('lib/base.php');
 
     $f3->config('config.ini');

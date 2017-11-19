@@ -87,4 +87,12 @@ jQuery(document).ready(function($) {
         });
 
     });
+
+    $(".master-list").click( function (event) {
+        console.log("Clicked master list");
+        $(".master-view").find(".master-list").removeClass("btn-primary");
+        $(".master-view").find(".master-list").addClass("btn-default");
+        $(this).removeClass("btn-default");
+        $(this).addClass("btn-primary");
+    });
 });
