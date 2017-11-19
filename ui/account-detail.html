@@ -2,11 +2,69 @@
     info
 </check>
 <check if="{{ @GET.tab === 'data' }}">
-data
+    <form class="form-horizontal" id="udpateUserDataForm" action="/PAI-proj/user/register" method="post">
+        <div class="error-placeholder"></div>
+        <div class="form-group">
+            <label for="inputFirstName" class="col-sm-3 control-label">First name</label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control"
+                       name="inputFirstName" id="inputFirstName" placeholder="Name" value="{{ @user->first_name }}" required="required" >
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputLastName" class="col-sm-3 control-label">Last name</label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control"
+                       name="inputLastName" id="inputLastName" placeholder="Last name" value="{{ @user->last_name }}" required="required" >
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputBirthDate" class="col-sm-3 control-label">Birth date</label>
+            <div class="col-sm-9">
+                <input type="date" class="form-control"
+                       name="inputBirthDate" id="inputBirthDate" value="{{ @user->birth_date }}" required="required" >
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputEmail" class="col-sm-3 control-label">Email</label>
+            <div class="col-sm-9">
+                <input type="email" class="form-control"
+                       name="inputEmail" id="inputEmail" placeholder="Email" value="{{ @user->email }}" required="required">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-4 col-sm-8">
+                <button type="submit" id="submitUpdateUserDataForm" class="btn btn-primary">Update</button>
+                <br />
+            </div>
+        </div>
+    </form>
 </check>
 <check if="{{ @GET.tab === 'billing' }}">
 billing
 </check>
 <check if="{{ @GET.tab === 'password' }}">
-pass
+    <form class="form-horizontal" id="udpateUserPasswordForm" action="/PAI-proj/user/register" method="post">
+        <div class="error-placeholder"></div>
+        <div class="form-group">
+            <label for="inputPassword" class="col-sm-3 control-label">Password</label>
+            <div class="col-sm-9">
+                <input type="password" class="form-control"
+                       name="inputPassword" id="inputPassword" placeholder="Password" required="required">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputRepeatPassword" class="col-sm-3 control-label">Repeat password</label>
+            <div class="col-sm-9">
+                <input type="password" class="form-control"
+                       id="inputRepeatPassword" name="inputRepeatPassword" placeholder="Password" required="required">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-4 col-sm-8">
+                <button type="submit" id="submitUpdateUserPasswordForm" class="btn btn-primary">Update</button>
+                <br />
+            </div>
+        </div>
+    </form>
 </check>
