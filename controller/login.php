@@ -39,9 +39,6 @@ class Login extends Controller
     }
 
     $returnData['rerouteAfterLogin'] = ($f3->exists('rerouteAfterLogin') ? $f3->get('rerouteAfterLogin') : '/PAI-proj/');
-    var_dump($returnData);
-
-    var_dump($f3->get('rerouteAfterLogin'));
     $f3->clear('rerouteAfterLogin');
 
     echo json_encode ($returnData);
