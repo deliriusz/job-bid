@@ -27,17 +27,24 @@ class Login extends Controller
     $calculatedPass = hash('sha256', $user->salt . $password);
 
     if ($user->username === $username &&
-    $user->password === $calculatedPass) {
+        $user->password === $calculatedPass) {
 
-    $f3->set('SESSION.username', $user->username);
-    $f3->set('SESSION.userid', $user->id);
+        $f3->set('SESSION.username', $user->username);
+        $f3->set('SESSION.userid', $user->id);
 
-    $returnData['success'] = true;
+        $returnData['success'] = true;
 
     } else {
       $returnData['success'] = false;
     }
-      echo json_encode ($returnData);
+
+    $returnData['rerouteAfterLogin'] = ($f3->exists('rerouteAfterLogin') ? $f3->get('rerouteAfterLogin') : '/PAI-proj/');
+    var_dump($returnData);
+
+    var_dump($f3->get('rerouteAfterLogin'));
+    $f3->clear('rerouteAfterLogin');
+
+    echo json_encode ($returnData);
   }
 
     function handleLogout ($f3)  {
@@ -45,9 +52,12 @@ class Login extends Controller
       $f3->reroute('/');
     }
 
+    //TODO does not reroute properly
     static function handleUserShouldBeLogged ($f3) {
-      if ($f3->get('SESSION.username') === NULL) {
-        $f3->reroute ('/PAI-proj/login');
+      if (!$f3->exists('SESSION.username')) {
+          $f3->set('rerouteAfterLogin', $_SERVER['REQUEST_URI']);
+          Logger::log("Server path is " . $f3->get('rerouteAfterLogin'));
+          $f3->reroute ('/login');
       }
     }
 

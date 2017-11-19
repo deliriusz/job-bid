@@ -67,6 +67,7 @@ class Jobs extends Controller
     }
 
     function postNewJob ($f3) {
+        $this->isPageLoginProtected = true;
         $jobsMapper = new DB\SQL\Mapper($this->db, 'job');
         $currentTime = time();
         $currentDate = date("Y-m-d H:M:S",$currentTime);
@@ -90,6 +91,7 @@ class Jobs extends Controller
     }
 
     function showNewJobEditor ($f3) {
+        $this->isPageLoginProtected = true;
         $f3->set('content', 'newjobeditor.html');
     }
 

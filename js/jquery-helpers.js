@@ -49,11 +49,12 @@ jQuery(document).ready(function($) {
         encode: true
       })
         .done (function(data){
+            console.log(data);
           if (data.success === false) {
             $(".error-placeholder").html ( "<div class=\"alert alert-danger\"><strong><i class=\"fa fa-close\" aria-hidden=\"true\"></i> Username or password not matched</strong><br/>"
             + "</div>" );
           } else {
-              location.href = "/PAI-proj/";
+              location.href = data.rerouteAfterLogin;
           }
 
         });

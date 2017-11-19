@@ -11,6 +11,7 @@ require('logger.php');
 class Controller
 {
   protected $doRender = true;
+  protected $isPageLoginProtected = false;
   protected $f3, $db;
 
   protected function logData ($data) {
@@ -22,7 +23,10 @@ class Controller
     $this->db = $f3->get('DB');
   }
 
-  function afterroute() {
+  function afterroute($f3) {
+    if ($this->isPageLoginProtected) {
+        Login::handleUserShouldBeLogged($f3);
+    }
     if ($this->doRender) {
       echo Template::instance()->render('template.html');
     }
