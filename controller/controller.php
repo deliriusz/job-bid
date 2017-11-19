@@ -7,10 +7,15 @@
  */
 
 // base controller
+require('logger.php');
 class Controller
 {
   protected $doRender = true;
   protected $f3, $db;
+
+  protected function logData ($data) {
+      Logger::log($data);
+  }
 
   function beforeroute ($f3) {
     $this->f3 = $f3;

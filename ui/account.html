@@ -1,12 +1,15 @@
 <div class="row col-xs-12 bottom-buffer">
-    <div class="col-sm-2 btn-group-vertical master-view">
-        <button type="button" class="btn btn-primary master-list" data-option="info">Account Information</button>
-        <button type="button" class="btn btn-default master-list" data-option="data">Personal Data</button>
-        <button type="button" class="btn btn-default master-list" data-option="password">Change password</button>
+    <div class="col-xs-offset-3 col-sm-offset-4 col-sm-4 col-md-offset-0 col-md-3 col-lg-2 btn-group-vertical master-view">
+        <button type="button" class="btn {{ @GET.tab === 'info' ? 'btn-primary' : !isset(@GET.tab) ? 'btn-primary' : 'btn-default' }} master-list" data-option="info">Overview</button>
+        <button type="button" class="btn {{ @GET.tab === 'data' ? 'btn-primary' : 'btn-default' }} master-list" data-option="data">Personal Data</button>
+        <button type="button" class="btn {{ @GET.tab === 'billing' ? 'btn-primary' : 'btn-default' }} master-list" data-option="billing">Billing</button>
+        <button type="button" class="btn {{ @GET.tab === 'password' ? 'btn-primary' : 'btn-default' }} master-list" data-option="password">Change password</button>
     </div>
-    <div class="col-sm-8">
-        <div class=" detail-view">
-
+    <div class="col-sm-12 col-md-9 col-lg-10">
+        <div class="panel panel-default detail-view">
+            <div class="panel-body">
+                <include href="account-detail.html" ></include>
+            </div>
         </div>
     </div>
 </div>
