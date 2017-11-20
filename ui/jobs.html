@@ -12,7 +12,7 @@
                 <table class="table table-hover">
                     <thead>
                     <tr>
-                        <th>Job Id</th>
+                        <th>Bids</th>
                         <th>Job name</th>
                         <th>Job creation date</th>
                     </tr>
@@ -20,9 +20,9 @@
                     <tbody>
                     <repeat group="{{ @jobs }}" value="{{ @job }}">
                         <tr class="clickable-row" data-href="/PAI-proj/job/{{ @job->id }}">
-                            <td>{{@job->id}}</td>
-                            <td>{{@job->name}}</td>
-                            <td>{{@job->creation_time}}</td>
+                            <td><span class="badge">{{ count(@job->bids) }}</span></td>
+                            <td>{{ @job->name }}</td>
+                            <td>{{ @job->creation_time }}</td>
                         </tr>
                     </repeat>
                     </tbody>
