@@ -14,7 +14,8 @@
                     <tr>
                         <th>Bids</th>
                         <th>Job name</th>
-                        <th>Job creation date</th>
+                        <th>Current offer</th>
+                        <th>Ends on</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -22,7 +23,8 @@
                         <tr class="clickable-row" data-href="/PAI-proj/job/{{ @job->id }}">
                             <td><span class="badge">{{ count(@job->bids) }}</span></td>
                             <td>{{ @job->name }}</td>
-                            <td>{{ @job->creation_time }}</td>
+                            <td>{{ @job->current_price }}</td>
+                            <td>{{ @job->job_end_time }}</td>
                         </tr>
                     </repeat>
                     </tbody>

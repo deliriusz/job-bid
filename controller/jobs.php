@@ -7,6 +7,7 @@
  */
 
 require ('controller/bids.php');
+//require ('controller/logger.php');
 class Jobs extends Controller
 {
     function viewJobsPage ($f3) {
@@ -165,6 +166,7 @@ class Job {
     public $job_end_time;
     public $initial_price;
     public $bids;
+    public $current_price;
 
     /**
      * Job constructor.
@@ -189,6 +191,16 @@ class Job {
         $this->job_start_time = $job_start_time;
         $this->job_end_time = $job_end_time;
         $this->bids = $bids;
+				$bidValues =
+					array_map(function($bid){
+						return $bid->value;
+					}, $bids);
+
+				if (count($bidValues) > 0) {
+					$this->current_price = min($bidValues);
+				} else {
+					$this->current_price = $initial_price;
+				}
     }
 
 }
