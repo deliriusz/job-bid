@@ -1,0 +1,15 @@
+//TODO add mail notifications
+//TODO add possibility of tracking job
+//TODO add possibility of tracking user
+//TODO add finish status to job
+//TODO add data overview for user
+//TODO add picture for username
+//TODO add possibility of using HTML in job offers
+//TODO implement "my bids" page
+//TODO add real jobs on the main page
+//TODO change "Page 2" site to "How it works"
+//TODO think about implementation of payments
+//TODO add filtering and pagination for jobs page
+//TODO implement searchbar in jobs
+//TODO implement "About us" page
+//TODO add icons for user specific submenu
