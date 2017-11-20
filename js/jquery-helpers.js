@@ -62,6 +62,65 @@ jQuery(document).ready(function($) {
         event.preventDefault();
     });
 
+    $("#submitUpdateUserDataForm").click (function (event){
+      var formData = {
+        'first_name': $('input[name=inputFirstName]').val(),
+        'last_name': $('input[name=inputLastName]').val(),
+        'username': $('input[name=inputUsername]').val(),
+        'email': $('input[name=inputEmail]').val(),
+        'birth_date': $('input[name=inputBirthDate]').val()
+      };
+
+      $.ajax({
+        type: 'POST',
+        url: '/PAI-proj/user/account',
+        data: formData,
+        dataType: 'json',
+        encode: true
+      })
+        .done (function(data){
+          if (data.success === false) {
+            $(".error-placeholder").html ( "<div class=\"alert alert-danger\"><strong>Please correct following errors:</strong><br/>"
+            + data.errors.map (x => "<p><i class=\"fa fa-close\" aria-hidden=\"true\"></i> " + x + "</p>")
+            + "</div>" );
+          } else {
+            $(".error-placeholder").html ( "<div class=\"alert alert-success\"><strong>Data successfully updated</strong><br/>"
+            + "</div>" );
+          }
+
+        });
+
+        event.preventDefault();
+    });
+
+    $("#submitUpdateUserPasswordForm").click (function (event){
+      var formData = {
+        'password': $('input[name=inputPassword]').val(),
+        'repeated_password': $('input[name=inputRepeatPassword]').val()
+      };
+
+      $.ajax({
+        type: 'POST',
+        url: '/PAI-proj/user/account',
+        data: formData,
+        dataType: 'json',
+        encode: true
+      })
+        .done (function(data){
+          if (data.success === false) {
+            $(".error-placeholder").html ( "<div class=\"alert alert-danger\"><strong>Please correct following errors:</strong><br/>"
+            + data.errors.map (x => "<p><i class=\"fa fa-close\" aria-hidden=\"true\"></i> " + x + "</p>")
+            + "</div>" );
+          } else {
+            $(".error-placeholder").html ( "<div class=\"alert alert-success\"><strong>Data successfully updated</strong><br/>"
+            + "</div>" );
+          }
+
+        });
+
+        event.preventDefault();
+    });
+
     $("#placeBidForm").submit (function (event){
       event.preventDefault();
       var formData = {

@@ -20,12 +20,12 @@ class Register extends Controller
     $returnData = array();
     $username = $f3->get('POST.username');
 
-    if (!preg_match('/^[0-9a-zA-Z]{0,}$/', $username)) {
-      array_push($errors, 'username should contain only characters and numbers');
+    if (!preg_match('/^[0-9a-z]{0,}$/', $username)) {
+      array_push($errors, 'username should contain only small characters and numbers');
     }
 
-    if (!preg_match('/^.{5,}$/', $username)) {
-      array_push($errors, 'username should be at least five characters long');
+    if (!preg_match('/^.{4,}$/', $username)) {
+      array_push($errors, 'username should be at least four characters long');
     }
 
     if (!preg_match('/^[A-Z]{1}[a-z]{0,}$/', $f3->get('POST.first_name'))) {
