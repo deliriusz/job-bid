@@ -13,7 +13,7 @@ class Jobs extends Controller
         $pageToDisplay = $f3->get('GET.p') != NULL ? $f3->get('GET.p') - 1 : 0;
         $itemsPerPage = $f3->get('itemsperpage');
 
-        $f3->set('jobs', $this->getJobs(NULL, array(
+        $f3->set('jobs', $this->getJobs(array('job_end_time < NOW()'), array(
             'offset' => $pageToDisplay * $itemsPerPage,
             'limit' => $itemsPerPage
         )));
