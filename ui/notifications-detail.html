@@ -9,7 +9,7 @@ font awesome icons to use on notifications:
  fa fa-warning for warnings
  -->
 <check if="{{ @GET.tab === 'jobs' || !isset(@GET.tab) }}">
-    <check if="{{ isset(@notifications) }}">
+    <check if="{{ count(@notifications) > 0 }}">
         <true>
             <table class="table table-hover">
                 <thead>
@@ -21,20 +21,20 @@ font awesome icons to use on notifications:
                 <repeat group="{{ @notifications }}" value="{{ @notification }}">
                     <tr class="clickable-row" data-href="/PAI-proj/notification/{{ @notification->id }}">
                         <td class="col-xs-1">
-                            <check if="{{ @notification->type }} === 0"> job created
+                            <check if="{{ @notification->type }} === 0">
                                 <i class="fa fa-check"></i>
                             </check>
-                            <check if="{{ @notification->type }} === 1"> job updated
+                            <check if="{{ @notification->type }} === 1">
                                 <i class="fa fa-info"></i>
                             </check>
-                            <check if="{{ @notification->type }} === 2"> job finished
+                            <check if="{{ @notification->type }} === 2">
                                 <i class="fa fa-calendar-check-o"></i>
                             </check>
-                            <check if="{{ @notification->type }} === 3"> lower bid
+                            <check if="{{ @notification->type }} === 3">
                                 <i class="fa fa-sort-down"></i>
                             </check>
                         </td>
-                        <td class="col-xs-11"> {{ @notification->name }}</td>
+                        <td class="col-xs-11"> {{ @notification->name }} </td>
                     </tr>
                 </repeat>
                 </tbody>
@@ -48,7 +48,7 @@ font awesome icons to use on notifications:
     </check>
 </check>
 <check if="{{ @GET.tab === 'users' }}">
-    <check if="{{ isset(@notifications) }}">
+    <check if="{{ count(@notifications) > 0 }}">
         <true>
             <table class="table table-hover">
                 <thead>
@@ -60,20 +60,20 @@ font awesome icons to use on notifications:
                 <repeat group="{{ @notifications }}" value="{{ @notification }}">
                     <tr class="clickable-row" data-href="/PAI-proj/notification/{{ @notification->id }}">
                         <td class="col-xs-1">
-                            <check if="{{ @notification->type }} === 0"> job created
+                            <check if="{{ @notification->type }} === 0"> <!-- job created -->
                                 <i class="fa fa-check"></i>
                             </check>
-                            <check if="{{ @notification->type }} === 1"> job updated
+                            <check if="{{ @notification->type }} === 1"> <!-- job updated -->
                                 <i class="fa fa-info"></i>
                             </check>
-                            <check if="{{ @notification->type }} === 2"> job finished
+                            <check if="{{ @notification->type }} === 2"> <!-- job finished -->
                                 <i class="fa fa-calendar-check-o"></i>
                             </check>
-                            <check if="{{ @notification->type }} === 3"> lower bid
+                            <check if="{{ @notification->type }} === 3"> <!-- lower bid -->
                                 <i class="fa fa-sort-down"></i>
                             </check>
                         </td>
-                        <td class="col-xs-11"> {{ @notification->name }}</td>
+                        <td class="col-xs-11"> {{ @notification->name }} </td>
                     </tr>
                 </repeat>
                 </tbody>
