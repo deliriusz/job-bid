@@ -6,6 +6,7 @@ SET time_zone = "+00:00";
 --
 -- Database: `pai`
 --
+DROP DATABASE IF EXISTS pai;
 CREATE DATABASE  IF NOT EXISTS pai;
 USE pai;
 -- --------------------------------------------------------
@@ -52,6 +53,21 @@ CREATE TABLE IF NOT EXISTS `user` (
   `email` varchar(50) NOT NULL,
   `salt` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+CREATE TABLE `pai`.`event_type` (
+  `id` INT NOT NULL ,
+  `name` VARCHAR(30) NOT NULL ,
+  PRIMARY KEY (`id`)
+  ) ENGINE = InnoDB;
+
+INSERT INTO `event_type` (`id`, `name`) VALUES ('0', 'job created');
+INSERT INTO `event_type` (`id`, `name`) VALUES ('1', 'job changed');
+INSERT INTO `event_type` (`id`, `name`) VALUES ('2', 'job finished');
+INSERT INTO `event_type` (`id`, `name`) VALUES ('3', 'lower bid');
+
+CREATE TABLE IF NOT EXISTS `pai`.`event` ( `id` INT NOT NULL , `source_id` INT NOT NULL , `type` INT NOT NULL , `creation_date` DATETIME NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;
+
+CREATE TABLE IF NOT EXISTS `pai`.`event_observer` ( `id` INT NOT NULL , `event_id` INT NOT NULL , `user_id` INT NOT NULL , `is_read` BOOLEAN NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;
 
 --
 -- Indexes for dumped tables

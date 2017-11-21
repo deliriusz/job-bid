@@ -1,6 +1,88 @@
+<!--
+font awesome icons to use on notifications:
+ fa fa-bell-o - for general notifications
+ fa fa-calendar-o   or  fo fa-calendar-check-o for finished jobs
+ fa fa-check  for confirmations
+ fa fa-comment-o for message ??
+ fa fa-info for informations
+ fa fa-sort-down for other user placed lower bid
+ fa fa-warning for warnings
+ -->
 <check if="{{ @GET.tab === 'jobs' || !isset(@GET.tab) }}">
-    jobs notification
+    <check if="{{ isset(@notifications) }}">
+        <true>
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                    <th class="col-xs-12">Jobs notifications</th>
+                </tr>
+                </thead>
+                <tbody>
+                <repeat group="{{ @notifications }}" value="{{ @notification }}">
+                    <tr class="clickable-row" data-href="/PAI-proj/notification/{{ @notification->id }}">
+                        <td class="col-xs-1">
+                            <check if="{{ @notification->type }} === 0"> job created
+                                <i class="fa fa-check"></i>
+                            </check>
+                            <check if="{{ @notification->type }} === 1"> job updated
+                                <i class="fa fa-info"></i>
+                            </check>
+                            <check if="{{ @notification->type }} === 2"> job finished
+                                <i class="fa fa-calendar-check-o"></i>
+                            </check>
+                            <check if="{{ @notification->type }} === 3"> lower bid
+                                <i class="fa fa-sort-down"></i>
+                            </check>
+                        </td>
+                        <td class="col-xs-11"> {{ @notification->name }}</td>
+                    </tr>
+                </repeat>
+                </tbody>
+            </table>
+        </true>
+        <false>
+            <div class="jumbotron">
+                <h2>No new notifications</h2>
+            </div>
+        </false>
+    </check>
 </check>
 <check if="{{ @GET.tab === 'users' }}">
-    other user's activity notification
+    <check if="{{ isset(@notifications) }}">
+        <true>
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                    <th class="col-xs-12">Other user's activity</th>
+                </tr>
+                </thead>
+                <tbody>
+                <repeat group="{{ @notifications }}" value="{{ @notification }}">
+                    <tr class="clickable-row" data-href="/PAI-proj/notification/{{ @notification->id }}">
+                        <td class="col-xs-1">
+                            <check if="{{ @notification->type }} === 0"> job created
+                                <i class="fa fa-check"></i>
+                            </check>
+                            <check if="{{ @notification->type }} === 1"> job updated
+                                <i class="fa fa-info"></i>
+                            </check>
+                            <check if="{{ @notification->type }} === 2"> job finished
+                                <i class="fa fa-calendar-check-o"></i>
+                            </check>
+                            <check if="{{ @notification->type }} === 3"> lower bid
+                                <i class="fa fa-sort-down"></i>
+                            </check>
+                        </td>
+                        <td class="col-xs-11"> {{ @notification->name }}</td>
+                    </tr>
+                </repeat>
+                </tbody>
+            </table>
+        </true>
+        <false>
+            <div class="jumbotron">
+                <h2>No new notifications</h2>
+            </div>
+        </false>
+    </check>
 </check>
