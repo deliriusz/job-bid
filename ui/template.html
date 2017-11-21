@@ -32,7 +32,7 @@
           </div>
           <ul class="nav navbar-nav">
             <li><a href="/PAI-proj/jobs">Jobs</a></li>
-            <li><a href="#">Page 2</a></li>
+            <li><a href="#">How it works</a></li>
             <li><a href="#">About us</a></li>
           </ul>
           <check if="{{ @SESSION['username'] }}">
@@ -46,7 +46,7 @@
                       <li><a href="/PAI-proj/user/account"><i class="fa fa-address-card-o"></i> My account</a></li>
                       <li><a href="#"><i class="fa fa-usd"></i> My bids</a></li>
                       <li><a href="/PAI-proj/user/{{@SESSION.username}}/jobs"><i class="fa fa-gavel"></i> My jobs</a></li>
-                      <li><a href="#">
+                      <li><a href="/PAI-proj/user/notifications">
 												<check if="{{ @SESSION.unreadNotificationCount }} > 0"> <!-- TODO implement -->
 												<true><span class="badge">{{ @SESSION.unreadNotificationCount }}</span></true>
 												<false><i class="fa fa-envelope-o"></i></false>

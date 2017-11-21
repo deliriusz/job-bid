@@ -154,5 +154,11 @@ jQuery(document).ready(function($) {
 
     });
 
-		$(".datetime-counter")
+    $(".notification-master-list").click( function () {
+
+        location.href = '/PAI-proj/user/notifications?tab=' + $(this).attr('data-option');
+
+    });
+
+		//$(".datetime-counter")
 });
