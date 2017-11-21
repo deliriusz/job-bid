@@ -7,7 +7,6 @@
  */
 
 require ('controller/bids.php');
-//require ('controller/logger.php');
 class Jobs extends Controller
 {
     function viewJobsPage ($f3) {

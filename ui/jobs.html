@@ -24,7 +24,7 @@
                             <td class="col-xs-1"><span class="badge">{{ count(@job->bids) }}</span></td>
                             <td class="col-xs-4">{{ @job->name }}</td>
                             <td class="col-xs-1">{{ @job->current_price }}</td>
-                            <td class="col-xs-2">{{ @job->job_end_time }}</td>
+                            <td class="col-xs-2 datetime-counter">{{ @job->job_end_time }}</td>
                         </tr>
                     </repeat>
                     </tbody>

@@ -153,4 +153,6 @@ jQuery(document).ready(function($) {
         location.href = '/PAI-proj/user/account?tab=' + $(this).attr('data-option');
 
     });
+
+		$(".datetime-counter")
 });

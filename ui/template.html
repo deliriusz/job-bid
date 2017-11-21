@@ -43,10 +43,17 @@
                   <a class="dropdown-toggle" data-toggle="dropdown" href="#"> {{ @SESSION['username'] }}
                     <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                      <li><a href="/PAI-proj/user/account">My account</a></li>
-                      <li><a href="#">My bids</a></li>
-                      <li><a href="/PAI-proj/user/{{@SESSION.username}}/jobs">My jobs</a></li>
-                      <li><a href="/PAI-proj/jobs/add">Create new job</a></li>
+                      <li><a href="/PAI-proj/user/account"><i class="fa fa-address-card-o"></i> My account</a></li>
+                      <li><a href="#"><i class="fa fa-usd"></i> My bids</a></li>
+                      <li><a href="/PAI-proj/user/{{@SESSION.username}}/jobs"><i class="fa fa-gavel"></i> My jobs</a></li>
+                      <li><a href="#">
+												<check if="{{ @SESSION.unreadNotificationCount }} > 0"> <!-- TODO implement -->
+												<true><span class="badge">{{ @SESSION.unreadNotificationCount }}</span></true>
+												<false><i class="fa fa-envelope-o"></i></false>
+											</check>
+												 Notifications</a>
+											 </li>
+                      <li><a href="/PAI-proj/jobs/add"><i class="fa fa-plus"></i> Create new job</a></li>
                     </ul>
                   </li>
                   <li><a href="/PAI-proj/logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
