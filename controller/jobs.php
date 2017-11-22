@@ -87,8 +87,8 @@ class Jobs extends Controller
 
         $jobsMapper->save();
 
-				$ec = new EventController($f3);
-				$ec->createNewEvent($jobsMapper->id, 'job');
+        $ec = new EventController($f3);
+        $ec->createNewEvent($jobsMapper->id, 'job');
 
         $f3->reroute('/user/' . $f3->get('SESSION.username') . '/job/' . $jobsMapper->id);
     }
@@ -134,11 +134,11 @@ class Jobs extends Controller
 
         for ($i = 0; $i < $bidsMapper->loaded(); $i++) {
             $bidsArray[$i] = new Bid(
-              $bidsMapper->id,
-              $bidsMapper->job_id,
-              $bidsMapper->user_id,
-              $bidsMapper->time,
-              $bidsMapper->value
+                $bidsMapper->id,
+                $bidsMapper->job_id,
+                $bidsMapper->user_id,
+                $bidsMapper->time,
+                $bidsMapper->value
             );
             $bidsMapper->next();
         }
@@ -193,16 +193,16 @@ class Job {
         $this->job_start_time = $job_start_time;
         $this->job_end_time = $job_end_time;
         $this->bids = $bids;
-				$bidValues =
-					array_map(function($bid){
-						return $bid->value;
-					}, $bids);
+        $bidValues =
+            array_map(function($bid){
+                return $bid->value;
+            }, $bids);
 
-				if (count($bidValues) > 0) {
-					$this->current_price = min($bidValues);
-				} else {
-					$this->current_price = $initial_price;
-				}
+        if (count($bidValues) > 0) {
+            $this->current_price = min($bidValues);
+        } else {
+            $this->current_price = $initial_price;
+        }
     }
 
 }

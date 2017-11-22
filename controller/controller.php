@@ -7,28 +7,30 @@
  */
 
 // base controller
-require('logger.php');
+require_once('logger.php');
+require_once('controller/event.php');
 class Controller
 {
-  protected $doRender = true;
-  protected $isPageLoginProtected = false;
-  protected $f3, $db;
+    protected $doRender = true;
+    protected $isPageLoginProtected = false;
+    protected $f3, $db;
 
-  protected function logData ($data) {
-      Logger::log($data);
-  }
-
-  function beforeroute ($f3) {
-    $this->f3 = $f3;
-    $this->db = $f3->get('DB');
-  }
-
-  function afterroute($f3) {
-    if ($this->isPageLoginProtected) {
-        Login::handleUserShouldBeLogged($f3);
+    protected function logData ($data) {
+        Logger::log($data);
     }
-    if ($this->doRender) {
-      echo Template::instance()->render('template.html');
+
+    function beforeroute ($f3) {
+        $this->f3 = $f3;
+        $this->db = $f3->get('DB');
+        $ec = new EventController($this->f3);
     }
-  }
+
+    function afterroute($f3) {
+        if ($this->isPageLoginProtected) {
+            Login::handleUserShouldBeLogged($f3);
+        }
+        if ($this->doRender) {
+            echo Template::instance()->render('template.html');
+        }
+    }
 }

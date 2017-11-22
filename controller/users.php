@@ -9,8 +9,8 @@
 class Users extends Controller
 {
     function setF3($f3) {
-      $this->f3 = $f3;
-      $this->db = $f3->get('DB');
+        $this->f3 = $f3;
+        $this->db = $f3->get('DB');
     }
 
     function getUsers ($constrainsArr = NULL, $paginationSettings = NULL) {

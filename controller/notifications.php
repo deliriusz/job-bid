@@ -16,19 +16,19 @@ class Notifications extends Controller
         $f3->set('content', 'notifications.html');
     }
 
-		//ajax request
-		function setNotification ($f3) {
-			$ec = new EventController($f3);
-	    $this->doRender = false;
-			$ec->subscribeNewUser($f3->get('POST.notification-subscribe-id'), $f3->get('POST.notification-subscribe-type'), $f3->get('SESSION.userid'));
+    //ajax request
+    function setNotification ($f3) {
+        $ec = new EventController($f3);
+        $this->doRender = false;
+        $ec->subscribeNewUser($f3->get('POST.notification-subscribe-id'), $f3->get('POST.notification-subscribe-type'), $f3->get('SESSION.userid'));
 
-			$returnData = array();
-	    echo json_encode ($returnData);
-		}
+        $returnData = array();
+        echo json_encode ($returnData);
+    }
 
     function getAllNotificationsForUser ($userid) {
-				$ec = new EventController($this->f3);
-				return $ec->getNotificationsForUser($userid);
+        $ec = new EventController($this->f3);
+        return $ec->getNotificationsForUser($userid);
     }
 
 }
