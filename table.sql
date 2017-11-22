@@ -55,21 +55,20 @@ CREATE TABLE IF NOT EXISTS `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 CREATE TABLE `pai`.`event_type` (
-  `id` INT NOT NULL ,
-  `name` VARCHAR(30) NOT NULL ,
-  PRIMARY KEY (`id`)
-  ) ENGINE = InnoDB;
+  `id` INT AUTO_INCREMENT PRIMARY KEY ,
+  `name` VARCHAR(30) NOT NULL
+) ENGINE = InnoDB;
 
-INSERT INTO `event_type` (`id`, `name`) VALUES ('0', 'job created');
-INSERT INTO `event_type` (`id`, `name`) VALUES ('1', 'job changed');
-INSERT INTO `event_type` (`id`, `name`) VALUES ('2', 'job finished');
-INSERT INTO `event_type` (`id`, `name`) VALUES ('3', 'lower bid');
+INSERT INTO `event_type` (`name`) VALUES ('job created');
+INSERT INTO `event_type` (`name`) VALUES ('job changed');
+INSERT INTO `event_type` (`name`) VALUES ('job finished');
+INSERT INTO `event_type` (`name`) VALUES ('lower bid');
 
-CREATE TABLE IF NOT EXISTS `pai`.`event` ( `id` INT NOT NULL , `source_id` INT NOT NULL , `type` VARCHAR(10) NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;
+CREATE TABLE IF NOT EXISTS `pai`.`event` ( `id` INT AUTO_INCREMENT PRIMARY KEY , `source_id` INT NOT NULL , `type` VARCHAR(10) NOT NULL ) ENGINE = InnoDB;
 
-CREATE TABLE IF NOT EXISTS `pai`.`event_subscriber` ( `id` INT NOT NULL , `event_id` INT NOT NULL , `user_id` INT NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;
+CREATE TABLE IF NOT EXISTS `pai`.`event_subscriber` ( `id` INT AUTO_INCREMENT PRIMARY KEY , `event_id` INT NOT NULL, `user_id` INT NOT NULL) ENGINE = InnoDB;
 
-CREATE TABLE IF NOT EXISTS `pai`.`notification` ( `id` INT NOT NULL , `event_id` INT NOT NULL , `user_id` INT NOT NULL , `is_read` INT NOT NULL, PRIMARY KEY (`id`)) ENGINE = InnoDB;
+CREATE TABLE IF NOT EXISTS `pai`.`notification` ( `id` INT AUTO_INCREMENT PRIMARY KEY , `event_id` INT NOT NULL, `user_id` INT NOT NULL , `is_read` INT NOT NULL) ENGINE = InnoDB;
 
 ALTER TABLE `notification` ADD `event_type` INT NOT NULL AFTER `user_id`;
 --
@@ -117,3 +116,5 @@ COMMIT;
 
 
 ALTER TABLE `job` CHANGE `initial_price` `initial_price` DOUBLE UNSIGNED NOT NULL;
+
+COMMIT;

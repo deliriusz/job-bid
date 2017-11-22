@@ -10,8 +10,6 @@ class EventController {
 
     public function createNewEvent ($source_id, $source_type) {
         $eventMapper = new DB\SQL\Mapper($this->db, 'event');
-        var_dump($source_id);
-        var_dump($source_type);
         $eventMapper->reset();
         $eventMapper->source_id = $source_id;
         $eventMapper->type = $source_type;
@@ -89,7 +87,6 @@ class EventController {
             $notificationMapper->next();
         }
 
-        var_dump($notifications);
         return $notifications;
     }
 
