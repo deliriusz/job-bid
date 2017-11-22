@@ -1,35 +1,35 @@
 <div>
-<check if="{{ isset(@job) }}">
-  <true>
-    <div class="row col-xs-12 bottom-buffer">
-      <div class="panel panel-default panel-body">
-        <h1>
-					<form class="form-inline">
-            <div class="form-group">
-							{{@job->name}}
-							<input type="hidden" name="notification-subscribe-type" value="job"></input>
-							<input type="hidden" name="notification-subscribe-id" value="{{ @job->id }}"></input>
-						  <i type="submit" class="fa fa-bell-o notification-switch-button"></i>
-            </div>
-          </form>
-				</h1>
+  <check if="{{ isset(@job) }}">
+    <true>
+      <div class="row col-xs-12 bottom-buffer">
+        <div class="panel panel-default panel-body">
+          <h1>
+            <form class="form-inline">
+              <div class="form-group">
+                {{@job->name}}
+                <input type="hidden" name="notification-subscribe-type" value="job"></input>
+                <input type="hidden" name="notification-subscribe-id" value="{{ @job->id }}"></input>
+                <i type="submit" class="fa fa-bell-o notification-switch-button"></i>
+              </div>
+            </form>
+          </h1>
+        </div>
       </div>
-    </div>
-    <div class="row col-xs-12 bottom-buffer">
-      <div class="col-md-12">
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <div class="col-md-6">
-              <p>Current price: {{@job->initial_price}} $</p>
-              <p>Created by: {{ @SESSION.username }} </p>
+      <div class="row col-xs-12 bottom-buffer">
+        <div class="col-md-12">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <div class="col-md-6">
+                <p>Current price: {{@job->initial_price}} $</p>
+                <p>Created by: {{ @SESSION.username }} </p>
+              </div>
+              <div class="col-md-6">
+                <p>Creation time: {{@job->creation_time}}</p>
+                <p>Start time: {{@job->job_start_time}}</p>
+              </div>
             </div>
-            <div class="col-md-6">
-              <p>Creation time: {{@job->creation_time}}</p>
-              <p>Start time: {{@job->job_start_time}}</p>
-            </div>
-          </div>
-          <div class="panel-body">
-            <check if="{{ isset(@SESSION.username) }}">
+            <div class="panel-body">
+              <check if="{{ isset(@SESSION.username) }}">
               <span>
                 <form class="form-inline" id="placeBidForm">
   	                <div class="error-placeholder"></div>
@@ -41,44 +41,44 @@
                     <button type="submit" class="btn btn-default" >Submit</button>
                   </form>
               </span>
-            </check>
-            <p>{{@job->description}}</p>
-            <hr>
-            <div class="panel-body">
-            <table class="table table-hover">
-              <thead>
-                <tr>
-                  <th>Bid value</th>
-                  <th>Bid time</th>
-                </tr>
-              </thead>
-              <tbody>
-                <repeat group="{{ @job->bids }}" value="{{ @bid }}">
+              </check>
+              <p>{{@job->description}}</p>
+              <hr>
+              <div class="panel-body">
+                <table class="table table-hover">
+                  <thead>
                   <tr>
-                    <td>{{@bid->value}}</td>
-                    <td>{{@bid->time}}</td>
+                    <th>Bid value</th>
+                    <th>Bid time</th>
                   </tr>
-                </repeat>
-              </tbody>
-            </table>
+                  </thead>
+                  <tbody>
+                  <repeat group="{{ @job->bids }}" value="{{ @bid }}">
+                    <tr>
+                      <td>{{@bid->value}}</td>
+                      <td>{{@bid->time}}</td>
+                    </tr>
+                  </repeat>
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </true>
-  <false>
-    <div class="row col-xs-12 bottom-buffer">
-      <check if="{{ isset(@PARAMS.username) }}">
-        <true>
-          <div class="jumbotron"><h2>Job not found for user {{ @PARAMS.username }}</h2>
-        </true>
-        <false>
-          <div class="jumbotron"><h2>Job not found</h2>
-        </false>
-      </check>
+    </true>
+    <false>
+      <div class="row col-xs-12 bottom-buffer">
+        <check if="{{ isset(@PARAMS.username) }}">
+          <true>
+            <div class="jumbotron"><h2>Job not found for user {{ @PARAMS.username }}</h2>
+          </true>
+          <false>
+            <div class="jumbotron"><h2>Job not found</h2>
+          </false>
+        </check>
       </div>
-    </div>
-  </false>
+</div>
+</false>
 </check>
 </div>

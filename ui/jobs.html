@@ -7,35 +7,35 @@
                 </h4>
             </div>
             <div class="panel-body">
-              <check if="{{ isset(@jobs) }}">
-                <true>
-                <table class="table table-hover">
-                    <thead>
-                    <tr>
-                        <th class="col-xs-1">Bids</th>
-                        <th class="col-xs-4">Job name</th>
-                        <th class="col-xs-1">Current offer</th>
-                        <th class="col-xs-2">Ends on</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <repeat group="{{ @jobs }}" value="{{ @job }}">
-                        <tr class="clickable-row" data-href="/PAI-proj/job/{{ @job->id }}">
-                            <td class="col-xs-1"><span class="badge">{{ count(@job->bids) }}</span></td>
-                            <td class="col-xs-4">{{ @job->name }}</td>
-                            <td class="col-xs-1">{{ @job->current_price }}</td>
-                            <td class="col-xs-2 datetime-counter">{{ @job->job_end_time }}</td>
-                        </tr>
-                    </repeat>
-                    </tbody>
-                </table>
-              </true>
-              <false>
-                <div class="jumbotron"><h2>Seems that there is no jobs matching given search criteria.</h2>
-                  <br/> <h4> Please change search criteria or create job yourself! </h4>
-                </div>
-              </false>
-            </check>
+                <check if="{{ isset(@jobs) }}">
+                    <true>
+                        <table class="table table-hover">
+                            <thead>
+                            <tr>
+                                <th class="col-xs-1">Bids</th>
+                                <th class="col-xs-4">Job name</th>
+                                <th class="col-xs-1">Current offer</th>
+                                <th class="col-xs-2">Ends on</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <repeat group="{{ @jobs }}" value="{{ @job }}">
+                                <tr class="clickable-row" data-href="/PAI-proj/job/{{ @job->id }}">
+                                    <td class="col-xs-1"><span class="badge">{{ count(@job->bids) }}</span></td>
+                                    <td class="col-xs-4">{{ @job->name }}</td>
+                                    <td class="col-xs-1">{{ @job->current_price }}</td>
+                                    <td class="col-xs-2 datetime-counter">{{ @job->job_end_time }}</td>
+                                </tr>
+                            </repeat>
+                            </tbody>
+                        </table>
+                    </true>
+                    <false>
+                        <div class="jumbotron"><h2>Seems that there is no jobs matching given search criteria.</h2>
+                            <br/> <h4> Please change search criteria or create job yourself! </h4>
+                        </div>
+                    </false>
+                </check>
             </div>
         </div>
     </div>

@@ -23,58 +23,58 @@
   <link rel="stylesheet" href="/PAI-proj/ui/css/main.css">
 </head>
 <body>
-  <div class="container">
-    <div class="row col-xs-12 bottom-buffer">
-      <nav class="navbar navbar-default">
-        <div class="container-fluid">
-          <div class="navbar-header">
-            <a class="navbar-brand" href="/PAI-proj/">PAI project</a>
-          </div>
-          <ul class="nav navbar-nav">
-            <li><a href="/PAI-proj/jobs">Jobs</a></li>
-            <li><a href="#">How it works</a></li>
-            <li><a href="#">About us</a></li>
-          </ul>
-          <check if="{{ @SESSION['username'] }}">
-            <true>
-              <!--look at https://codepen.io/Gnex77/pen/aZOWxR-->
-              <ul class="nav navbar-nav navbar-right">
-                <li class="dropdown">
-                  <a class="dropdown-toggle" data-toggle="dropdown" href="#"> {{ @SESSION['username'] }}
-                    <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                      <li><a href="/PAI-proj/user/account"><i class="fa fa-address-card-o"></i> My account</a></li>
-                      <li><a href="#"><i class="fa fa-usd"></i> My bids</a></li>
-                      <li><a href="/PAI-proj/user/{{@SESSION.username}}/jobs"><i class="fa fa-gavel"></i> My jobs</a></li>
-                      <li><a href="/PAI-proj/user/notifications">
-												<check if="{{ @SESSION.unreadNotificationCount }} > 0"> <!-- TODO implement -->
-												<true><span class="badge">{{ @SESSION.unreadNotificationCount }}</span></true>
-												<false><i class="fa fa-envelope-o"></i></false>
-											</check>
-												 Notifications</a>
-											 </li>
-                      <li><a href="/PAI-proj/jobs/add"><i class="fa fa-plus"></i> Create new job</a></li>
-                    </ul>
-                  </li>
-                  <li><a href="/PAI-proj/logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
-                </ul>
-              </true>
-              <false>
-                <ul class="nav navbar-nav navbar-right">
-                  <li><a href="/PAI-proj/register"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-                  <li><a href="/PAI-proj/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-                </ul>
-              </false>
-            </check>
-          </div>
-        </nav>
-      </div>
-      <include href="{{ @content }}" ></include>
-
-      <div class="row col-xs-12">
-          <div class="well text-muted">
-            <p>© 2017, Rafał Kalinowski, All rights reserved</p>
+<div class="container">
+  <div class="row col-xs-12 bottom-buffer">
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/PAI-proj/">PAI project</a>
         </div>
+        <ul class="nav navbar-nav">
+          <li><a href="/PAI-proj/jobs">Jobs</a></li>
+          <li><a href="#">How it works</a></li>
+          <li><a href="#">About us</a></li>
+        </ul>
+        <check if="{{ @SESSION['username'] }}">
+          <true>
+            <!--look at https://codepen.io/Gnex77/pen/aZOWxR-->
+            <ul class="nav navbar-nav navbar-right">
+              <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#"> {{ @SESSION['username'] }}
+                  <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="/PAI-proj/user/account"><i class="fa fa-address-card-o"></i> My account</a></li>
+                  <li><a href="#"><i class="fa fa-usd"></i> My bids</a></li>
+                  <li><a href="/PAI-proj/user/{{@SESSION.username}}/jobs"><i class="fa fa-gavel"></i> My jobs</a></li>
+                  <li><a href="/PAI-proj/user/notifications">
+                    <check if="{{ @SESSION.unreadNotificationCount }} > 0"> <!-- TODO implement -->
+                      <true><span class="badge">{{ @SESSION.unreadNotificationCount }}</span></true>
+                      <false><i class="fa fa-envelope-o"></i></false>
+                    </check>
+                    Notifications</a>
+                  </li>
+                  <li><a href="/PAI-proj/jobs/add"><i class="fa fa-plus"></i> Create new job</a></li>
+                </ul>
+              </li>
+              <li><a href="/PAI-proj/logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+            </ul>
+          </true>
+          <false>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="/PAI-proj/register"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+              <li><a href="/PAI-proj/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+            </ul>
+          </false>
+        </check>
+      </div>
+    </nav>
+  </div>
+  <include href="{{ @content }}" ></include>
+
+  <div class="row col-xs-12">
+    <div class="well text-muted">
+      <p>© 2017, Rafał Kalinowski, All rights reserved</p>
     </div>
-  </body>
-  </html>
+  </div>
+</body>
+</html>
