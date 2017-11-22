@@ -1,6 +1,7 @@
 <!--
 font awesome icons to use on notifications:
  fa fa-bell-o - for general notifications
+ fa fa-bell-slash-o - for removing general notifications
  fa fa-calendar-o   or  fo fa-calendar-check-o for finished jobs
  fa fa-check  for confirmations
  fa fa-comment-o for message ??
@@ -21,20 +22,20 @@ font awesome icons to use on notifications:
                 <repeat group="{{ @notifications }}" value="{{ @notification }}">
                     <tr class="clickable-row" data-href="/PAI-proj/notification/{{ @notification->id }}">
                         <td class="col-xs-1">
-                            <check if="{{ @notification->type }} === 0">
+                            <check if="{{ @notification->event_type }} === 0">
                                 <i class="fa fa-check"></i>
                             </check>
-                            <check if="{{ @notification->type }} === 1">
+                            <check if="{{ @notification->event_type }} === 1">
                                 <i class="fa fa-info"></i>
                             </check>
-                            <check if="{{ @notification->type }} === 2">
+                            <check if="{{ @notification->event_type }} === 2">
                                 <i class="fa fa-calendar-check-o"></i>
                             </check>
-                            <check if="{{ @notification->type }} === 3">
+                            <check if="{{ @notification->event_type }} === 3">
                                 <i class="fa fa-sort-down"></i>
                             </check>
                         </td>
-                        <td class="col-xs-11"> {{ @notification->name }} </td>
+                        <td class="col-xs-11"> {{ @notification->message }} </td>
                     </tr>
                 </repeat>
                 </tbody>

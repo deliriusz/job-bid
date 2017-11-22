@@ -6,7 +6,7 @@
  * Time: 19:46
  */
 
-require ('controller/bids.php');
+require_once ('controller/bids.php');
 class Jobs extends Controller
 {
     function viewJobsPage ($f3) {
@@ -86,6 +86,9 @@ class Jobs extends Controller
         $jobsMapper->job_end_time = $jobEndDate;
 
         $jobsMapper->save();
+
+				$ec = new EventController($f3);
+				$ec->createNewEvent($jobsMapper->id, 'job');
 
         $f3->reroute('/user/' . $f3->get('SESSION.username') . '/job/' . $jobsMapper->id);
     }

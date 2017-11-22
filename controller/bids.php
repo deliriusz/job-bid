@@ -1,6 +1,7 @@
 <?php
 
-require('controller/utils.php');
+require_once('controller/utils.php');
+require_once('controller/event.php');
 class Bids extends Controller {
 
   //ajax request
@@ -70,6 +71,8 @@ class Bids extends Controller {
       $bidsMapper->time = Utils::getCurrentDateTime();
       $bidsMapper->value = $bid;
       $bidsMapper->save();
+				$ec = new EventController($this->f3);
+				$ec->fireEvent($jobid, 'job', 3); // lower bid
     }
 
     return $errors;

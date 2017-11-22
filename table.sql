@@ -65,10 +65,13 @@ INSERT INTO `event_type` (`id`, `name`) VALUES ('1', 'job changed');
 INSERT INTO `event_type` (`id`, `name`) VALUES ('2', 'job finished');
 INSERT INTO `event_type` (`id`, `name`) VALUES ('3', 'lower bid');
 
-CREATE TABLE IF NOT EXISTS `pai`.`event` ( `id` INT NOT NULL , `source_id` INT NOT NULL , `type` INT NOT NULL , `creation_date` DATETIME NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;
+CREATE TABLE IF NOT EXISTS `pai`.`event` ( `id` INT NOT NULL , `source_id` INT NOT NULL , `type` VARCHAR(10) NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;
 
-CREATE TABLE IF NOT EXISTS `pai`.`event_observer` ( `id` INT NOT NULL , `event_id` INT NOT NULL , `user_id` INT NOT NULL , `is_read` BOOLEAN NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;
+CREATE TABLE IF NOT EXISTS `pai`.`event_subscriber` ( `id` INT NOT NULL , `event_id` INT NOT NULL , `user_id` INT NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;
 
+CREATE TABLE IF NOT EXISTS `pai`.`notification` ( `id` INT NOT NULL , `event_id` INT NOT NULL , `user_id` INT NOT NULL , `is_read` INT NOT NULL, PRIMARY KEY (`id`)) ENGINE = InnoDB;
+
+ALTER TABLE `notification` ADD `event_type` INT NOT NULL AFTER `user_id`;
 --
 -- Indexes for dumped tables
 --
@@ -92,7 +95,7 @@ ALTER TABLE `job`
 ALTER TABLE `user`
   ADD UNIQUE KEY `username` (`username`),
   ADD UNIQUE KEY `email` (`email`);
-  
+
 ALTER TABLE `user` ADD `first_name` VARCHAR(40) NOT NULL AFTER `username`, ADD `last_name` VARCHAR(40) NOT NULL AFTER `first_name`, ADD `birth_date` DATE NOT NULL AFTER `last_name`;
 --
 -- Constraints for dumped tables

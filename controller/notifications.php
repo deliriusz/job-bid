@@ -5,7 +5,7 @@
  * Date: 21.11.2017
  * Time: 20:03
  */
-
+require_once ('controller/event.php');
 class Notifications extends Controller
 {
     function view($f3) {
@@ -16,51 +16,19 @@ class Notifications extends Controller
         $f3->set('content', 'notifications.html');
     }
 
+		//ajax request
+		function setNotification ($f3) {
+			$ec = new EventController($f3);
+	    $this->doRender = false;
+			$ec->subscribeNewUser($f3->get('POST.notification-subscribe-id'), $f3->get('POST.notification-subscribe-type'), $f3->get('SESSION.userid'));
+
+			$returnData = array();
+	    echo json_encode ($returnData);
+		}
+
     function getAllNotificationsForUser ($userid) {
-        return $this->getNotifications(array('user_id = ?', $userid), array('ORDER BY event_id DESC'));
+				$ec = new EventController($this->f3);
+				return $ec->getNotificationsForUser($userid);
     }
 
-    private function getNotifications ($constrainsArr = NULL, $paginationSettings = NULL) {
-        $notificationsMapper = new DB\SQL\Mapper($this->db, 'event_observer');
-        $notificationsMapper->load($constrainsArr, $paginationSettings);
-        $notificationsArray = array();
-        for ($i =  0; $i < $notificationsMapper->loaded(); $i++) {
-            $notificationsArray[$i] = $this->eventMapperToNotifications($notificationsMapper);
-            $notificationsMapper->next();
-        }
-        return $notificationsArray;
-    }
-
-    private function eventMapperToNotifications ($m) {
-        $eventMapper = new DB\SQL\Mapper($this->db, 'event');
-        $eventMapper->load(array('id = ?', $m->event_id));
-
-        $n = new Notification(
-            $m->id,
-            $eventMapper->type,
-            'test name', //TODO change to something useful
-            $m->is_read
-        );
-        return $n;
-    }
-}
-class Notification {
-    public $id,
-    $type,
-    $name,
-    $is_read;
-
-    /**
-     * Notification constructor.
-     * @param $id
-     * @param $type
-     * @param $name
-     */
-    public function __construct($id, $type, $name, $is_read)
-    {
-        $this->id = $id;
-        $this->type = $type;
-        $this->name = $name;
-        $this->is_read = $is_read;
-    }
 }

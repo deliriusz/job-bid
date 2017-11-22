@@ -160,5 +160,31 @@ jQuery(document).ready(function($) {
 
     });
 
+    $(".notification-switch-button").click( function (event) {
+			event.preventDefault();
+
+      var formData = {
+        'notification-subscribe-type': $('input[name=notification-subscribe-type]').val(),
+        'notification-subscribe-id': $('input[name=notification-subscribe-id').val()
+      };
+
+      $.ajax({
+        type: 'POST',
+        url: '/PAI-proj/notification/set',
+        data: formData,
+        dataType: 'json',
+        encode: true
+      })
+        .done (function(data){
+          if (data.success === false) {
+						console.log('ERROR');
+          } else {
+              location.reload();
+          }
+
+        });
+
+    });
+
 		//$(".datetime-counter")
 });

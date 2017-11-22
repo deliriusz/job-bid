@@ -3,7 +3,16 @@
   <true>
     <div class="row col-xs-12 bottom-buffer">
       <div class="panel panel-default panel-body">
-        <h1>{{@job->name}}</h1>
+        <h1>
+					<form class="form-inline">
+            <div class="form-group">
+							{{@job->name}}
+							<input type="hidden" name="notification-subscribe-type" value="job"></input>
+							<input type="hidden" name="notification-subscribe-id" value="{{ @job->id }}"></input>
+						  <i type="submit" class="fa fa-bell-o notification-switch-button"></i>
+            </div>
+          </form>
+				</h1>
       </div>
     </div>
     <div class="row col-xs-12 bottom-buffer">
