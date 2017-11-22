@@ -50,6 +50,20 @@ class EventController {
         }
     }
 
+    public function getNotificationCountForUser($user_id)
+    {
+        $notificationMapper = new DB\SQL\Mapper($this->db, 'notification');
+        return $notificationMapper->count(array('user_id = ?', $user_id));
+
+    }
+
+    public function getUnreadNotificationCountForUser($user_id)
+    {
+        $notificationMapper = new DB\SQL\Mapper($this->db, 'notification');
+        return $notificationMapper->count(array('user_id = ? AND is_read = 0', $user_id));
+
+    }
+
     public function getNotificationsForUser($user_id) {
         $notificationMapper = new DB\SQL\Mapper($this->db, 'notification');
         $notificationMapper->load (array('user_id = ?', $user_id));
