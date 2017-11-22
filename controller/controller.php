@@ -31,6 +31,7 @@ class Controller
         if ($this->doRender) {
             if ($f3->exists('SESSION.userid')) {
                 $ec = new EventController($this->f3);
+
                 $f3->set('SESSION.unreadNotificationCount', $ec->getUnreadNotificationCountForUser($f3->get('SESSION.userid')));
             }
             echo Template::instance()->render('template.html');
