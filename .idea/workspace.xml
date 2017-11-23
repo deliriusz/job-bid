@@ -3,11 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="18e00a4e-4f99-4d1a-97f1-77be50321d51" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controller/account.php" afterPath="$PROJECT_DIR$/controller/account.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controller/bids.php" afterPath="$PROJECT_DIR$/controller/bids.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controller/controller.php" afterPath="$PROJECT_DIR$/controller/controller.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controller/jobs.php" afterPath="$PROJECT_DIR$/controller/jobs.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controller/notifications.php" afterPath="$PROJECT_DIR$/controller/notifications.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controller/utils.php" afterPath="$PROJECT_DIR$/controller/utils.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ui/job.html" afterPath="$PROJECT_DIR$/ui/job.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -29,21 +26,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="controller.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="controller.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controller/controller.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
+            <state relative-caret-position="181">
               <caret line="23" column="35" lean-forward="true" selection-start-line="23" selection-start-column="35" selection-end-line="23" selection-end-column="35" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="jobs.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/controller/jobs.php">
+      <file leaf-file-name="job.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ui/job.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="112">
-              <caret line="26" column="4" lean-forward="false" selection-start-line="26" selection-start-column="4" selection-end-line="26" selection-end-column="4" />
+            <state relative-caret-position="165">
+              <caret line="11" column="82" lean-forward="false" selection-start-line="11" selection-start-column="82" selection-end-line="11" selection-end-column="82" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="utils.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/controller/utils.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="18" column="90" lean-forward="false" selection-start-line="18" selection-start-column="90" selection-end-line="18" selection-end-column="90" />
               <folding />
             </state>
           </provider>
@@ -84,6 +91,16 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="90">
               <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="jobs.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ui/jobs.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -161,7 +178,6 @@
         <option value="$PROJECT_DIR$/controller/logger.php" />
         <option value="$PROJECT_DIR$/ui/account.html" />
         <option value="$PROJECT_DIR$/ui/notifications.html" />
-        <option value="$PROJECT_DIR$/controller/utils.php" />
         <option value="$PROJECT_DIR$/ui/jobs.html" />
         <option value="$PROJECT_DIR$/ui/loginform.html" />
         <option value="$PROJECT_DIR$/ui/newjobeditor.html" />
@@ -184,13 +200,14 @@
         <option value="$PROJECT_DIR$/ui/css/main.css" />
         <option value="$PROJECT_DIR$/ui/account-detail.html" />
         <option value="$PROJECT_DIR$/controller/register.php" />
-        <option value="$PROJECT_DIR$/ui/job.html" />
         <option value="$PROJECT_DIR$/controller/login.php" />
         <option value="$PROJECT_DIR$/controller/jobs.php" />
         <option value="$PROJECT_DIR$/controller/account.php" />
         <option value="$PROJECT_DIR$/controller/bids.php" />
         <option value="$PROJECT_DIR$/controller/notifications.php" />
         <option value="$PROJECT_DIR$/controller/controller.php" />
+        <option value="$PROJECT_DIR$/controller/utils.php" />
+        <option value="$PROJECT_DIR$/ui/job.html" />
       </list>
     </option>
   </component>
@@ -330,13 +347,6 @@
       <workItem from="1510696311883" duration="6921000" />
       <workItem from="1510787251584" duration="716000" />
       <workItem from="1511087894416" duration="23885000" />
-    </task>
-    <task id="LOCAL-00016" summary="working on register and log in pages">
-      <created>1510094095004</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1510094095004</updated>
     </task>
     <task id="LOCAL-00017" summary="setting up configurations">
       <created>1510167676137</created>
@@ -674,11 +684,18 @@
       <option name="project" value="LOCAL" />
       <updated>1511460823451</updated>
     </task>
-    <option name="localTasksCounter" value="65" />
+    <task id="LOCAL-00065" summary="adding login protection to perform certain actions">
+      <created>1511462376274</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1511462376274</updated>
+    </task>
+    <option name="localTasksCounter" value="66" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="111842000" />
+    <option name="totallyTimeSpent" value="112737000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -733,7 +750,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="working on job" />
     <MESSAGE value="adding proper url for user jobs" />
     <MESSAGE value="- moving reroute to ajax&#10;- fixing problems" />
     <MESSAGE value="- fixing problems with missing COOKIE on AJAX&#10;- fixing bugs in bids inserting&#10;- changing getCurrentDateTime format" />
@@ -758,7 +774,8 @@
     <MESSAGE value="- fixing error with wrong user being displayed in job&#10;- indenting jquery-helpers" />
     <MESSAGE value="fixing errors with registering event though errors persist" />
     <MESSAGE value="minor bugfixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="minor bugfixes" />
+    <MESSAGE value="adding login protection to perform certain actions" />
+    <option name="LAST_COMMIT_MESSAGE" value="adding login protection to perform certain actions" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -943,14 +960,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ui/jobs.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ui/bids.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
@@ -1096,26 +1105,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controller/utils.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/controller/event.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="10" column="20" lean-forward="false" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ui/job.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="10" lean-forward="true" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="10" />
           <folding />
         </state>
       </provider>
@@ -1168,14 +1161,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controller/login.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/controller/notifications.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="327">
@@ -1197,8 +1182,40 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/controller/controller.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
+        <state relative-caret-position="181">
           <caret line="23" column="35" lean-forward="true" selection-start-line="23" selection-start-column="35" selection-end-line="23" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/utils.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="90" lean-forward="false" selection-start-line="18" selection-start-column="90" selection-end-line="18" selection-end-column="90" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ui/jobs.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ui/job.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="82" lean-forward="false" selection-start-line="11" selection-start-column="82" selection-end-line="11" selection-end-column="82" />
           <folding />
         </state>
       </provider>
