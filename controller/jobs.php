@@ -139,6 +139,8 @@ class Jobs extends Controller
 
     private function jobMapperToJob ($m) {
         $bidsMapper = new DB\SQL\Mapper($this->db, 'bid');
+        $usersMapper = new DB\SQL\Mapper($this->db, 'user');
+        $usersMapper->load(array('id = ?', $m->userid));
         $bidsMapper->load(array ('job_id = ?', $m->id), NULL);
         $bidsArray = array();
 
@@ -156,6 +158,7 @@ class Jobs extends Controller
         $j = new Job(
             $m->id,
             $m->userid,
+            $usersMapper->username,
             $m->name,
             $m->description,
             $m->initial_price,
@@ -171,6 +174,7 @@ class Jobs extends Controller
 class Job {
     public $id;
     public $userId;
+    public $username;
     public $name;
     public $description;
     public $creation_time;
@@ -184,6 +188,7 @@ class Job {
      * Job constructor.
      * @param $id
      * @param $userId
+     * @param $username
      * @param $name
      * @param $description
      * @param $creation_time
@@ -191,11 +196,12 @@ class Job {
      * @param $job_end_time
      * @param $bids
      */
-    public function __construct($id, $userId, $name, $description, $initial_price,
+    public function __construct($id, $userId, $username, $name, $description, $initial_price,
                                 $creation_time, $job_start_time, $job_end_time, $bids)
     {
         $this->id = $id;
         $this->userId = $userId;
+        $this->username = $username;
         $this->name = $name;
         $this->description = $description;
         $this->initial_price = $initial_price;

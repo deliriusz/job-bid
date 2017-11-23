@@ -23,7 +23,7 @@
             <div class="panel-heading">
               <div class="col-md-6">
                 <p>Current price: {{@job->initial_price}} $</p>
-                <p>Created by: {{ @SESSION.username }} </p>
+                <p>Created by: <a href="/PAI-proj/user/{{ @job->username }}">{{ @job->username }}</a> </p> <!-- TODO implement user page -->
               </div>
               <div class="col-md-6">
                 <p>Creation time: {{@job->creation_time}}</p>

@@ -1,15 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="18e00a4e-4f99-4d1a-97f1-77be50321d51" name="Default" comment="">
+    <list default="true" id="18e00a4e-4f99-4d1a-97f1-77be50321d51" name="Default" comment="- fixing error with wrong user being displayed in job&#10;- indenting jquery-helpers">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controller/account.php" afterPath="$PROJECT_DIR$/controller/account.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controller/jobs.php" afterPath="$PROJECT_DIR$/controller/jobs.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controller/users.php" afterPath="$PROJECT_DIR$/controller/users.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/jquery-helpers.js" afterPath="$PROJECT_DIR$/js/jquery-helpers.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/table.sql" afterPath="$PROJECT_DIR$/table.sql" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ui/account-detail.html" afterPath="$PROJECT_DIR$/ui/account-detail.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ui/css/main.css" afterPath="$PROJECT_DIR$/ui/css/main.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ui/job.html" afterPath="$PROJECT_DIR$/ui/job.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -46,7 +41,7 @@
         <entry file="file://$PROJECT_DIR$/ui/job.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="375">
-              <caret line="25" column="39" lean-forward="false" selection-start-line="25" selection-start-column="39" selection-end-line="25" selection-end-column="39" />
+              <caret line="25" column="136" lean-forward="false" selection-start-line="25" selection-start-column="136" selection-end-line="25" selection-end-column="136" />
               <folding />
             </state>
           </provider>
@@ -352,13 +347,6 @@
       <workItem from="1510696311883" duration="6921000" />
       <workItem from="1510787251584" duration="716000" />
       <workItem from="1511087894416" duration="23885000" />
-    </task>
-    <task id="LOCAL-00011" summary="implementing validators">
-      <created>1510006125547</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1510006125547</updated>
     </task>
     <task id="LOCAL-00012" summary="adding favicon">
       <created>1510010400596</created>
@@ -696,11 +684,18 @@
       <option name="project" value="LOCAL" />
       <updated>1511449967618</updated>
     </task>
-    <option name="localTasksCounter" value="60" />
+    <task id="LOCAL-00060" summary="working on account">
+      <created>1511457385545</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1511457385545</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="109050000" />
+    <option name="totallyTimeSpent" value="109255000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1080" extended-state="0" />
@@ -755,7 +750,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="adding dropdown for logged in user" />
     <MESSAGE value="working on jobs" />
     <MESSAGE value="working on jobs and specific job" />
     <MESSAGE value="adding pagination to jobs" />
@@ -780,7 +774,8 @@
     <MESSAGE value="working on subscribing to events" />
     <MESSAGE value="working on bids view for user" />
     <MESSAGE value="working on simple html pages controller" />
-    <option name="LAST_COMMIT_MESSAGE" value="working on simple html pages controller" />
+    <MESSAGE value="working on account" />
+    <option name="LAST_COMMIT_MESSAGE" value="working on account" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1216,7 +1211,7 @@
     <entry file="file://$PROJECT_DIR$/ui/job.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
-          <caret line="25" column="39" lean-forward="false" selection-start-line="25" selection-start-column="39" selection-end-line="25" selection-end-column="39" />
+          <caret line="25" column="136" lean-forward="false" selection-start-line="25" selection-start-column="136" selection-end-line="25" selection-end-column="136" />
           <folding />
         </state>
       </provider>
