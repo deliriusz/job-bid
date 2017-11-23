@@ -11,3 +11,7 @@
   text-align: center;
   background-color: #f7f7f7;
  }
+
+.text-bold {
+    font-weight: bold;
+}
