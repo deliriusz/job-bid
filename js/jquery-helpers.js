@@ -165,12 +165,12 @@ jQuery(document).ready(function($) {
 
       var formData = {
         'notification-subscribe-type': $('input[name=notification-subscribe-type]').val(),
-        'notification-subscribe-id': $('input[name=notification-subscribe-id').val()
+        'notification-subscribe-id': $('input[name=notification-subscribe-id]').val()
       };
 
       $.ajax({
         type: 'POST',
-        url: '/PAI-proj/notification/set',
+        url: '/PAI-proj/eventsubscriber/set',
         data: formData,
         dataType: 'json',
         encode: true
@@ -186,5 +186,31 @@ jQuery(document).ready(function($) {
 
     });
 
+
+    $(".delete-notification").click( function (event) {
+        event.preventDefault();
+        var clickedElem = $(this);
+
+        var formData = {
+        };
+
+        $.ajax({
+            type: 'delete',
+            url: '/PAI-proj/notification/' + $(this).attr('data-href'),
+            data: formData,
+            dataType: 'json',
+            encode: true
+        })
+            .done (function(data){
+                if (data.success === false) {
+                    console.log('ERROR');
+                } else {
+                    console.log($(clickedElem).closest('.notification-tr'));
+                    $(clickedElem).closest('.notification-tr').remove();
+                }
+
+            });
+
+    });
 		//$(".datetime-counter")
 });

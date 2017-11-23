@@ -17,11 +17,12 @@ font awesome icons to use on notifications:
                 <tr>
                     <th class="col-xs-1"></th>
                     <th class="col-xs-11">Jobs notifications</th>
+                    <th class="col-xs-1"></th>
                 </tr>
                 </thead>
                 <tbody>
                 <repeat group="{{ @notifications }}" value="{{ @notification }}">
-                    <tr class="clickable-row" data-href="/PAI-proj/notification/{{ @notification->id }}">
+                    <tr class="notification-tr">
                         <td class="col-xs-1">
                             <check if="{{ @notification->event_type }} === 1">
                                 <i class="fa fa-check"></i>
@@ -37,6 +38,7 @@ font awesome icons to use on notifications:
                             </check>
                         </td>
                         <td class="col-xs-11 {{ @notification->is_read === 0 ? 'text-bold' : '' }}"> {{ @notification->message }} </td>
+                        <td class="col-xs-1 delete-notification" data-href="{{ @notification->id }}"><i class="fa fa-trash"></i> </td>
                     </tr>
                 </repeat>
                 </tbody>

@@ -65,6 +65,7 @@ class EventController {
     public function getNotificationsForUser($user_id) {
         $notificationMapper = new DB\SQL\Mapper($this->db, 'notification');
         $notificationMapper->load (array('user_id = ?', $user_id));
+        $eventMapper = new DB\SQL\Mapper($this->db, 'event');
         $notifications = array();
 
         for ($i =  0; $i < $notificationMapper->loaded(); $i++) {
@@ -75,10 +76,33 @@ class EventController {
             $n->event_type = $notificationMapper->event_type;
             $n->is_read = $notificationMapper->is_read;
 
-            $eventMapper = new DB\SQL\Mapper($this->db, 'event');
-            //TODO varying message based on event type
+            $eventMapper->load(array('id = ?', $notificationMapper->event_id));
+            $sourceOfEventMapper = new DB\SQL\Mapper($this->db, $eventMapper->type);
+            $sourceOfEvent = NULL;
 
-            $message = 'some message';
+            $sourceOfEventMapper->load(array('id = ?', $eventMapper->source_id));
+
+            $message = '';
+            switch ($notificationMapper->event_type) {
+                case 1: //job created
+                    $message = sprintf('User %s created job %s', $sourceOfEventMapper->userid, $sourceOfEventMapper->name);
+                    break;
+
+                case 2: //job updated
+                    $message = sprintf('User %s updated job %s', $sourceOfEventMapper->userid, $sourceOfEventMapper->name);
+                    break;
+
+                case 3: //job finished
+                    $message = sprintf('Job %s finished', $sourceOfEventMapper->userid, $sourceOfEventMapper->name);
+                    break;
+
+                case 4: //lower bid
+                    $message = sprintf('User %s placed bid in %s', $sourceOfEventMapper->user_id, $sourceOfEventMapper->job_id);
+                    break;
+
+                default:
+                    //do nothing
+            }
 
             $n->message = $message;
 
@@ -88,6 +112,11 @@ class EventController {
         }
 
         return $notifications;
+    }
+
+    public function deleteNotification($id) {
+        $notificationMapper = new DB\SQL\Mapper($this->db, 'notification');
+        $notificationMapper->erase(array('id = ?', $id));
     }
 
 }
