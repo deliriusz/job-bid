@@ -99,6 +99,7 @@ class Jobs extends Controller
 
         $ec = new EventController($f3);
         $ec->createNewEvent($jobsMapper->id, 'job');
+        $ec->subscribeNewUser($jobsMapper->id, 'job', $f3->get('SESSION.userid'));
 
         $f3->reroute('/user/' . $f3->get('SESSION.username') . '/job/' . $jobsMapper->id);
     }
