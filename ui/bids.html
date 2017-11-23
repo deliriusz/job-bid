@@ -1,0 +1,42 @@
+<div class="row col-xs-12 bottom-buffer">
+    <div class="col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4>
+                    Searchbar goes here
+                </h4>
+            </div>
+            <div class="panel-body">
+                <check if="{{ isset(@bids) }}">
+                    <true>
+                        <table class="table table-hover">
+                            <thead>
+                            <tr>
+                                <th class="col-xs-1">Id</th>
+                                <th class="col-xs-4">Job name</th>
+                                <th class="col-xs-1">Offer</th>
+                                <th class="col-xs-2">Bid time</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <repeat group="{{ @bids }}" value="{{ @bid }}">
+                                <tr class="clickable-row" data-href="/PAI-proj/job/{{ @bid->job_id }}">
+                                    <td class="col-xs-1"><span class="badge">{{ @bid->id }}</span></td>
+                                    <td class="col-xs-4">{{ @bid->job_id }}</td>
+                                    <td class="col-xs-1">{{ @bid->value }}</td>
+                                    <td class="col-xs-2 datetime-counter">{{ @bid->time }}</td>
+                                </tr>
+                            </repeat>
+                            </tbody>
+                        </table>
+                    </true>
+                    <false>
+                        <div class="jumbotron"><h2>You did not participate in any job offer. </h2>
+                            <br/> <h4>Go to <a href="/PAI-proj/jobs">Jobs</a> to find jobs that suit you.</h4>
+                        </div>
+                    </false>
+                </check>
+            </div>
+        </div>
+    </div>
+</div>

@@ -7,9 +7,11 @@
             <form class="form-inline">
               <div class="form-group">
                 {{@job->name}}
-                <input type="hidden" name="notification-subscribe-type" value="job"></input>
-                <input type="hidden" name="notification-subscribe-id" value="{{ @job->id }}"></input>
-                <i type="submit" class="fa {{ @isUserSubscribedToJobEvents ? 'fa-bell-slash-o' : 'fa-bell-o' }} notification-switch-button"></i>
+                <check if="{{ isset(@SESSION.usernmae) }}">
+                  <input type="hidden" name="notification-subscribe-type" value="job"></input>
+                  <input type="hidden" name="notification-subscribe-id" value="{{ @job->id }}"></input>
+                  <i type="submit" class="fa {{ @isUserSubscribedToJobEvents ? 'fa-bell-slash-o' : 'fa-bell-o' }} notification-switch-button"></i>
+                </check>
               </div>
             </form>
           </h1>

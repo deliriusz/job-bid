@@ -3,6 +3,18 @@
 require_once('controller/utils.php');
 class Bids extends Controller {
 
+    function viewUserSpecificBids ($f3) {
+        $pageToDisplay = $f3->get('GET.p') != NULL ? $f3->get('GET.p') - 1 : 0;
+        $itemsPerPage = $f3->get('itemsperpage');
+
+        $f3->set('bids', $this->getBids(array('user_id = ?', $f3->get('SESSION.userid')),
+            array(
+            'offset' => $pageToDisplay * $itemsPerPage,
+            'limit' => $itemsPerPage
+        )));
+        $f3->set('content', 'bids.html');
+    }
+
     //ajax request
     function placeBid ($f3)
     {
@@ -76,6 +88,24 @@ class Bids extends Controller {
 
         return $errors;
     }
+
+    function getBids ($constrainsArr = NULL, $paginationSettings = NULL) {
+        $bidsMapper = new DB\SQL\Mapper($this->db, 'bid');
+        $bidsMapper->load($constrainsArr, $paginationSettings);
+
+        for ($i = 0; $i < $bidsMapper->loaded(); $i++) {
+            $bidsArray[$i] = new Bid(
+                $bidsMapper->id,
+                $bidsMapper->job_id,
+                $bidsMapper->user_id,
+                $bidsMapper->time,
+                $bidsMapper->value
+            );
+            $bidsMapper->next();
+        }
+        return $bidsArray;
+    }
+
 }
 
 

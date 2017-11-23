@@ -1,5 +1,4 @@
 //TODO add mail notifications
-//TODO add possibility of tracking job
 //TODO add possibility of tracking user
 //TODO add finish status to job
 //TODO add data overview for user
@@ -13,6 +12,4 @@
 //TODO implement searchbar in jobs
 //TODO change "ends on" to "ends in" and calculate how much time left. Maybe use ajax to diminish counter
 //TODO implement "About us" page
-//TODO add icons for user specific submenu
 //TODO think about what to do when job finishes and (1) noone was interested (2) someone won
-//TODO add notification mechanism for logged in users

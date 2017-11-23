@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="18e00a4e-4f99-4d1a-97f1-77be50321d51" name="Default" comment="working on notifications">
+    <list default="true" id="18e00a4e-4f99-4d1a-97f1-77be50321d51" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ui/bids.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controller/event.php" afterPath="$PROJECT_DIR$/controller/event.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controller/jobs.php" afterPath="$PROJECT_DIR$/controller/jobs.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TODO.txt" afterPath="$PROJECT_DIR$/TODO.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controller/bids.php" afterPath="$PROJECT_DIR$/controller/bids.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes.ini" afterPath="$PROJECT_DIR$/routes.ini" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ui/job.html" afterPath="$PROJECT_DIR$/ui/job.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ui/template.html" afterPath="$PROJECT_DIR$/ui/template.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -27,17 +30,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="event.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/controller/event.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="130">
-              <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="base.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="base.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/base.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="130">
@@ -47,11 +40,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="jquery-helpers.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/jquery-helpers.js">
+      <file leaf-file-name="bids.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/controller/bids.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="725">
-              <caret line="208" column="32" lean-forward="true" selection-start-line="208" selection-start-column="32" selection-end-line="208" selection-end-column="32" />
+            <state relative-caret-position="105">
+              <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="routes.ini" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/routes.ini">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="315">
+              <caret line="21" column="35" lean-forward="false" selection-start-line="21" selection-start-column="35" selection-end-line="21" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -61,7 +64,27 @@
         <entry file="file://$PROJECT_DIR$/ui/job.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="165">
-              <caret line="11" column="110" lean-forward="false" selection-start-line="11" selection-start-column="110" selection-end-line="11" selection-end-column="110" />
+              <caret line="11" column="18" lean-forward="false" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="jobs.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ui/jobs.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="template.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ui/template.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="145">
+              <caret line="46" column="44" lean-forward="false" selection-start-line="46" selection-start-column="44" selection-end-line="46" selection-end-column="44" />
               <folding />
             </state>
           </provider>
@@ -70,8 +93,38 @@
       <file leaf-file-name="jobs.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controller/jobs.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="67" column="0" lean-forward="false" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
+            <state relative-caret-position="204">
+              <caret line="117" column="30" lean-forward="false" selection-start-line="117" selection-start-column="30" selection-end-line="117" selection-end-column="30" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="start.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ui/start.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-229">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TODO.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/TODO.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="6" column="27" lean-forward="false" selection-start-line="6" selection-start-column="27" selection-end-line="6" selection-end-column="27" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="bids.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ui/bids.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="181">
+              <caret line="34" column="62" lean-forward="false" selection-start-line="34" selection-start-column="62" selection-end-line="34" selection-end-column="62" />
               <folding />
             </state>
           </provider>
@@ -124,14 +177,12 @@
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/controller/logger.php" />
         <option value="$PROJECT_DIR$/ui/account.html" />
-        <option value="$PROJECT_DIR$/TODO.txt" />
         <option value="$PROJECT_DIR$/ui/notifications.html" />
         <option value="$PROJECT_DIR$/controller/account.php" />
         <option value="$PROJECT_DIR$/controller/login.php" />
         <option value="$PROJECT_DIR$/controller/register.php" />
         <option value="$PROJECT_DIR$/controller/users.php" />
         <option value="$PROJECT_DIR$/controller/utils.php" />
-        <option value="$PROJECT_DIR$/ui/template.html" />
         <option value="$PROJECT_DIR$/ui/account-detail.html" />
         <option value="$PROJECT_DIR$/ui/jobs.html" />
         <option value="$PROJECT_DIR$/ui/loginform.html" />
@@ -143,14 +194,17 @@
         <option value="$PROJECT_DIR$/controller/controller.php" />
         <option value="$PROJECT_DIR$/ui/css/main.css" />
         <option value="$PROJECT_DIR$/ui/notifications-detail.html" />
-        <option value="$PROJECT_DIR$/routes.ini" />
         <option value="$PROJECT_DIR$/controller/notifications.php" />
         <option value="$PROJECT_DIR$/php.php" />
-        <option value="$PROJECT_DIR$/controller/bids.php" />
         <option value="$PROJECT_DIR$/js/jquery-helpers.js" />
         <option value="$PROJECT_DIR$/controller/jobs.php" />
-        <option value="$PROJECT_DIR$/ui/job.html" />
         <option value="$PROJECT_DIR$/controller/event.php" />
+        <option value="$PROJECT_DIR$/ui/job.html" />
+        <option value="$PROJECT_DIR$/TODO.txt" />
+        <option value="$PROJECT_DIR$/ui/template.html" />
+        <option value="$PROJECT_DIR$/routes.ini" />
+        <option value="$PROJECT_DIR$/ui/bids.html" />
+        <option value="$PROJECT_DIR$/controller/bids.php" />
       </list>
     </option>
   </component>
@@ -290,13 +344,6 @@
       <workItem from="1510696311883" duration="6921000" />
       <workItem from="1510787251584" duration="716000" />
       <workItem from="1511087894416" duration="23885000" />
-    </task>
-    <task id="LOCAL-00008" summary="deleting unused files">
-      <created>1510001463777</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1510001463777</updated>
     </task>
     <task id="LOCAL-00009" summary="moving common components to templates">
       <created>1510002622758</created>
@@ -634,11 +681,18 @@
       <option name="project" value="LOCAL" />
       <updated>1511441047859</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="working on subscribing to events">
+      <created>1511444946020</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1511444946020</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="102406000" />
+    <option name="totallyTimeSpent" value="103956000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="6" />
@@ -693,7 +747,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="refactoring to registerform.html" />
     <MESSAGE value="fixing error handler&#10;pushing rest to git" />
     <MESSAGE value="implementation of login  / logout" />
     <MESSAGE value="adding dropdown for logged in user" />
@@ -718,7 +771,8 @@
     <MESSAGE value="fixing table alignment" />
     <MESSAGE value="fixing event type ids" />
     <MESSAGE value="working on notifications" />
-    <option name="LAST_COMMIT_MESSAGE" value="working on notifications" />
+    <MESSAGE value="working on subscribing to events" />
+    <option name="LAST_COMMIT_MESSAGE" value="working on subscribing to events" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -728,12 +782,11 @@
           <line>1</line>
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="17" />
+      <option name="time" value="19" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/config.ini" />
     <entry file="file://$PROJECT_DIR$/lib/db/sql.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="690">
@@ -788,14 +841,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="335">
           <caret line="428" column="9" lean-forward="false" selection-start-line="428" selection-start-column="9" selection-end-line="428" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TODO.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="30" lean-forward="false" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="30" />
           <folding />
         </state>
       </provider>
@@ -887,14 +932,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ui/start.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ui/newjobeditor.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -935,14 +972,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ui/template.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="263">
-          <caret line="50" column="50" lean-forward="false" selection-start-line="50" selection-start-column="50" selection-end-line="50" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config.ini">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -971,14 +1000,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes.ini">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="11" lean-forward="false" selection-start-line="20" selection-start-column="11" selection-end-line="20" selection-end-column="11" />
           <folding />
         </state>
       </provider>
@@ -1023,14 +1044,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ui/jobs.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ui/notifications-detail.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
@@ -1043,14 +1056,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controller/bids.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="413">
-          <caret line="76" column="0" lean-forward="false" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1071,37 +1076,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ui/job.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="110" lean-forward="false" selection-start-line="11" selection-start-column="110" selection-end-line="11" selection-end-column="110" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controller/jobs.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="67" column="0" lean-forward="false" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/controller/event.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="130">
           <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../phpmyadmin/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding>
-            <marker date="1503583094000" expanded="true" signature="4453:4480" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1141,6 +1120,88 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="130">
           <caret line="333" column="0" lean-forward="false" selection-start-line="333" selection-start-column="0" selection-end-line="333" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ui/start.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-229">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TODO.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="27" lean-forward="false" selection-start-line="6" selection-start-column="27" selection-end-line="6" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ui/template.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="145">
+          <caret line="46" column="44" lean-forward="false" selection-start-line="46" selection-start-column="44" selection-end-line="46" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../phpmyadmin/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding>
+            <marker date="1503583094000" expanded="true" signature="4453:4480" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ui/job.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="18" lean-forward="false" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ui/jobs.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/jobs.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="117" column="30" lean-forward="false" selection-start-line="117" selection-start-column="30" selection-end-line="117" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes.ini">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="35" lean-forward="false" selection-start-line="21" selection-start-column="35" selection-end-line="21" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ui/bids.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="181">
+          <caret line="34" column="62" lean-forward="false" selection-start-line="34" selection-start-column="62" selection-end-line="34" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/bids.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
           <folding />
         </state>
       </provider>
