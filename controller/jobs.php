@@ -52,6 +52,15 @@ class Jobs extends Controller
             $f3->set('job', $job[0]);
         }
 
+        $ec = new EventController($f3);
+        $f3->set('isUserSubscribedToJobEvents',
+            $ec->isUserSubscribedToEvent(
+                $f3->get('SESSION.userid'),
+                $jobid,
+                'job'
+            )
+        );
+
         $content = 'job.html';
         $f3->set('content', $content);
     }
