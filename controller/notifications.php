@@ -29,7 +29,7 @@ class Notifications extends Controller
     }
 
     function getAllNotificationsForUser ($userid) {
-        Login::handleUserShouldBeLogged($f3);
+        Login::handleUserShouldBeLogged($this->f3);
         $ec = new EventController($this->f3);
         return $ec->getNotificationsForUser($userid);
     }
