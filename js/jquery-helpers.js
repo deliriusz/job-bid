@@ -205,8 +205,8 @@ jQuery(document).ready(function($) {
                 if (data.success === false) {
                     console.log('ERROR');
                 } else {
-                    console.log($(clickedElem).closest('.notification-tr'));
-                    $(clickedElem).closest('.notification-tr').remove();
+                    // $(clickedElem).closest('.notification-tr').remove();
+                    location.reload();
                 }
 
             });

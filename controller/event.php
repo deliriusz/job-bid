@@ -97,7 +97,7 @@ class EventController {
                     break;
 
                 case 4: //lower bid
-                    $message = sprintf('User %s placed bid in %s', $sourceOfEventMapper->user_id, $sourceOfEventMapper->job_id);
+                    $message = sprintf('New bid id in %s ', $sourceOfEventMapper->userid, $sourceOfEventMapper->id);
                     break;
 
                 default:
