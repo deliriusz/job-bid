@@ -21,11 +21,17 @@ class EventController {
         $eventSubscriberMapper = new DB\SQL\Mapper($this->db, 'event_subscriber');
         $eventMapper->load (array('source_id = ? AND type = ?', $source_id, $source_type));
 
-        $eventSubscriberMapper->reset();
-        $eventSubscriberMapper->user_id = $user_id;
-        $eventSubscriberMapper->event_id = $eventMapper->id;
+        if ($this->isUserSubscribedToEvent($user_id, $source_id, $source_type)) {
+            $eventSubscriberMapper->erase(
+                array ('event_id = ? and user_id = ?', $eventMapper->id, $user_id)
+            );
+        } else {
+            $eventSubscriberMapper->reset();
+            $eventSubscriberMapper->user_id = $user_id;
+            $eventSubscriberMapper->event_id = $eventMapper->id;
 
-        $eventSubscriberMapper->save();
+            $eventSubscriberMapper->save();
+        }
     }
 
     public function fireEvent ($source_id, $source_type, $event_type) {
@@ -117,6 +123,21 @@ class EventController {
     public function deleteNotification($id) {
         $notificationMapper = new DB\SQL\Mapper($this->db, 'notification');
         $notificationMapper->erase(array('id = ?', $id));
+    }
+
+    public function isUserSubscribedToEvent ($userid, $eventid, $eventType) {
+        $eventMapper = new DB\SQL\Mapper($this->db, 'event');
+        $eventMapper->load(
+                array('source_id = ? AND type = ?', $eventid, $eventType)
+            );
+        $eventSubscriberMapper = new DB\SQL\Mapper($this->db, 'event_subscriber');
+        $subscriptionCount = $eventSubscriberMapper->count(
+            array('event_id = ? AND user_id = ?',
+                $eventMapper->id,
+                $userid)
+        );
+
+        return $subscriptionCount > 0;
     }
 
 }

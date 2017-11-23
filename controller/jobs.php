@@ -7,6 +7,7 @@
  */
 
 require_once ('controller/bids.php');
+require_once ('controller/event.php');
 class Jobs extends Controller
 {
     function viewJobsPage ($f3) {
@@ -62,6 +63,15 @@ class Jobs extends Controller
             $f3->set ('job', $job[0]);
         }
         $content = 'job.html';
+        $ec = new EventController($f3);
+
+        $f3->set('isUserSubscribedToJobEvents',
+            $ec->isUserSubscribedToEvent(
+                $f3->get('SESSION.userid'),
+                $jobid,
+                'job'
+            )
+            );
 
         $f3->set('content', $content);
     }

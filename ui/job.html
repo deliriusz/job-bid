@@ -9,7 +9,7 @@
                 {{@job->name}}
                 <input type="hidden" name="notification-subscribe-type" value="job"></input>
                 <input type="hidden" name="notification-subscribe-id" value="{{ @job->id }}"></input>
-                <i type="submit" class="fa fa-bell-o notification-switch-button"></i>
+                <i type="submit" class="fa {{ @isUserSubscribedToJobEvents ? 'fa-bell-slash-o' : 'fa-bell-o' }} notification-switch-button"></i>
               </div>
             </form>
           </h1>
