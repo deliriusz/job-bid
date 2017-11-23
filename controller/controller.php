@@ -25,9 +25,6 @@ class Controller
     }
 
     function afterroute($f3) {
-        if ($this->isPageLoginProtected) {
-            Login::handleUserShouldBeLogged($f3);
-        }
         if ($this->doRender) {
             if ($f3->exists('SESSION.userid')) {
                 $ec = new EventController($this->f3);

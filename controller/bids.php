@@ -4,6 +4,7 @@ require_once('controller/utils.php');
 class Bids extends Controller {
 
     function viewUserSpecificBids ($f3) {
+        Login::handleUserShouldBeLogged($f3);
         $pageToDisplay = $f3->get('GET.p') != NULL ? $f3->get('GET.p') - 1 : 0;
         $itemsPerPage = $f3->get('itemsperpage');
 
@@ -18,6 +19,7 @@ class Bids extends Controller {
     //ajax request
     function placeBid ($f3)
     {
+        Login::handleUserShouldBeLogged($f3);
         $errors = array();
         $returnData = array();
         $username = $f3->get('SESSION.username');

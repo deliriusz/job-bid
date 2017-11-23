@@ -7,10 +7,12 @@
  */
 
 require_once ('controller/bids.php');
+require_once ('controller/utils.php');
 require_once ('controller/event.php');
 class Jobs extends Controller
 {
     function viewJobsPage ($f3) {
+        Login::handleUserShouldBeLogged($f3);
         $pageToDisplay = $f3->get('GET.p') != NULL ? $f3->get('GET.p') - 1 : 0;
         $itemsPerPage = $f3->get('itemsperpage');
 
@@ -86,10 +88,9 @@ class Jobs extends Controller
     }
 
     function postNewJob ($f3) {
-        $this->isPageLoginProtected = true;
+        Login::handleUserShouldBeLogged($f3);
         $jobsMapper = new DB\SQL\Mapper($this->db, 'job');
-        $currentTime = time();
-        $currentDate = date("Y-m-d H:M:S",$currentTime);
+        $currentDate = Utils::getCurrentDateTime();
         $jobName = $_POST['jobName'];
         $jobStartDate = $_POST['jobStartDate'];
         $jobEndDate = $_POST['jobEndDate'];

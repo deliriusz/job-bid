@@ -20,6 +20,7 @@ class Account extends Controller
 
     //ajax request
     function validateUpdateUserDataForm ($f3) {
+        Login::handleUserShouldBeLogged($f3);
         $errors = array();
         $returnData = array();
 
@@ -72,6 +73,7 @@ class Account extends Controller
     }
 
     function updateUserData () {
+        Login::handleUserShouldBeLogged($this->f3);
         $saltLength = random_int(170, 180);
         $saltForUser = bin2hex(random_bytes($saltLength));
         $pass = $_POST['password'];

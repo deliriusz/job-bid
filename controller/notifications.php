@@ -29,12 +29,14 @@ class Notifications extends Controller
     }
 
     function getAllNotificationsForUser ($userid) {
+        Login::handleUserShouldBeLogged($f3);
         $ec = new EventController($this->f3);
         return $ec->getNotificationsForUser($userid);
     }
 
     //ajax
     function deleteNotification ($f3) {
+        Login::handleUserShouldBeLogged($f3);
         $ec = new EventController($f3);
         $this->doRender = false;
         $ec->deleteNotification($f3->get('PARAMS.notificationid'));
