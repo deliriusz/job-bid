@@ -71,7 +71,7 @@ class Bids extends Controller {
             $bidsMapper->value = $bid;
             $bidsMapper->save();
             $ec = new EventController($this->f3);
-            $ec->fireEvent($jobid, 'job', 3); // lower bid
+            $ec->fireEvent($jobid, 'job', 4); // lower bid
         }
 
         return $errors;

@@ -23,16 +23,16 @@ font awesome icons to use on notifications:
                 <repeat group="{{ @notifications }}" value="{{ @notification }}">
                     <tr class="clickable-row" data-href="/PAI-proj/notification/{{ @notification->id }}">
                         <td class="col-xs-1">
-                            <check if="{{ @notification->event_type }} === 0">
+                            <check if="{{ @notification->event_type }} === 1">
                                 <i class="fa fa-check"></i>
                             </check>
-                            <check if="{{ @notification->event_type }} === 1">
+                            <check if="{{ @notification->event_type }} === 2">
                                 <i class="fa fa-info"></i>
                             </check>
-                            <check if="{{ @notification->event_type }} === 2">
+                            <check if="{{ @notification->event_type }} === 3">
                                 <i class="fa fa-calendar-check-o"></i>
                             </check>
-                            <check if="{{ @notification->event_type }} === 3">
+                            <check if="{{ @notification->event_type }} === 4">
                                 <i class="fa fa-sort-down"></i>
                             </check>
                         </td>
