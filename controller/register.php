@@ -52,9 +52,12 @@ class Register extends Controller
             array_push($errors, 'email is not valid');
         }
 
-        $errorsFromRegister = $this->registerNewUser();
-        foreach ($errorsFromRegister as $key => $value) {
-            array_push($errors, $value);
+        if (empty($errors)) {
+            $errorsFromRegister = $this->registerNewUser();
+
+            foreach ($errorsFromRegister as $key => $value) {
+                array_push($errors, $value);
+            }
         }
 
         $this->doRender = false;

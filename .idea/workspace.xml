@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="18e00a4e-4f99-4d1a-97f1-77be50321d51" name="Default" comment="- fixing error with wrong user being displayed in job&#10;- indenting jquery-helpers">
+    <list default="true" id="18e00a4e-4f99-4d1a-97f1-77be50321d51" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controller/jobs.php" afterPath="$PROJECT_DIR$/controller/jobs.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/jquery-helpers.js" afterPath="$PROJECT_DIR$/js/jquery-helpers.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ui/job.html" afterPath="$PROJECT_DIR$/ui/job.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controller/register.php" afterPath="$PROJECT_DIR$/controller/register.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -37,7 +35,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="job.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="job.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ui/job.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="375">
@@ -107,6 +105,20 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="register.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/controller/register.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="298">
+              <caret line="56" column="0" lean-forward="false" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
+              <folding>
+                <marker date="1511457840755" expanded="false" signature="9:11" ph=" Created by PhpStorm. ..." />
+                <marker date="1511457840755" expanded="true" signature="3082:3196" ph="INSERT INTO user... " />
+                <marker date="1511457840755" expanded="true" signature="3639:3643" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="users.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controller/users.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -116,16 +128,6 @@
                 <marker date="1511455772377" expanded="true" signature="103:989" ph="{...}" />
                 <marker date="1511455772377" expanded="true" signature="345:658" ph="..." />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="template.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ui/template.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="71">
-              <caret line="35" column="37" lean-forward="false" selection-start-line="35" selection-start-column="37" selection-end-line="35" selection-end-column="37" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -179,7 +181,6 @@
         <option value="$PROJECT_DIR$/ui/account.html" />
         <option value="$PROJECT_DIR$/ui/notifications.html" />
         <option value="$PROJECT_DIR$/controller/login.php" />
-        <option value="$PROJECT_DIR$/controller/register.php" />
         <option value="$PROJECT_DIR$/controller/utils.php" />
         <option value="$PROJECT_DIR$/ui/jobs.html" />
         <option value="$PROJECT_DIR$/ui/loginform.html" />
@@ -208,6 +209,7 @@
         <option value="$PROJECT_DIR$/ui/account-detail.html" />
         <option value="$PROJECT_DIR$/controller/jobs.php" />
         <option value="$PROJECT_DIR$/ui/job.html" />
+        <option value="$PROJECT_DIR$/controller/register.php" />
       </list>
     </option>
   </component>
@@ -347,13 +349,6 @@
       <workItem from="1510696311883" duration="6921000" />
       <workItem from="1510787251584" duration="716000" />
       <workItem from="1511087894416" duration="23885000" />
-    </task>
-    <task id="LOCAL-00012" summary="adding favicon">
-      <created>1510010400596</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1510010400596</updated>
     </task>
     <task id="LOCAL-00013" summary="moving files to one mail template&#10;adding controllers for register and login">
       <created>1510090878844</created>
@@ -691,11 +686,18 @@
       <option name="project" value="LOCAL" />
       <updated>1511457385545</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="- fixing error with wrong user being displayed in job&#10;- indenting jquery-helpers">
+      <created>1511457535553</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1511457535554</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="109255000" />
+    <option name="totallyTimeSpent" value="109527000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1080" extended-state="0" />
@@ -750,7 +752,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="working on jobs" />
     <MESSAGE value="working on jobs and specific job" />
     <MESSAGE value="adding pagination to jobs" />
     <MESSAGE value="working on job" />
@@ -775,7 +776,8 @@
     <MESSAGE value="working on bids view for user" />
     <MESSAGE value="working on simple html pages controller" />
     <MESSAGE value="working on account" />
-    <option name="LAST_COMMIT_MESSAGE" value="working on account" />
+    <MESSAGE value="- fixing error with wrong user being displayed in job&#10;- indenting jquery-helpers" />
+    <option name="LAST_COMMIT_MESSAGE" value="- fixing error with wrong user being displayed in job&#10;- indenting jquery-helpers" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -800,14 +802,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/ui/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ui/loginform.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1213,6 +1207,18 @@
         <state relative-caret-position="375">
           <caret line="25" column="136" lean-forward="false" selection-start-line="25" selection-start-column="136" selection-end-line="25" selection-end-column="136" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/register.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="298">
+          <caret line="56" column="0" lean-forward="false" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
+          <folding>
+            <marker date="1511457840755" expanded="false" signature="9:11" ph=" Created by PhpStorm. ..." />
+            <marker date="1511457840755" expanded="true" signature="3082:3196" ph="INSERT INTO user... " />
+            <marker date="1511457840755" expanded="true" signature="3639:3643" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
