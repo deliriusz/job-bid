@@ -33,7 +33,8 @@ class Users extends Controller
             $m->birth_date,
             $m->email,
             $m->password,
-            $m->salt
+            $m->salt,
+            $m->info
         );
         return $u;
     }
@@ -48,6 +49,7 @@ class User {
     public $email;
     public $password;
     public $salt;
+    public $info;
 
     /**
      * User constructor.
@@ -59,6 +61,7 @@ class User {
      * @param $email
      * @param $password
      * @param $salt
+     * @param $info
      */
     public function __construct($id = NULL,
                                 $username = NULL,
@@ -67,7 +70,8 @@ class User {
                                 $birth_date = NULL,
                                 $email = NULL,
                                 $password = NULL,
-                                $salt = NULL)
+                                $salt = NULL,
+                                $info = NULL)
     {
         $this->id = $id;
         $this->username = $username;
@@ -77,6 +81,7 @@ class User {
         $this->email = $email;
         $this->password = $password;
         $this->salt = $salt;
+        $this->info = $info;
     }
 
 }

@@ -51,6 +51,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `username` varchar(30) NOT NULL,
   `password` text NOT NULL,
   `email` varchar(50) NOT NULL,
+  `info` text NULL,
   `salt` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 

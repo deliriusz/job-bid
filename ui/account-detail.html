@@ -1,8 +1,24 @@
 <check if="{{ @GET.tab === 'info' || !isset(@GET.tab) }}">
-    info
+    <h2 class="title-overview">{{ @user->first_name }} {{ @user->last_name }}</h2>
+    <br/>
+    <h4 class="text-muted title-overview">{{ @user->username }}</h4>
+    <hr>
+    <span class="col-xs-12 col-sm-6"><i class="fa fa-envelope-o"></i> <a href="mailto:{{ @user->email}}">{{ @user->email}}</a> </span>
+    <span class="col-xs-12 col-sm-6"><i class="fa fa-map-marker"></i> TODO: user location</span>
+    <hr>
+    <div class="row col-xs-12 top-buffer">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="title-overview">Info</h3>
+            </div>
+            <div class="panel-body">
+                {{ @user->info }}
+            </div>
+        </div>
+    </div>
 </check>
 <check if="{{ @GET.tab === 'data' }}">
-    <form class="form-horizontal" id="udpateUserDataForm" action="/PAI-proj/user/register" method="post">
+    <form class="form-horizontal" id="updateUserDataForm" action="/PAI-proj/user/register" method="post">
         <div class="error-placeholder"></div>
         <div class="form-group">
             <label for="inputFirstName" class="col-sm-3 control-label">First name</label>
@@ -33,7 +49,14 @@
             </div>
         </div>
         <div class="form-group">
-            <div class="col-sm-offset-4 col-sm-8">
+            <label for="inputInfo" class="col-sm-3 control-label">Info</label>
+            <div class="col-sm-9">
+                <textarea rows="6" class="form-control"
+                          form="updateUserDataForm" name="inputInfo" id="inputInfo" placeholder="Write something about yourself">{{ @user->info }}</textarea>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-3 col-sm-9">
                 <button type="submit" id="submitUpdateUserDataForm" class="btn btn-primary">Update</button>
                 <br />
             </div>

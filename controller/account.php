@@ -97,6 +97,7 @@ class Account extends Controller
                 $userMapper->birth_date = $_POST['birth_date'];
                 $userMapper->first_name = $_POST['first_name'];
                 $userMapper->last_name = $_POST['last_name'];
+                $userMapper->info = $_POST['info'];
             }
 
             $userMapper->save();
