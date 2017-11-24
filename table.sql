@@ -117,5 +117,5 @@ COMMIT;
 
 
 ALTER TABLE `job` CHANGE `initial_price` `initial_price` DOUBLE UNSIGNED NOT NULL;
-
+ALTER TABLE `job` ADD `finished` BOOLEAN NOT NULL DEFAULT FALSE AFTER `job_end_time`;
 COMMIT;

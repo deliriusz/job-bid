@@ -22,8 +22,8 @@
           <div class="panel panel-default">
             <div class="panel-heading">
               <div class="col-md-6">
-                <p>Current price: {{@job->initial_price}} $</p>
-                <p>Created by: <a href="/PAI-proj/user/{{ @job->username }}">{{ @job->username }}</a> </p> <!-- TODO implement user page -->
+                <p>Current price: {{@job->current_price}} $</p>
+                <p>Created by: <a href="/PAI-proj/user/{{ @job->username }}">{{ @job->username }}</a> </p>
               </div>
               <div class="col-md-6">
                 <p>Creation time: {{@job->creation_time}}</p>
@@ -38,7 +38,7 @@
                     <div class="form-group">
                       <input type="hidden" name="jobid" value="{{ @job->id }}">
                       <label for="value">Place your bid: </label>
-                      <input type="number" step="0.01" id="value" class="form-control" name="value">
+                      <input type="number" step="0.1" id="value" class="form-control" name="value">
                     </div>
                     <button type="submit" class="btn btn-default" >Submit</button>
                   </form>
@@ -73,14 +73,17 @@
       <div class="row col-xs-12 bottom-buffer">
         <check if="{{ isset(@PARAMS.username) }}">
           <true>
-            <div class="jumbotron"><h2>Job not found for user {{ @PARAMS.username }}</h2>
+            <div class="jumbotron">
+              <h2>Job not found for user {{ @PARAMS.username }}</h2>
+            </div>
           </true>
           <false>
-            <div class="jumbotron"><h2>Job not found</h2>
+            <div class="jumbotron">
+              <h2>Job not found</h2>
+            </div>
           </false>
         </check>
       </div>
-</div>
 </false>
 </check>
 </div>

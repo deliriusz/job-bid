@@ -15,6 +15,14 @@ class Utils {
         return $dtime->getTimestamp();
     }
 
+    static function validateDateTime ($datetimestring, $format = "Y-m-d H:i:s") {
+        return !(!(DateTime::createFromFormat($format, $datetimestring))); // nasty workaround
+    }
+
+    static function validateDate ($datetimestring, $format = "Y-m-d") {
+        return !(!(DateTime::createFromFormat($format, $datetimestring))); // nasty workaround
+    }
+
     static function getDateTimeDifference ($from, $to) {
         return self::getTimestampFromDateTime($from) - self::getTimestampFromDateTime($to);
     }

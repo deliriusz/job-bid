@@ -16,7 +16,7 @@ class Jobs extends Controller
         $pageToDisplay = $f3->get('GET.p') != NULL ? $f3->get('GET.p') - 1 : 0;
         $itemsPerPage = $f3->get('itemsperpage');
 
-        $f3->set('jobs', $this->getJobs(array('job_end_time >= NOW()'), array(
+        $f3->set('jobs', $this->getJobs(array('finished = FALSE'), array(
             'offset' => $pageToDisplay * $itemsPerPage,
             'limit' => $itemsPerPage
         )));
@@ -96,22 +96,45 @@ class Jobs extends Controller
         $jobEndDate = $_POST['jobEndDate'];
         $jobInitialPayment = $_POST['jobInitialPayment'];
         $jobDescription = $_POST['jobDescription'];
+        $errors = array();
+        $returnData = array();
 
-        $jobsMapper->userid = $f3->get('SESSION.userid');
-        $jobsMapper->name = $jobName;
-        $jobsMapper->description = $jobDescription;
-        $jobsMapper->initial_price = $jobInitialPayment;
-        $jobsMapper->creation_time = $currentDate;
-        $jobsMapper->job_start_time = $jobStartDate;
-        $jobsMapper->job_end_time = $jobEndDate;
+        if (Utils::validateDate($jobStartDate)) {
+            array_push($errors, 'start date passed is not valid date');
+        }
 
-        $jobsMapper->save();
+        if (Utils::validateDate($jobEndDate)) {
+            array_push($errors, 'end date passed is not valid date');
+        }
 
-        $ec = new EventController($f3);
-        $ec->createNewEvent($jobsMapper->id, 'job');
-        $ec->subscribeNewUser($jobsMapper->id, 'job', $f3->get('SESSION.userid'));
+        if ($jobInitialPayment < 1) {
+            array_push($errors, 'initial payment cannot be lower than 1');
+        }
 
-        $f3->reroute('/user/' . $f3->get('SESSION.username') . '/job/' . $jobsMapper->id);
+        if (strlen($jobName) < 4) {
+            array_push($errors, 'job name is too short');
+        }
+
+        if (empty($errors)) {
+            $returnData['success'] = true;
+            $jobsMapper->userid = $f3->get('SESSION.userid');
+            $jobsMapper->name = $jobName;
+            $jobsMapper->description = $jobDescription;
+            $jobsMapper->initial_price = $jobInitialPayment;
+            $jobsMapper->creation_time = $currentDate;
+            $jobsMapper->job_start_time = $jobStartDate;
+            $jobsMapper->job_end_time = $jobEndDate;
+
+            $jobsMapper->save();
+
+            $ec = new EventController($f3);
+            $ec->createNewEvent($jobsMapper->id, 'job');
+            $ec->subscribeNewUser($jobsMapper->id, 'job', $f3->get('SESSION.userid'));
+
+            $f3->reroute('/user/' . $f3->get('SESSION.username') . '/job/' . $jobsMapper->id);
+        } else {
+            $returnData['success'] = false;
+        }
     }
 
     function showNewJobEditor ($f3) {
