@@ -199,6 +199,7 @@ class Jobs extends Controller
             $m->creation_time,
             $m->job_start_time,
             $m->job_end_time,
+            $m->finished,
             $bidsArray
         );
         return $j;
@@ -217,6 +218,7 @@ class Job {
     public $initial_price;
     public $bids;
     public $current_price;
+    public $finished;
 
     /**
      * Job constructor.
@@ -228,10 +230,11 @@ class Job {
      * @param $creation_time
      * @param $job_start_time
      * @param $job_end_time
+     * @param $finished
      * @param $bids
      */
     public function __construct($id, $userId, $username, $name, $description, $initial_price,
-                                $creation_time, $job_start_time, $job_end_time, $bids)
+                                $creation_time, $job_start_time, $job_end_time, $finished, $bids)
     {
         $this->id = $id;
         $this->userId = $userId;
@@ -243,6 +246,7 @@ class Job {
         $this->job_start_time = $job_start_time;
         $this->job_end_time = $job_end_time;
         $this->bids = $bids;
+        $this->finished = $finished === 1;
         $bidValues =
             array_map(function($bid){
                 return $bid->value;

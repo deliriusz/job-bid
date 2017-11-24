@@ -1,89 +1,98 @@
 <div>
-  <check if="{{ isset(@job) }}">
-    <true>
-      <div class="row col-xs-12 bottom-buffer">
-        <div class="panel panel-default panel-body">
-          <h1>
-            <form class="form-inline">
-              <div class="form-group">
-                {{@job->name}}
-                <check if="{{ isset(@SESSION.username) }}">
-                  <input type="hidden" name="notification-subscribe-type" value="job"/>
-                  <input type="hidden" name="notification-subscribe-id" value="{{ @job->id }}"/>
-                  <i type="submit" class="fa {{ @isUserSubscribedToJobEvents ? 'fa-bell-slash-o' : 'fa-bell-o' }} notification-switch-button"></i>
-                </check>
-              </div>
-            </form>
-          </h1>
-        </div>
-      </div>
-      <div class="row col-xs-12 bottom-buffer">
-        <div class="col-md-12">
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <div class="col-md-6">
-                <p>Current price: {{@job->current_price}} $</p>
-                <p>Created by: <a href="/PAI-proj/user/{{ @job->username }}">{{ @job->username }}</a> </p>
-              </div>
-              <div class="col-md-6">
-                <p>Creation time: {{@job->creation_time}}</p>
-                <p>Start time: {{@job->job_start_time}}</p>
-              </div>
+    <check if="{{ isset(@job) }}">
+        <true>
+            <div class="row col-xs-12 bottom-buffer">
+                <div class="panel panel-default panel-body">
+                    <h1>
+                        <form class="form-inline">
+                            <div class="form-group">
+                                {{@job->name}}
+                                <check if="{{ isset(@SESSION.username) && @job->finished===false }}">
+                                    <input type="hidden" name="notification-subscribe-type" value="job"/>
+                                    <input type="hidden" name="notification-subscribe-id" value="{{ @job->id }}"/>
+                                    <i type="submit" class="fa {{ @isUserSubscribedToJobEvents ? 'fa-bell-slash-o' : 'fa-bell-o' }} notification-switch-button"></i>
+                                </check>
+                            </div>
+                        </form>
+                    </h1>
+                </div>
             </div>
-            <div class="panel-body">
-              <check if="{{ isset(@SESSION.username) }}">
-              <span>
-                <form class="form-inline" id="placeBidForm">
-  	                <div class="error-placeholder"></div>
-                    <div class="form-group">
-                      <input type="hidden" name="jobid" value="{{ @job->id }}">
-                      <label for="value">Place your bid: </label>
-                      <input type="number" step="0.1" id="value" class="form-control" name="value">
+            <div class="row col-xs-12 bottom-buffer">
+                <div class="col-md-12">
+                    <div class="panel panel-default container-fluid">
+                        <div class="panel-heading row">
+                            <div class="col-md-6">
+                                <p>Current price: {{@job->current_price}} $</p>
+                                <p>Created by: <a href="/PAI-proj/user/{{ @job->username }}">{{ @job->username }}</a> </p>
+                            </div>
+                            <div class="col-md-6">
+                                <p>Creation time: {{@job->creation_time}}</p>
+                                <p>Start time: {{@job->job_start_time}}</p>
+                            </div>
+                        </div>
+                        <div class="panel-body">
+                            <check if="{{ isset(@SESSION.username) }}">
+                                <check if="{{ @job->finished===true }}">
+                                    <true>
+                                        <div class="alert alert-info">
+                                            <i class="fa fa-info-circle"></i> This job already finished
+                                        </div>
+                                    </true>
+                                    <false>
+                                      <span>
+                                        <form class="form-inline" id="placeBidForm">
+                                            <div class="error-placeholder"></div>
+                                            <div class="form-group">
+                                              <input type="hidden" name="jobid" value="{{ @job->id }}">
+                                              <label for="value">Place your bid: </label>
+                                              <input type="number" step="0.1" id="value" class="form-control" name="value">
+                                            </div>
+                                            <button type="submit" class="btn btn-default" >Submit</button>
+                                          </form>
+                                        </span>
+                                    </false>
+                                </check>
+                            </check>
+                            <p>{{@job->description}}</p>
+                            <hr>
+                            <div class="panel-body">
+                                <table class="table table-hover">
+                                    <thead>
+                                    <tr>
+                                        <th>Bid value</th>
+                                        <th>Bid time</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <repeat group="{{ @job->bids }}" value="{{ @bid }}">
+                                        <tr>
+                                            <td>{{@bid->value}}</td>
+                                            <td>{{@bid->time}}</td>
+                                        </tr>
+                                    </repeat>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
                     </div>
-                    <button type="submit" class="btn btn-default" >Submit</button>
-                  </form>
-              </span>
-              </check>
-              <p>{{@job->description}}</p>
-              <hr>
-              <div class="panel-body">
-                <table class="table table-hover">
-                  <thead>
-                  <tr>
-                    <th>Bid value</th>
-                    <th>Bid time</th>
-                  </tr>
-                  </thead>
-                  <tbody>
-                  <repeat group="{{ @job->bids }}" value="{{ @bid }}">
-                    <tr>
-                      <td>{{@bid->value}}</td>
-                      <td>{{@bid->time}}</td>
-                    </tr>
-                  </repeat>
-                  </tbody>
-                </table>
-              </div>
+                </div>
             </div>
-          </div>
-        </div>
-      </div>
-    </true>
-    <false>
-      <div class="row col-xs-12 bottom-buffer">
-        <check if="{{ isset(@PARAMS.username) }}">
-          <true>
-            <div class="jumbotron">
-              <h2>Job not found for user {{ @PARAMS.username }}</h2>
+        </true>
+        <false>
+            <div class="row col-xs-12 bottom-buffer">
+                <check if="{{ isset(@PARAMS.username) }}">
+                    <true>
+                        <div class="jumbotron">
+                            <h2>Job not found for user {{ @PARAMS.username }}</h2>
+                        </div>
+                    </true>
+                    <false>
+                        <div class="jumbotron">
+                            <h2>Job not found</h2>
+                        </div>
+                    </false>
+                </check>
             </div>
-          </true>
-          <false>
-            <div class="jumbotron">
-              <h2>Job not found</h2>
-            </div>
-          </false>
-        </check>
-      </div>
-</false>
-</check>
+        </false>
+    </check>
 </div>
