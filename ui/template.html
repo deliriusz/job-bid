@@ -43,7 +43,7 @@
                 <a class="dropdown-toggle" data-toggle="dropdown" href="#"> {{ @SESSION['username'] }}
                   <span class="caret"></span></a>
                 <ul class="dropdown-menu">
-                  <li><a href="/PAI-proj/user/account"><i class="fa fa-address-card-o"></i> My account</a></li>
+                  <li><a href="/PAI-proj/user/{{@SESSION.username}}"><i class="fa fa-address-card-o"></i> My account</a></li>
                   <li><a href="/PAI-proj/bids"><i class="fa fa-usd"></i> My bids</a></li>
                   <li><a href="/PAI-proj/user/{{@SESSION.username}}/jobs"><i class="fa fa-gavel"></i> My jobs</a></li>
                   <li><a href="/PAI-proj/user/notifications">

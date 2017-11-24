@@ -151,7 +151,7 @@ jQuery(document).ready(function($) {
 
     $(".master-list").click( function () {
 
-        location.href = '/PAI-proj/user/account?tab=' + $(this).attr('data-option');
+        location.href = location.pathname + '?tab=' + $(this).attr('data-option');
 
     });
 
