@@ -14,23 +14,7 @@ jQuery(document).ready(function($) {
             'birth_date': $('input[name=inputBirthDate]').val()
         };
 
-        $.ajax({
-            type: 'POST',
-            url: '/PAI-proj/register',
-            data: formData,
-            dataType: 'json',
-            encode: true
-        })
-            .done (function(data){
-                if (data.success === false) {
-                    $(".error-placeholder").html ( "<div class=\"alert alert-danger\"><strong>Please correct registration form</strong><br/>"
-                        + data.errors.map (x => "<p><i class=\"fa fa-close\" aria-hidden=\"true\"></i> " + x + "</p>")
-                    + "</div>" );
-                } else {
-                    location.href = "/PAI-proj/register/welcome";
-                }
-
-            });
+        postForm('post', '/PAI-proj/register', formData, '/PAI-proj/register/welcome', 'Please correct following errors: ', listErrorsOnDoneWithReroute);
 
         event.preventDefault();
     });
@@ -41,23 +25,8 @@ jQuery(document).ready(function($) {
             'password': $('input[name=inputPassword]').val()
         };
 
-        $.ajax({
-            type: 'POST',
-            url: '/PAI-proj/login',
-            data: formData,
-            dataType: 'json',
-            encode: true
-        })
-            .done (function(data){
-                console.log(data);
-                if (data.success === false) {
-                    $(".error-placeholder").html ( "<div class=\"alert alert-danger\"><strong><i class=\"fa fa-close\" aria-hidden=\"true\"></i> Username or password not matched</strong><br/>"
-                        + "</div>" );
-                } else {
-                    location.href = data.rerouteAfterLogin;
-                }
-
-            });
+        // postForm('post', '/PAI-proj/login', formData, data.rerouteAfterLogin, 'Username or password not matched', listErrorsOnDoneWithReroute);
+        postForm('post', '/PAI-proj/login', formData, '/PAI-proj/', 'Username or password not matched', listErrorsOnDoneWithReroute);
 
         event.preventDefault();
     });
@@ -72,24 +41,7 @@ jQuery(document).ready(function($) {
             'birth_date': $('input[name=inputBirthDate]').val()
         };
 
-        $.ajax({
-            type: 'POST',
-            url: '/PAI-proj/user/account',
-            data: formData,
-            dataType: 'json',
-            encode: true
-        })
-            .done (function(data){
-                if (data.success === false) {
-                    $(".error-placeholder").html ( "<div class=\"alert alert-danger\"><strong>Please correct following errors:</strong><br/>"
-                        + data.errors.map (x => "<p><i class=\"fa fa-close\" aria-hidden=\"true\"></i> " + x + "</p>")
-                    + "</div>" );
-                } else {
-                    $(".error-placeholder").html ( "<div class=\"alert alert-success\"><strong>Data successfully updated</strong><br/>"
-                        + "</div>" );
-                }
-
-            });
+        postForm('post', '/PAI-proj/user/account', formData, '', 'Please correct following errors: ', listErrorsOnDoneWithSettingSucess);
 
         event.preventDefault();
     });
@@ -100,24 +52,7 @@ jQuery(document).ready(function($) {
             'repeated_password': $('input[name=inputRepeatPassword]').val()
         };
 
-        $.ajax({
-            type: 'POST',
-            url: '/PAI-proj/user/account',
-            data: formData,
-            dataType: 'json',
-            encode: true
-        })
-            .done (function(data){
-                if (data.success === false) {
-                    $(".error-placeholder").html ( "<div class=\"alert alert-danger\"><strong>Please correct following errors:</strong><br/>"
-                        + data.errors.map (x => "<p><i class=\"fa fa-close\" aria-hidden=\"true\"></i> " + x + "</p>")
-                    + "</div>" );
-                } else {
-                    $(".error-placeholder").html ( "<div class=\"alert alert-success\"><strong>Data successfully updated</strong><br/>"
-                        + "</div>" );
-                }
-
-            });
+        postForm('post', '/PAI-proj/user/account', formData, '', 'Please correct following errors: ', listErrorsOnDoneWithSettingSucess);
 
         event.preventDefault();
     });
@@ -129,23 +64,7 @@ jQuery(document).ready(function($) {
             'job_id': $('input[name=jobid]').val()
         };
 
-        $.ajax({
-            type: 'POST',
-            url: '/PAI-proj/bid',
-            data: formData,
-            dataType: 'json',
-            encode: true
-        })
-            .done (function(data){
-                if (data.success === false) {
-                    $(".error-placeholder").html ( "<div class=\"alert alert-danger\"><strong>Please correct following errors: </strong><br/>"
-                        + data.errors.map (x => "<p><i class=\"fa fa-close\" aria-hidden=\"true\"></i> " + x + "</p>")
-                    + "</div>" );
-                } else {
-                    location.reload();
-                }
-
-            });
+        postForm('post', '/PAI-proj/bid', formData, '', 'Please correct following errors: ', listErrorsOnDoneWithReroute);
 
     });
 
@@ -169,49 +88,64 @@ jQuery(document).ready(function($) {
             'notification-subscribe-id': $('input[name=notification-subscribe-id]').val()
         };
 
-        $.ajax({
-            type: 'POST',
-            url: '/PAI-proj/eventsubscriber/set',
-            data: formData,
-            dataType: 'json',
-            encode: true
-        })
-            .done (function(data){
-                if (data.success === false) {
-                    console.log('ERROR');
-                } else {
-                    location.reload();
-                }
-
-            });
+        postForm('post', '/PAI-proj/eventsubscriber/set', formData, '', '', reloadPageOnDone);
 
     });
 
 
     $(".delete-notification").click( function (event) {
         event.preventDefault();
-        var clickedElem = $(this);
 
         var formData = {
         };
 
-        $.ajax({
-            type: 'delete',
-            url: '/PAI-proj/notification/' + $(this).attr('data-href'),
-            data: formData,
-            dataType: 'json',
-            encode: true
-        })
-            .done (function(data){
-                if (data.success === false) {
-                    console.log('ERROR');
-                } else {
-                    // $(clickedElem).closest('.notification-tr').remove();
-                    location.reload();
-                }
-
-            });
+        postForm('delete', '/PAI-proj/notification/' + $(this).attr('data-href'), formData, '', '', reloadPageOnDone);
 
     });
-    //$(".datetime-counter")
 });
+
+function postForm (method, url, formData, urlondone, title, doneCallback) {
+    $.ajax({
+        type: method,
+        url: url,
+        data: formData,
+        dataType: 'json',
+        encode: true
+    })
+        .done (function(data) {
+            doneCallback(data, urlondone, title);
+        });
+}
+
+function reloadPageOnDone (data, url, title) {
+    if (data.success === false) {
+        console.log('ERROR');
+    } else {
+        location.reload();
+    }
+}
+
+function listErrorsOnDoneWithReroute (data, url, title) {
+    if (data.success === false) {
+        $(".error-placeholder").html ( "<div class=\"alert alert-danger\"><strong>" + title + "</strong><br/>"
+            + (data.errors ? data.errors.map (x => "<p><i class=\"fa fa-close\" aria-hidden=\"true\"></i> " + x + "</p>") : "")
+        + "</div>" );
+    } else {
+        if (url.length === 0) {
+            location.reload();
+        } else {
+            location.href = url;
+        }
+    }
+}
+
+function listErrorsOnDoneWithSettingSucess (data, url, title) {
+    if (data.success === false) {
+        $(".error-placeholder").html ( "<div class=\"alert alert-danger\"><strong>" + title + "</strong><br/>"
+        + (data.errors ? data.errors.map (x => "<p><i class=\"fa fa-close\" aria-hidden=\"true\"></i> " + x + "</p>") : "")
+        + "</div>" );
+    } else {
+        $(".error-placeholder").html ( "<div class=\"alert alert-success\"><strong>Data successfully updated</strong><br/>"
+            + "</div>" );
+    }
+}

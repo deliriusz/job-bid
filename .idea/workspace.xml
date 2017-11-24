@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="18e00a4e-4f99-4d1a-97f1-77be50321d51" name="Default" comment="working on adding new jobs validation">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controller/bids.php" afterPath="$PROJECT_DIR$/controller/bids.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controller/jobs.php" afterPath="$PROJECT_DIR$/controller/jobs.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/jquery-helpers.js" afterPath="$PROJECT_DIR$/js/jquery-helpers.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -332,14 +330,7 @@
       <workItem from="1510696311883" duration="6921000" />
       <workItem from="1510787251584" duration="716000" />
       <workItem from="1511087894416" duration="23885000" />
-      <workItem from="1511517377364" duration="8394000" />
-    </task>
-    <task id="LOCAL-00024" summary="implementation of login  / logout">
-      <created>1510183076381</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1510183076381</updated>
+      <workItem from="1511517377364" duration="8406000" />
     </task>
     <task id="LOCAL-00025" summary="adding dropdown for logged in user">
       <created>1510262413956</created>
@@ -677,11 +668,18 @@
       <option name="project" value="LOCAL" />
       <updated>1511521762723</updated>
     </task>
-    <option name="localTasksCounter" value="73" />
+    <task id="LOCAL-00073" summary="working on adding new jobs validation">
+      <created>1511526360004</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1511526360004</updated>
+    </task>
+    <option name="localTasksCounter" value="74" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="128337000" />
+    <option name="totallyTimeSpent" value="128349000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -736,7 +734,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="working on detail pane of account" />
     <MESSAGE value="working on detail pane of account&#10;- working on reroute on log out" />
     <MESSAGE value="adding pending items to TODO list&#10;- removing searchbar for navigation panel" />
     <MESSAGE value="- adding pending items to TODO list&#10;- adding column size for jobs" />
@@ -761,7 +758,8 @@
     <MESSAGE value="working on finishing jobs after reaching end time" />
     <MESSAGE value="working on hrefs in notifications" />
     <MESSAGE value="- diabling bidding and subscribing to events when job is done&#10;- adding info about finished job&#10;- fixing panel heading containing main data in job" />
-    <option name="LAST_COMMIT_MESSAGE" value="- diabling bidding and subscribing to events when job is done&#10;- adding info about finished job&#10;- fixing panel heading containing main data in job" />
+    <MESSAGE value="working on adding new jobs validation" />
+    <option name="LAST_COMMIT_MESSAGE" value="working on adding new jobs validation" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
