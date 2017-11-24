@@ -99,11 +99,11 @@ class Jobs extends Controller
         $errors = array();
         $returnData = array();
 
-        if (Utils::validateDate($jobStartDate)) {
+        if (!Utils::validateDate($jobStartDate)) {
             array_push($errors, 'start date passed is not valid date');
         }
 
-        if (Utils::validateDate($jobEndDate)) {
+        if (!Utils::validateDate($jobEndDate)) {
             array_push($errors, 'end date passed is not valid date');
         }
 

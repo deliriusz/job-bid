@@ -77,6 +77,8 @@ class Bids extends Controller {
             array_push($errors, 'Your offer is not the lowest one');
         } else if ($jobsMapper->initial_price < $bid) {
             array_push($errors, 'You cannot bid for higher value than initial price');
+        } else if ($jobsMapper->userid === $this->f3->get('SESSION.userid')) {
+            array_push($errors, 'You cannot participate in your own job offer');
         } else {
             $bidsMapper->reset();
             $bidsMapper->job_id = $jobid;
