@@ -70,6 +70,8 @@ class EventController {
 
     public function getNotificationsForUser($user_id) {
         $notificationMapper = new DB\SQL\Mapper($this->db, 'notification');
+        $jobsMapper = new DB\SQL\Mapper($this->db, 'job');
+        $bidsMapper = new DB\SQL\Mapper($this->db, 'bid');
         $notificationMapper->load (array('user_id = ?', $user_id));
         $eventMapper = new DB\SQL\Mapper($this->db, 'event');
         $notifications = array();
@@ -89,6 +91,7 @@ class EventController {
             $sourceOfEventMapper->load(array('id = ?', $eventMapper->source_id));
 
             $message = '';
+            $postmessage = '';
             switch ($notificationMapper->event_type) {
                 case 1: //job created
                     $message = sprintf('User %s created job %s', $sourceOfEventMapper->userid, $sourceOfEventMapper->name);
@@ -99,18 +102,26 @@ class EventController {
                     break;
 
                 case 3: //job finished
-                    $message = sprintf('Job %s finished', $sourceOfEventMapper->userid, $sourceOfEventMapper->name);
+                    $jobName = $sourceOfEventMapper->name;
+                    $n->url = sprintf('/PAI-proj/job/%d', $sourceOfEventMapper->id);
+                    $message = 'Job ';
+                    $postmessage = ' finished';
+                    $n->name = $jobName;
                     break;
 
                 case 4: //lower bid
-                    $message = sprintf('New bid id in %s ', $sourceOfEventMapper->userid, $sourceOfEventMapper->id);
+                    $jobName = $sourceOfEventMapper->name;
+                    $message = 'New bid id in job ';
+                    $n->url = sprintf('/PAI-proj/job/%d', $sourceOfEventMapper->id);
+                    $n->name = $jobName;
                     break;
 
                 default:
                     //do nothing
             }
 
-            $n->message = $message;
+            $n->premessage = $message;
+            $n->postmessage = $postmessage;
 
             array_push($notifications, $n);
 
@@ -143,7 +154,7 @@ class EventController {
 }
 
 class Notification {
-    public $id, $user_id, $event_id, $event_type, $is_read, $message;
+    public $id, $user_id, $event_id, $event_type, $is_read, $premessage, $postmessage, $name, $url;
 
     public function __construct (){}
 }

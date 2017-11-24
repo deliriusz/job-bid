@@ -37,7 +37,11 @@ font awesome icons to use on notifications:
                                 <i class="fa fa-sort-down"></i>
                             </check>
                         </td>
-                        <td class="col-xs-11 {{ @notification->is_read === 0 ? 'text-bold' : '' }}"> {{ @notification->message }} </td>
+                        <td class="col-xs-11 {{ @notification->is_read === 0 ? 'text-bold' : '' }}">
+                            {{ @notification->premessage }}
+                            <a href="{{@notification->url}}"> {{ @notification->name}} </a>
+                            {{ @notification->postmessage }}
+                        </td>
                         <td class="col-xs-1 delete-notification" data-href="{{ @notification->id }}"><i class="fa fa-trash"></i> </td>
                     </tr>
                 </repeat>
