@@ -14,7 +14,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>PAI projekt</title>
 
-    <link rel="stylesheet" href="/PAI-proj/ui/css/bootstrap.css" />
+  <link rel="stylesheet" href="/PAI-proj/ui/css/bootstrap.css" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.js"></script>
   <script src="/PAI-proj/js/validators.js"></script>
   <script src="/PAI-proj/js/jquery-helpers.js"></script>
@@ -23,10 +23,8 @@
   <link rel="stylesheet" href="/PAI-proj/ui/css/main.css">
 </head>
 <body>
-<div class="container-fluid">
-  <div class="row col-xs-12 bottom-buffer">
     <nav class="navbar navbar-default">
-      <div class="container-fluid">
+      <div class="container">
         <div class="navbar-header">
           <a class="navbar-brand" href="/PAI-proj/">PAI project</a>
         </div>
@@ -47,7 +45,7 @@
                   <li><a href="/PAI-proj/bids"><i class="fa fa-usd"></i> My bids</a></li>
                   <li><a href="/PAI-proj/user/{{@SESSION.username}}/jobs"><i class="fa fa-gavel"></i> My jobs</a></li>
                   <li><a href="/PAI-proj/user/notifications">
-                    <check if="{{ @SESSION.unreadNotificationCount }} > 0"> <!-- TODO implement -->
+                    <check if="{{ @SESSION.unreadNotificationCount }} > 0">
                       <true><span class="badge">{{ @SESSION.unreadNotificationCount }}</span></true>
                       <false><i class="fa fa-envelope-o"></i></false>
                     </check>
@@ -68,13 +66,14 @@
         </check>
       </div>
     </nav>
-  </div>
-  <include href="{{ @content }}" ></include>
+<include href="{{ @content }}" ></include>
 
+<footer>
   <div class="row col-xs-12">
     <div class="well text-muted">
       <p>© 2017, Rafał Kalinowski, All rights reserved</p>
     </div>
   </div>
+</footer>
 </body>
 </html>

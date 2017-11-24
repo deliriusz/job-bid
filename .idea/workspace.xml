@@ -3,6 +3,20 @@
   <component name="ChangeListManager">
     <list default="true" id="18e00a4e-4f99-4d1a-97f1-77be50321d51" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ui/about.html" afterPath="$PROJECT_DIR$/ui/about.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ui/account.html" afterPath="$PROJECT_DIR$/ui/account.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ui/bids.html" afterPath="$PROJECT_DIR$/ui/bids.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ui/css/main.css" afterPath="$PROJECT_DIR$/ui/css/main.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ui/howitworks.html" afterPath="$PROJECT_DIR$/ui/howitworks.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ui/job.html" afterPath="$PROJECT_DIR$/ui/job.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ui/jobs.html" afterPath="$PROJECT_DIR$/ui/jobs.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ui/login.html" afterPath="$PROJECT_DIR$/ui/login.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ui/lostpassword.html" afterPath="$PROJECT_DIR$/ui/lostpassword.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ui/lostpasswordform.html" afterPath="$PROJECT_DIR$/ui/lostpasswordform.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ui/newjobeditor.html" afterPath="$PROJECT_DIR$/ui/newjobeditor.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ui/notifications.html" afterPath="$PROJECT_DIR$/ui/notifications.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ui/register.html" afterPath="$PROJECT_DIR$/ui/register.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ui/start.html" afterPath="$PROJECT_DIR$/ui/start.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ui/template.html" afterPath="$PROJECT_DIR$/ui/template.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -25,91 +39,18 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="routes.ini" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routes.ini">
+      <file leaf-file-name="job.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ui/job.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="25" column="66" lean-forward="false" selection-start-line="25" selection-start-column="66" selection-end-line="25" selection-end-column="66" />
+            <state relative-caret-position="300">
+              <caret line="20" column="20" lean-forward="false" selection-start-line="20" selection-start-column="20" selection-end-line="20" selection-end-column="20" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="jquery-helpers.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/jquery-helpers.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="135" column="15" lean-forward="false" selection-start-line="135" selection-start-column="15" selection-end-line="135" selection-end-column="15" />
-              <folding>
-                <marker date="1511526236722" expanded="true" signature="35:3795" ph="{...}" />
-                <marker date="1511526236722" expanded="true" signature="78:133" ph="{...}" />
-                <marker date="1511526236722" expanded="true" signature="189:869" ph="{...}" />
-                <marker date="1511526236722" expanded="true" signature="214:674" ph="{...}" />
-                <marker date="1511526236722" expanded="true" signature="922:1403" ph="{...}" />
-                <marker date="1511526236722" expanded="true" signature="947:1081" ph="{...}" />
-                <marker date="1511526236722" expanded="true" signature="1465:2047" ph="{...}" />
-                <marker date="1511526236722" expanded="true" signature="1490:1868" ph="{...}" />
-                <marker date="1511526236722" expanded="true" signature="2113:2466" ph="{...}" />
-                <marker date="1511526236722" expanded="true" signature="2138:2287" ph="{...}" />
-                <marker date="1511526236722" expanded="true" signature="2517:2817" ph="{...}" />
-                <marker date="1511526236722" expanded="true" signature="2574:2685" ph="{...}" />
-                <marker date="1511526236722" expanded="true" signature="2862:2954" ph="{...}" />
-                <marker date="1511526236722" expanded="true" signature="3012:3112" ph="{...}" />
-                <marker date="1511526236722" expanded="true" signature="3177:3535" ph="{...}" />
-                <marker date="1511526236722" expanded="true" signature="3235:3431" ph="{...}" />
-                <marker date="1511526236722" expanded="true" signature="3594:3791" ph="{...}" />
-                <marker date="1511526236722" expanded="true" signature="3652:3663" ph="{...}" />
-                <marker date="1511526236722" expanded="true" signature="3873:4101" ph="{...}" />
-                <marker date="1511526236722" expanded="true" signature="3886:4004" ph="{&quot;type&quot;: method...}" />
-                <marker date="1511526236722" expanded="true" signature="4036:4097" ph="{...}" />
-                <marker date="1511526236722" expanded="true" signature="4148:4261" ph="{...}" />
-                <marker date="1511526236722" expanded="true" signature="4182:4219" ph="{...}" />
-                <marker date="1511526236722" expanded="true" signature="4225:4259" ph="{...}" />
-                <marker date="1511526236722" expanded="true" signature="4319:4759" ph="{...}" />
-                <marker date="1511526236722" expanded="true" signature="4353:4621" ph="{...}" />
-                <marker date="1511526236722" expanded="true" signature="4627:4757" ph="{...}" />
-                <marker date="1511526236722" expanded="true" signature="4659:4701" ph="{...}" />
-                <marker date="1511526236722" expanded="true" signature="4707:4751" ph="{...}" />
-                <marker date="1511526236722" expanded="true" signature="4823:5286" ph="{...}" />
-                <marker date="1511526236722" expanded="true" signature="4857:5121" ph="{...}" />
-                <marker date="1511526236722" expanded="true" signature="5127:5284" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="simplepagecontroller.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/controller/simplepagecontroller.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="bootstrap.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/bootstrap.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-35250">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="template.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/ui/template.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="434">
-              <caret line="63" column="69" lean-forward="false" selection-start-line="63" selection-start-column="69" selection-end-line="63" selection-end-column="69" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="bootstrap.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ui/css/bootstrap.css">
+      <file leaf-file-name="loginform.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ui/loginform.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -118,8 +59,38 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="bootstrap.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ui/js/bootstrap.js">
+      <file leaf-file-name="login.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ui/login.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="20" lean-forward="false" selection-start-line="0" selection-start-column="20" selection-end-line="0" selection-end-column="20" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="start.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ui/start.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-58">
+              <caret line="24" column="20" lean-forward="false" selection-start-line="24" selection-start-column="20" selection-end-line="24" selection-end-column="20" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="lostpasswordform.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ui/lostpasswordform.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="45">
+              <caret line="3" column="33" lean-forward="false" selection-start-line="3" selection-start-column="33" selection-end-line="3" selection-end-column="33" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="newjobeditor.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ui/newjobeditor.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -128,14 +99,42 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="bootstrap.min.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/bootstrap.min.js">
+      <file leaf-file-name="notifications.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ui/notifications.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="20" lean-forward="false" selection-start-line="0" selection-start-column="20" selection-end-line="0" selection-end-column="20" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="notifications-detail.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ui/notifications-detail.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="735">
+              <caret line="49" column="11" lean-forward="false" selection-start-line="49" selection-start-column="11" selection-end-line="49" selection-end-column="11" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="register.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ui/register.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="20" lean-forward="false" selection-start-line="0" selection-start-column="20" selection-end-line="0" selection-end-column="20" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="registerform.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ui/registerform.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -170,40 +169,26 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/composer.json" />
-        <option value="$PROJECT_DIR$/js/validators.js" />
         <option value="$PROJECT_DIR$/classes/controller/Login.php" />
         <option value="$PROJECT_DIR$/Controller/Login.php" />
         <option value="$PROJECT_DIR$/lib/auth.php" />
         <option value="$PROJECT_DIR$/ui/navbar.html" />
         <option value="$PROJECT_DIR$/ui/htmlhead.html" />
         <option value="$PROJECT_DIR$/ui/index_template.html" />
-        <option value="$PROJECT_DIR$/ui/login.html" />
         <option value="$PROJECT_DIR$/ui/signupform.html" />
-        <option value="$PROJECT_DIR$/ui/register.html" />
         <option value="$PROJECT_DIR$/app/username.php" />
         <option value="$PROJECT_DIR$/app/user.php" />
         <option value="$PROJECT_DIR$/controller/index.php" />
         <option value="$PROJECT_DIR$/controller/logger.php" />
-        <option value="$PROJECT_DIR$/ui/notifications.html" />
-        <option value="$PROJECT_DIR$/ui/jobs.html" />
-        <option value="$PROJECT_DIR$/ui/loginform.html" />
-        <option value="$PROJECT_DIR$/ui/newjobeditor.html" />
         <option value="$PROJECT_DIR$/ui/registerform.html" />
-        <option value="$PROJECT_DIR$/ui/start.html" />
         <option value="$PROJECT_DIR$/config.ini" />
         <option value="$PROJECT_DIR$/php.php" />
-        <option value="$PROJECT_DIR$/ui/bids.html" />
-        <option value="$PROJECT_DIR$/ui/about.html" />
         <option value="$PROJECT_DIR$/controller/simplePageController.php" />
-        <option value="$PROJECT_DIR$/ui/howitworks.html" />
         <option value="$PROJECT_DIR$/controller/users.php" />
-        <option value="$PROJECT_DIR$/ui/css/main.css" />
         <option value="$PROJECT_DIR$/controller/register.php" />
         <option value="$PROJECT_DIR$/controller/login.php" />
         <option value="$PROJECT_DIR$/controller/controller.php" />
         <option value="$PROJECT_DIR$/controller/notifications.php" />
-        <option value="$PROJECT_DIR$/ui/account.html" />
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/controller/account.php" />
         <option value="$PROJECT_DIR$/ui/account-detail.html" />
@@ -215,12 +200,26 @@
         <option value="$PROJECT_DIR$/controller/maintenance.php" />
         <option value="$PROJECT_DIR$/ui/notifications-detail.html" />
         <option value="$PROJECT_DIR$/controller/event.php" />
-        <option value="$PROJECT_DIR$/ui/job.html" />
         <option value="$PROJECT_DIR$/controller/bids.php" />
         <option value="$PROJECT_DIR$/controller/jobs.php" />
         <option value="$PROJECT_DIR$/js/jquery-helpers.js" />
         <option value="$PROJECT_DIR$/ui/css/bootstrap.css" />
+        <option value="$PROJECT_DIR$/ui/css/main.css" />
         <option value="$PROJECT_DIR$/ui/template.html" />
+        <option value="$PROJECT_DIR$/ui/jobs.html" />
+        <option value="$PROJECT_DIR$/ui/about.html" />
+        <option value="$PROJECT_DIR$/ui/account.html" />
+        <option value="$PROJECT_DIR$/ui/bids.html" />
+        <option value="$PROJECT_DIR$/ui/howitworks.html" />
+        <option value="$PROJECT_DIR$/ui/lostpassword.html" />
+        <option value="$PROJECT_DIR$/ui/lostpasswordform.html" />
+        <option value="$PROJECT_DIR$/ui/notifications.html" />
+        <option value="$PROJECT_DIR$/ui/register.html" />
+        <option value="$PROJECT_DIR$/ui/loginform.html" />
+        <option value="$PROJECT_DIR$/ui/start.html" />
+        <option value="$PROJECT_DIR$/ui/job.html" />
+        <option value="$PROJECT_DIR$/ui/newjobeditor.html" />
+        <option value="$PROJECT_DIR$/ui/login.html" />
       </list>
     </option>
   </component>
@@ -382,14 +381,7 @@
       <workItem from="1510696311883" duration="6921000" />
       <workItem from="1510787251584" duration="716000" />
       <workItem from="1511087894416" duration="23885000" />
-      <workItem from="1511517377364" duration="11608000" />
-    </task>
-    <task id="LOCAL-00028" summary="adding pagination to jobs">
-      <created>1510393332932</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1510393332932</updated>
+      <workItem from="1511517377364" duration="14836000" />
     </task>
     <task id="LOCAL-00029" summary="working on job">
       <created>1510395326284</created>
@@ -727,11 +719,18 @@
       <option name="project" value="LOCAL" />
       <updated>1511553858271</updated>
     </task>
-    <option name="localTasksCounter" value="77" />
+    <task id="LOCAL-00077" summary="changing all icons to font awesome">
+      <created>1511554037938</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1511554037938</updated>
+    </task>
+    <option name="localTasksCounter" value="78" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="131551000" />
+    <option name="totallyTimeSpent" value="134779000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -786,7 +785,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fixing indentation" />
     <MESSAGE value="- adding update for unread notifications on every update&#10;- fixing job time update" />
     <MESSAGE value="xx" />
     <MESSAGE value="fixing table alignment" />
@@ -811,7 +809,8 @@
     <MESSAGE value="cleaning up jquery helpers" />
     <MESSAGE value="changing default bootstrap theme" />
     <MESSAGE value="changing name of simple page controller" />
-    <option name="LAST_COMMIT_MESSAGE" value="changing name of simple page controller" />
+    <MESSAGE value="changing all icons to font awesome" />
+    <option name="LAST_COMMIT_MESSAGE" value="changing all icons to font awesome" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -841,92 +840,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/ui/notifications.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/validators.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../phpmyadmin/tbl_change.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../phpmyadmin/tbl_replace.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ui/start.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-229">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ui/howitworks.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="15" lean-forward="false" selection-start-line="3" selection-start-column="15" selection-end-line="3" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controller/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-105">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ui/about.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="96" lean-forward="false" selection-start-line="4" selection-start-column="96" selection-end-line="4" selection-end-column="96" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ui/bids.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="34" column="62" lean-forward="false" selection-start-line="34" selection-start-column="62" selection-end-line="34" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../phpmyadmin/js/whitelist.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../phpmyadmin/phpmyadmin.css.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../phpmyadmin/js/get_scripts.js.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../../phpmyadmin/js/messages.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -952,14 +865,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
           <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ui/css/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="13" lean-forward="false" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -998,13 +903,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ui/account.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/controller/account.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -1013,25 +911,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ui/account-detail.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="8" lean-forward="false" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/TODO.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="11" column="26" lean-forward="false" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ui/jobs.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1107,22 +990,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="253">
           <caret line="123" column="35" lean-forward="false" selection-start-line="123" selection-start-column="35" selection-end-line="123" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ui/job.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="95" lean-forward="false" selection-start-line="9" selection-start-column="95" selection-end-line="9" selection-end-column="95" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ui/notifications-detail.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="359">
-          <caret line="49" column="11" lean-forward="false" selection-start-line="49" selection-start-column="11" selection-end-line="49" selection-end-column="11" />
           <folding />
         </state>
       </provider>
@@ -1268,10 +1135,154 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/ui/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ui/template.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="434">
-          <caret line="63" column="69" lean-forward="false" selection-start-line="63" selection-start-column="69" selection-end-line="63" selection-end-column="69" />
+        <state relative-caret-position="317">
+          <caret line="68" column="0" lean-forward="false" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ui/jobs.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="20" lean-forward="false" selection-start-line="0" selection-start-column="20" selection-end-line="0" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ui/about.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="20" lean-forward="false" selection-start-line="0" selection-start-column="20" selection-end-line="0" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ui/account.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="28" lean-forward="false" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ui/account-detail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="8" lean-forward="false" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ui/bids.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="20" lean-forward="false" selection-start-line="0" selection-start-column="20" selection-end-line="0" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ui/howitworks.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="20" lean-forward="false" selection-start-line="0" selection-start-column="20" selection-end-line="0" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ui/lostpassword.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="20" lean-forward="false" selection-start-line="0" selection-start-column="20" selection-end-line="0" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ui/lostpasswordform.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="33" lean-forward="false" selection-start-line="3" selection-start-column="33" selection-end-line="3" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ui/notifications.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="20" lean-forward="false" selection-start-line="0" selection-start-column="20" selection-end-line="0" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ui/notifications-detail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="735">
+          <caret line="49" column="11" lean-forward="false" selection-start-line="49" selection-start-column="11" selection-end-line="49" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ui/register.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="20" lean-forward="false" selection-start-line="0" selection-start-column="20" selection-end-line="0" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ui/registerform.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ui/loginform.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ui/start.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-58">
+          <caret line="24" column="20" lean-forward="false" selection-start-line="24" selection-start-column="20" selection-end-line="24" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ui/job.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="20" lean-forward="false" selection-start-line="20" selection-start-column="20" selection-end-line="20" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ui/newjobeditor.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ui/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="20" lean-forward="false" selection-start-line="0" selection-start-column="20" selection-end-line="0" selection-end-column="20" />
           <folding />
         </state>
       </provider>

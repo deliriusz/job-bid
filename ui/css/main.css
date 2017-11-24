@@ -3,18 +3,21 @@
 }
 
 .bottom-buffer {
-  margin-bottom:20px;
- }
+    margin-bottom:20px;
+}
 
 .text-muted {
-  color: #636c72!important;
- }
+    color: #636c72!important;
+}
 
 .pai-footer {
-  font-size: 85%;
-  text-align: center;
-  background-color: #f7f7f7;
- }
+    font-size: 85%;
+    text-align: center;
+    background-color: #f7f7f7;
+    width:100%;
+    bottom:0;
+    left:0;
+}
 
 .text-bold {
     font-weight: bold;

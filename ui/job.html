@@ -1,7 +1,7 @@
-<div>
+<div class="container">
     <check if="{{ isset(@job) }}">
         <true>
-            <div class="row col-xs-12 bottom-buffer">
+            <div>
                 <div class="panel panel-default panel-body">
                     <h1>
                         <form class="form-inline">
@@ -17,8 +17,8 @@
                     </h1>
                 </div>
             </div>
-            <div class="row col-xs-12 bottom-buffer">
-                <div class="col-md-12">
+            <div>
+                <div>
                     <div class="panel panel-default container-fluid">
                         <div class="panel-heading row">
                             <div class="col-md-6">
@@ -79,7 +79,7 @@
             </div>
         </true>
         <false>
-            <div class="row col-xs-12 bottom-buffer">
+            <div class="container">
                 <check if="{{ isset(@PARAMS.username) }}">
                     <true>
                         <div class="jumbotron">
