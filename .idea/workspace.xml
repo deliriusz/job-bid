@@ -3,10 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="18e00a4e-4f99-4d1a-97f1-77be50321d51" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ui/about.html" afterPath="$PROJECT_DIR$/ui/about.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ui/css/main.css" afterPath="$PROJECT_DIR$/ui/css/main.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ui/howitworks.html" afterPath="$PROJECT_DIR$/ui/howitworks.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ui/template.html" afterPath="$PROJECT_DIR$/ui/template.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ui/jobs.html" afterPath="$PROJECT_DIR$/ui/jobs.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -58,7 +55,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="howitworks.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="howitworks.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ui/howitworks.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="90">
@@ -74,6 +71,19 @@
             <state relative-caret-position="407">
               <caret line="70" column="33" lean-forward="false" selection-start-line="70" selection-start-column="33" selection-end-line="70" selection-end-column="33" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="jobs.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ui/jobs.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <element signature="e#1723#1730#1" expanded="true" />
+                <element signature="e#2098#2105#1" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -143,7 +153,6 @@
         <option value="$PROJECT_DIR$/controller/jobs.php" />
         <option value="$PROJECT_DIR$/js/jquery-helpers.js" />
         <option value="$PROJECT_DIR$/ui/css/bootstrap.css" />
-        <option value="$PROJECT_DIR$/ui/jobs.html" />
         <option value="$PROJECT_DIR$/ui/account.html" />
         <option value="$PROJECT_DIR$/ui/bids.html" />
         <option value="$PROJECT_DIR$/ui/lostpassword.html" />
@@ -159,6 +168,7 @@
         <option value="$PROJECT_DIR$/ui/css/main.css" />
         <option value="$PROJECT_DIR$/ui/about.html" />
         <option value="$PROJECT_DIR$/ui/howitworks.html" />
+        <option value="$PROJECT_DIR$/ui/jobs.html" />
       </list>
     </option>
   </component>
@@ -320,14 +330,7 @@
       <workItem from="1510696311883" duration="6921000" />
       <workItem from="1510787251584" duration="716000" />
       <workItem from="1511087894416" duration="23885000" />
-      <workItem from="1511517377364" duration="16020000" />
-    </task>
-    <task id="LOCAL-00030" summary="working on job">
-      <created>1510395377979</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1510395377979</updated>
+      <workItem from="1511517377364" duration="16558000" />
     </task>
     <task id="LOCAL-00031" summary="working on job">
       <created>1510403840539</created>
@@ -665,11 +668,18 @@
       <option name="project" value="LOCAL" />
       <updated>1511558087202</updated>
     </task>
-    <option name="localTasksCounter" value="79" />
+    <task id="LOCAL-00079" summary="- fixing footer&#10;- adding panel to about and how it works">
+      <created>1511560025795</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1511560025795</updated>
+    </task>
+    <option name="localTasksCounter" value="80" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="135963000" />
+    <option name="totallyTimeSpent" value="136501000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -724,7 +734,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="xx" />
     <MESSAGE value="fixing table alignment" />
     <MESSAGE value="fixing event type ids" />
     <MESSAGE value="working on notifications" />
@@ -749,7 +758,8 @@
     <MESSAGE value="changing name of simple page controller" />
     <MESSAGE value="changing all icons to font awesome" />
     <MESSAGE value="fixing containers in html" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixing containers in html" />
+    <MESSAGE value="- fixing footer&#10;- adding panel to about and how it works" />
+    <option name="LAST_COMMIT_MESSAGE" value="- fixing footer&#10;- adding panel to about and how it works" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1074,14 +1084,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ui/jobs.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="20" lean-forward="false" selection-start-line="0" selection-start-column="20" selection-end-line="0" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ui/account.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
@@ -1223,6 +1225,17 @@
         <state relative-caret-position="90">
           <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ui/jobs.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#1723#1730#1" expanded="true" />
+            <element signature="e#2098#2105#1" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
