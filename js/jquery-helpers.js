@@ -1,4 +1,12 @@
 jQuery(document).ready(function($) {
+    var docHeight = $(window).height();
+    var footerHeight = $('footer').height();
+    var footerTop = $('footer').position().top + footerHeight;
+
+    if (footerTop < docHeight) {
+        $('footer').css('margin-top', 10 + (docHeight - footerTop) + 'px');
+    }
+
     $(".clickable-row").click(function() {
         window.location = $(this).data("href");
     });
@@ -144,7 +152,7 @@ function listErrorsOnDoneWithReroute (data, url, title) {
     if (data.success === false) {
         $(".error-placeholder").html ( "<div class=\"alert alert-danger\"><strong>" + title + "</strong><br/>"
             + (data.errors ? data.errors.map (x => "<p><i class=\"fa fa-close\" aria-hidden=\"true\"></i> " + x + "</p>") : "")
-        + "</div>" );
+            + "</div>" );
     } else {
         if (data.rerouteurl) {
             location.href = data.rerouteurl;
@@ -159,8 +167,8 @@ function listErrorsOnDoneWithReroute (data, url, title) {
 function listErrorsOnDoneWithSettingSucess (data, url, title) {
     if (data.success === false) {
         $(".error-placeholder").html ( "<div class=\"alert alert-danger\"><strong>" + title + "</strong><br/>"
-        + (data.errors ? data.errors.map (x => "<p><i class=\"fa fa-close\" aria-hidden=\"true\"></i> " + x + "</p>") : "")
-        + "</div>" );
+            + (data.errors ? data.errors.map (x => "<p><i class=\"fa fa-close\" aria-hidden=\"true\"></i> " + x + "</p>") : "")
+            + "</div>" );
     } else {
         $(".error-placeholder").html ( "<div class=\"alert alert-success\"><strong>Data successfully updated</strong><br/>"
             + "</div>" );
