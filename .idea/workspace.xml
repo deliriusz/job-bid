@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="18e00a4e-4f99-4d1a-97f1-77be50321d51" name="Default" comment="">
+    <list default="true" id="18e00a4e-4f99-4d1a-97f1-77be50321d51" name="Default" comment="moving adding new job to ajax">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config.ini" afterPath="$PROJECT_DIR$/config.ini" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controller/jobs.php" afterPath="$PROJECT_DIR$/controller/jobs.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controller/utils.php" afterPath="$PROJECT_DIR$/controller/utils.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes.ini" afterPath="$PROJECT_DIR$/routes.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ui/jobs.html" afterPath="$PROJECT_DIR$/ui/jobs.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/jquery-helpers.js" afterPath="$PROJECT_DIR$/js/jquery-helpers.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ui/newjobeditor.html" afterPath="$PROJECT_DIR$/ui/newjobeditor.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -29,26 +28,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="main.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ui/css/main.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
-              <caret line="29" column="1" lean-forward="false" selection-start-line="29" selection-start-column="1" selection-end-line="29" selection-end-column="1" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="template.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ui/template.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-313">
-              <caret line="35" column="27" lean-forward="false" selection-start-line="35" selection-start-column="27" selection-end-line="35" selection-end-column="27" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="jobs.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ui/jobs.html">
           <provider selected="true" editor-type-id="text-editor">
@@ -82,35 +61,61 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="jobs.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="jobs.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controller/jobs.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="307">
-              <caret line="31" column="23" lean-forward="false" selection-start-line="31" selection-start-column="23" selection-end-line="31" selection-end-column="23" />
+            <state relative-caret-position="257">
+              <caret line="134" column="50" lean-forward="false" selection-start-line="134" selection-start-column="50" selection-end-line="134" selection-end-column="50" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="mapper.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/db/sql/mapper.php">
+      <file leaf-file-name="jquery-helpers.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/jquery-helpers.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="309">
-              <caret line="350" column="0" lean-forward="false" selection-start-line="350" selection-start-column="0" selection-end-line="350" selection-end-column="0" />
-              <folding>
-                <marker date="1500620994000" expanded="true" signature="6589:6629" ph="SELECT * FRO... ${$sql}" />
-                <marker date="1500620994000" expanded="true" signature="13584:13596" ph="DELETE FROM " />
-                <marker date="1500620994000" expanded="true" signature="14384:14419" ph="DELETE FROM " />
-              </folding>
+            <state relative-caret-position="307">
+              <caret line="153" column="28" lean-forward="false" selection-start-line="153" selection-start-column="28" selection-end-line="153" selection-end-column="28" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="config.ini" pinned="false" current-in-tab="false">
+      <file leaf-file-name="newjobeditor.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ui/newjobeditor.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="292">
+              <caret line="41" column="50" lean-forward="false" selection-start-line="41" selection-start-column="50" selection-end-line="41" selection-end-column="50" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="login.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/controller/login.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="315">
+              <caret line="43" column="21" lean-forward="true" selection-start-line="43" selection-start-column="21" selection-end-line="43" selection-end-column="21" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="loginform.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ui/loginform.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15">
+              <caret line="1" column="27" lean-forward="false" selection-start-line="1" selection-start-column="27" selection-end-line="1" selection-end-column="27" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="config.ini" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/config.ini">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="300">
-              <caret line="20" column="13" lean-forward="false" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+              <caret line="20" column="14" lean-forward="false" selection-start-line="20" selection-start-column="14" selection-end-line="20" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -175,7 +180,6 @@
         <option value="$PROJECT_DIR$/ui/notifications-detail.html" />
         <option value="$PROJECT_DIR$/controller/event.php" />
         <option value="$PROJECT_DIR$/controller/bids.php" />
-        <option value="$PROJECT_DIR$/js/jquery-helpers.js" />
         <option value="$PROJECT_DIR$/ui/css/bootstrap.css" />
         <option value="$PROJECT_DIR$/ui/account.html" />
         <option value="$PROJECT_DIR$/ui/bids.html" />
@@ -186,7 +190,6 @@
         <option value="$PROJECT_DIR$/ui/loginform.html" />
         <option value="$PROJECT_DIR$/ui/start.html" />
         <option value="$PROJECT_DIR$/ui/job.html" />
-        <option value="$PROJECT_DIR$/ui/newjobeditor.html" />
         <option value="$PROJECT_DIR$/ui/login.html" />
         <option value="$PROJECT_DIR$/ui/about.html" />
         <option value="$PROJECT_DIR$/ui/howitworks.html" />
@@ -195,8 +198,10 @@
         <option value="$PROJECT_DIR$/controller/utils.php" />
         <option value="$PROJECT_DIR$/ui/jobs.html" />
         <option value="$PROJECT_DIR$/routes.ini" />
-        <option value="$PROJECT_DIR$/config.ini" />
+        <option value="$PROJECT_DIR$/ui/newjobeditor.html" />
+        <option value="$PROJECT_DIR$/js/jquery-helpers.js" />
         <option value="$PROJECT_DIR$/controller/jobs.php" />
+        <option value="$PROJECT_DIR$/config.ini" />
       </list>
     </option>
   </component>
@@ -264,6 +269,11 @@
               <item name="PAI-proj" type="b2602c69:ProjectViewProjectNode" />
               <item name="PAI-proj" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="controller" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="PAI-proj" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PAI-proj" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="js" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="PAI-proj" type="b2602c69:ProjectViewProjectNode" />
@@ -347,14 +357,7 @@
       <workItem from="1510696311883" duration="6921000" />
       <workItem from="1510787251584" duration="716000" />
       <workItem from="1511087894416" duration="23885000" />
-      <workItem from="1511517377364" duration="22270000" />
-    </task>
-    <task id="LOCAL-00033" summary="adding proper url for user jobs">
-      <created>1510439736168</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1510439736168</updated>
+      <workItem from="1511517377364" duration="24524000" />
     </task>
     <task id="LOCAL-00034" summary="- moving reroute to ajax&#10;- fixing problems">
       <created>1510697280984</created>
@@ -692,11 +695,18 @@
       <option name="project" value="LOCAL" />
       <updated>1511562092626</updated>
     </task>
-    <option name="localTasksCounter" value="82" />
+    <task id="LOCAL-00082" summary="adding pagination to jobs">
+      <created>1511601094722</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1511601094722</updated>
+    </task>
+    <option name="localTasksCounter" value="83" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="142213000" />
+    <option name="totallyTimeSpent" value="144467000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1080" extended-state="6" />
@@ -751,8 +761,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="working on notifications" />
-    <MESSAGE value="working on subscribing to events" />
     <MESSAGE value="working on bids view for user" />
     <MESSAGE value="working on simple html pages controller" />
     <MESSAGE value="working on account" />
@@ -776,7 +784,9 @@
     <MESSAGE value="- fixing footer&#10;- adding panel to about and how it works" />
     <MESSAGE value="implementing pagination POC" />
     <MESSAGE value="adding colapsable navbar" />
-    <option name="LAST_COMMIT_MESSAGE" value="adding colapsable navbar" />
+    <MESSAGE value="adding pagination to jobs" />
+    <MESSAGE value="moving adding new job to ajax" />
+    <option name="LAST_COMMIT_MESSAGE" value="moving adding new job to ajax" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -797,11 +807,11 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/controller/jobs.php</url>
-          <line>89</line>
-          <option name="timeStamp" value="28" />
+          <line>130</line>
+          <option name="timeStamp" value="34" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="34" />
+      <option name="time" value="35" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -867,14 +877,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="11" column="26" lean-forward="false" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controller/login.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="52" column="20" lean-forward="false" selection-start-line="52" selection-start-column="20" selection-end-line="52" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -951,57 +953,6 @@
         <state relative-caret-position="514">
           <caret line="80" column="76" lean-forward="false" selection-start-line="80" selection-start-column="76" selection-end-line="80" selection-end-column="76" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../phpmyadmin/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding>
-            <marker date="1503583094000" expanded="true" signature="4453:4480" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/jquery-helpers.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="135" column="15" lean-forward="false" selection-start-line="135" selection-start-column="15" selection-end-line="135" selection-end-column="15" />
-          <folding>
-            <marker date="1511526236722" expanded="true" signature="35:3795" ph="{...}" />
-            <marker date="1511526236722" expanded="true" signature="78:133" ph="{...}" />
-            <marker date="1511526236722" expanded="true" signature="189:869" ph="{...}" />
-            <marker date="1511526236722" expanded="true" signature="214:674" ph="{...}" />
-            <marker date="1511526236722" expanded="true" signature="922:1403" ph="{...}" />
-            <marker date="1511526236722" expanded="true" signature="947:1081" ph="{...}" />
-            <marker date="1511526236722" expanded="true" signature="1465:2047" ph="{...}" />
-            <marker date="1511526236722" expanded="true" signature="1490:1868" ph="{...}" />
-            <marker date="1511526236722" expanded="true" signature="2113:2466" ph="{...}" />
-            <marker date="1511526236722" expanded="true" signature="2138:2287" ph="{...}" />
-            <marker date="1511526236722" expanded="true" signature="2517:2817" ph="{...}" />
-            <marker date="1511526236722" expanded="true" signature="2574:2685" ph="{...}" />
-            <marker date="1511526236722" expanded="true" signature="2862:2954" ph="{...}" />
-            <marker date="1511526236722" expanded="true" signature="3012:3112" ph="{...}" />
-            <marker date="1511526236722" expanded="true" signature="3177:3535" ph="{...}" />
-            <marker date="1511526236722" expanded="true" signature="3235:3431" ph="{...}" />
-            <marker date="1511526236722" expanded="true" signature="3594:3791" ph="{...}" />
-            <marker date="1511526236722" expanded="true" signature="3652:3663" ph="{...}" />
-            <marker date="1511526236722" expanded="true" signature="3873:4101" ph="{...}" />
-            <marker date="1511526236722" expanded="true" signature="3886:4004" ph="{&quot;type&quot;: method...}" />
-            <marker date="1511526236722" expanded="true" signature="4036:4097" ph="{...}" />
-            <marker date="1511526236722" expanded="true" signature="4148:4261" ph="{...}" />
-            <marker date="1511526236722" expanded="true" signature="4182:4219" ph="{...}" />
-            <marker date="1511526236722" expanded="true" signature="4225:4259" ph="{...}" />
-            <marker date="1511526236722" expanded="true" signature="4319:4759" ph="{...}" />
-            <marker date="1511526236722" expanded="true" signature="4353:4621" ph="{...}" />
-            <marker date="1511526236722" expanded="true" signature="4627:4757" ph="{...}" />
-            <marker date="1511526236722" expanded="true" signature="4659:4701" ph="{...}" />
-            <marker date="1511526236722" expanded="true" signature="4707:4751" ph="{...}" />
-            <marker date="1511526236722" expanded="true" signature="4823:5286" ph="{...}" />
-            <marker date="1511526236722" expanded="true" signature="4857:5121" ph="{...}" />
-            <marker date="1511526236722" expanded="true" signature="5127:5284" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1103,14 +1054,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ui/loginform.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ui/job.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
@@ -1123,14 +1066,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="3" column="33" lean-forward="false" selection-start-line="3" selection-start-column="33" selection-end-line="3" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ui/newjobeditor.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1234,14 +1169,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config.ini">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="13" lean-forward="false" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/db/sql/mapper.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="309">
@@ -1254,10 +1181,60 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controller/jobs.php">
+    <entry file="file://$PROJECT_DIR$/ui/loginform.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="27" lean-forward="false" selection-start-line="1" selection-start-column="27" selection-end-line="1" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="43" column="21" lean-forward="true" selection-start-line="43" selection-start-column="21" selection-end-line="43" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../phpmyadmin/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding>
+            <marker date="1503583094000" expanded="true" signature="4453:4480" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/jquery-helpers.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="307">
-          <caret line="31" column="23" lean-forward="false" selection-start-line="31" selection-start-column="23" selection-end-line="31" selection-end-column="23" />
+          <caret line="153" column="28" lean-forward="false" selection-start-line="153" selection-start-column="28" selection-end-line="153" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ui/newjobeditor.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="292">
+          <caret line="41" column="50" lean-forward="false" selection-start-line="41" selection-start-column="50" selection-end-line="41" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/jobs.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="257">
+          <caret line="134" column="50" lean-forward="false" selection-start-line="134" selection-start-column="50" selection-end-line="134" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config.ini">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="14" lean-forward="false" selection-start-line="20" selection-start-column="14" selection-end-line="20" selection-end-column="14" />
           <folding />
         </state>
       </provider>

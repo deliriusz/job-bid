@@ -85,8 +85,11 @@ class Jobs extends Controller
         $f3->set('content', $content);
     }
 
+    //ajax request
     function postNewJob ($f3) {
         Login::handleUserShouldBeLogged($f3);
+        $this->doRender = false;
+
         $jobsMapper = new DB\SQL\Mapper($this->db, 'job');
         $currentDate = Utils::getCurrentDateTime();
         $jobName = $_POST['jobName'];
@@ -129,10 +132,13 @@ class Jobs extends Controller
             $ec->createNewEvent($jobsMapper->id, 'job');
             $ec->subscribeNewUser($jobsMapper->id, 'job', $f3->get('SESSION.userid'));
 
-            $f3->reroute('/user/' . $f3->get('SESSION.username') . '/job/' . $jobsMapper->id);
+            $returnData['rerouteurl'] = ('/PAI-proj/user/' . $f3->get('SESSION.username') . '/job/' . $jobsMapper->id);
         } else {
             $returnData['success'] = false;
+            $returnData['errors'] = $errors;
         }
+
+        echo json_encode ($returnData);
     }
 
     function showNewJobEditor ($f3) {

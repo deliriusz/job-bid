@@ -57,6 +57,21 @@ jQuery(document).ready(function($) {
         event.preventDefault();
     });
 
+    $("#submitNewJobForm").submit (function (event){
+        event.preventDefault();
+        console.log($('textarea[name=jobDescription]').val());
+        var formData = {
+            'jobName': $('input[name=jobName]').val(),
+            'jobStartDate': $('input[name=jobStartDate]').val(),
+            'jobEndDate': $('input[name=jobEndDate]').val(),
+            'jobInitialPayment': $('input[name=jobInitialPayment]').val(),
+            'jobDescription': $('textarea[name=jobDescription]').val()
+        };
+
+        postForm('post', '/PAI-proj/jobs/add', formData, '', 'Please correct following errors: ', listErrorsOnDoneWithReroute);
+
+    });
+
     $("#placeBidForm").submit (function (event){
         event.preventDefault();
         var formData = {
@@ -131,7 +146,9 @@ function listErrorsOnDoneWithReroute (data, url, title) {
             + (data.errors ? data.errors.map (x => "<p><i class=\"fa fa-close\" aria-hidden=\"true\"></i> " + x + "</p>") : "")
         + "</div>" );
     } else {
-        if (url.length === 0) {
+        if (data.rerouteurl) {
+            location.href = data.rerouteurl;
+        } else if (url.length === 0) {
             location.reload();
         } else {
             location.href = url;
