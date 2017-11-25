@@ -26,4 +26,18 @@ class Utils {
     static function getDateTimeDifference ($from, $to) {
         return self::getTimestampFromDateTime($from) - self::getTimestampFromDateTime($to);
     }
+
+    static function getPageNeighbours ($currPage, $maxPage, $neighnoursCount = 5) {
+        $x = floor($neighnoursCount / 2);
+        $minValue = max(1, $currPage - $x);
+        $maxValue = $maxPage < $neighnoursCount ? $maxPage : min ($maxPage, $currPage + $x);
+
+        $returnValues = array();
+
+        for ($i = $minValue; $i <= $maxValue; $i++) {
+            array_push($returnValues, $i);
+        }
+
+        return $returnValues;
+    }
 }

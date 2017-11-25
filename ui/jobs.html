@@ -31,15 +31,14 @@
                         </table>
                         <div class="text-center">
                             <ul class="pagination">
-                                <li class="disabled"><a href="#">&laquo;</a></li>
-                                <li class="active"><a href="#">1</a></li>
-                                <li><a href="#">2</a></li>
-                                <li><a href="#">3</a></li>
-                                <li><a href="#">4</a></li>
-                                <li><a href="#">5</a></li>
-                                <li><a href="#">&raquo;</a></li>
+                                <li><a href="{{@SERVER.REDIRECT_URL}}?p=1">&laquo;</a></li>
+                                <repeat group="{{ @pageNeighbours }}" value=" {{ @cp }}">
+                                    <li class="{{ @GET.p == @cp ? 'active' : !isset(@GET.p) && @cp == 1 ? 'active' : '' }}"><a href="{{ @SERVER.REDIRECT_URL }}?p={{ @cp }}">{{ @cp }}</a></li>
+                                </repeat>
+                                <li><a href="{{@SERVER.REDIRECT_URL}}?p={{@maxPage}}">&raquo;</a></li>
                             </ul>
-                        </div>                    </true>
+                        </div>
+                    </true>
                     <false>
                         <div class="jumbotron"><h2>Seems that there is no jobs matching given search criteria.</h2>
                             <br/> <h4> Please change search criteria or create job yourself! </h4>

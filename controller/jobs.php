@@ -13,30 +13,28 @@ class Jobs extends Controller
 {
     function viewJobsPage ($f3) {
         Login::handleUserShouldBeLogged($f3);
-        $pageToDisplay = $f3->get('GET.p') != NULL ? $f3->get('GET.p') - 1 : 0;
+        $username = $f3->get('PARAMS.username');
+        $pageToDisplay = $f3->get('GET.p') != NULL ? $f3->get('GET.p') : 1;
         $itemsPerPage = $f3->get('itemsperpage');
 
-        $f3->set('jobs', $this->getJobs(array('finished = FALSE'), array(
-            'offset' => $pageToDisplay * $itemsPerPage,
-            'limit' => $itemsPerPage
-        )));
-        $f3->set('content', 'jobs.html');
-    }
-
-    function viewUserJobsPage ($f3)
-    {
-        $username = $f3->get('PARAMS.username');
-        $jobs = $this->getJobs(
-            array('userid = ?', $this->getUserIdFromUsername($username)),
-            NULL
-        );
-
-        if (count($jobs)) {
-            $f3->set('jobs', $jobs);
+        $constrainsArray = NULL;
+        if ($f3->exists('PARAMS.username')) {
+            $constrainsArray = array('userid = ?', $this->getUserIdFromUsername($username));
+        } else {
+            $constrainsArray = array ('finished = FALSE');
         }
 
-        $content = 'jobs.html';
-        $f3->set('content', $content);
+        $f3->set('jobs', $this->getJobs($constrainsArray, array(
+            'offset' => ($pageToDisplay - 1) * $itemsPerPage,
+            'limit' => $itemsPerPage
+        )));
+
+        $maxPage = ceil($this->countJobs($constrainsArray) / $itemsPerPage);
+
+        $f3->set('pageNeighbours', Utils::getPageNeighbours($pageToDisplay, $maxPage));
+        $f3->set('maxPage', $maxPage);
+
+        $f3->set('content', 'jobs.html');
     }
 
     function viewSpecificJobForUser ($f3)
@@ -140,6 +138,11 @@ class Jobs extends Controller
     function showNewJobEditor ($f3) {
         $this->isPageLoginProtected = true;
         $f3->set('content', 'newjobeditor.html');
+    }
+
+    function countJobs ($constrainsArr = NULL) {
+        $jobsMapper = new DB\SQL\Mapper($this->db, 'job');
+        return $jobsMapper->count ($constrainsArr);
     }
 
     //f3 mapper accepts second parameter for pagination, that is:
