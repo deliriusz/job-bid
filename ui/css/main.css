@@ -29,6 +29,11 @@
     margin-top: 0px;
 }
 
+.profile-img {
+	width: 140px;
+	height: 140px;
+}
+
 @media (min-width:992px){
 
     .account-display-text { display: inline-block!important; }
@@ -40,5 +45,15 @@
 
     .account-display-text { display: none!important; }
     .account-display-icon { display: inline-block!important; }
+
+  }
+
+
+@media (max-width:300px){
+
+		.profile-img {
+	width: 100px;
+	height: 100px;
+		}
 
   }
