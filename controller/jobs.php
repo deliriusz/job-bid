@@ -30,6 +30,9 @@ class Jobs extends Controller
         )));
 
         $maxPage = ceil($this->countJobs($constrainsArray) / $itemsPerPage);
+				if ($maxPage < 1) {
+					$maxPage = 1;
+				}
 
         $f3->set('pageNeighbours', Utils::getPageNeighbours($pageToDisplay, $maxPage));
         $f3->set('maxPage', $maxPage);
