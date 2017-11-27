@@ -28,3 +28,17 @@
     margin-bottom: 0px;
     margin-top: 0px;
 }
+
+@media (min-width:992px){
+
+    .account-display-text { display: inline-block!important; }
+    .account-display-icon { display: none!important; }
+
+  }
+
+@media (max-width:991px){
+
+    .account-display-text { display: none!important; }
+    .account-display-icon { display: inline-block!important; }
+
+  }
