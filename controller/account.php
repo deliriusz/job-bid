@@ -74,27 +74,16 @@ class Account extends Controller
 
     //ajax request
     function upsertProfilePicture ($f3) {
+        $web = Web::instance();
         $this->doRender = false;
         $overwrite = false; // set to true, to overwrite an existing file; Default: false
-        $slug = true; // rename file to filesystem-friendly version
         $returnData = array();
         $errors = array();
 
-        if ($f3->get('PARAMS.userid') !== $f3->get('SESSION.userid')) {
+        if ($f3->get('PARAMS.userid') != $f3->get('SESSION.userid')) {
             array_push($errors, 'you cannot change other user\'s profile picture');
         } else {
-            $files = $web->receive(function($file,$formFieldName){
-                var_dump($file);
-                /* looks like:
-                  array(5) {
-                      ["name"] =>     string(19) "csshat_quittung.png"
-                      ["type"] =>     string(9) "image/png"
-                      ["tmp_name"] => string(14) "/tmp/php2YS85Q"
-                      ["error"] =>    int(0)
-                      ["size"] =>     int(172245)
-                    }
-                */
-                // $file['name'] already contains the slugged name now
+            $files = $web->receive(function($file) use ($f3){
 
                 $allowed=$f3->get('allowed');
                 if (!(is_array($allowed) && in_array($file['type'],$allowed)) ) {
@@ -108,25 +97,29 @@ class Account extends Controller
                 return empty($errors);
             },
                 $overwrite,
-                $slug
+                function ($fileBaseName, $formFieldName) { // rename file
+                    $newFilename =  hash('sha256', time() . $$fileBaseName);
+
+                    return $newFilename;
+                }
             );
+
+            foreach ($files as $key => $value) {
+                if ($value === false) {
+                    array_push($errors, 'Saving profile picture was not possible. Please try again later');
+                } else {
+                    $usersMapper = new DB\SQL\Mapper($this->db, 'user');
+                    $usersMapper->load(array('id = ?', $f3->get('SESSION.userid')));
+                    $usersMapper->picture_path = $f3->get('projectroot') . $key;
+                    $usersMapper->save();
+                }
+            }
         }
+
+        $returnData['success'] = empty($errors);
 
         echo json_encode($returnData);
 
-    }
-
-    function getProfilePicture ($f3) {
-        $this->doRender = false;
-        $userid = $f3->get('PARAMS.userid');
-
-        $imageMapper = new DB\SQL\Mapper($this->db, 'profile_image');
-        $imageMapper->load (array('user_id = ?', $userid));
-        if ($imageMapper->loaded() === 0) {
-            $imageMapper->load (array('id = 1'));
-        }
-        // echo 'data:image/bmp;base64,' .  base64_encode($imageMapper->image);
-        echo $imageMapper->image;
     }
 
     function updateUserData () {

@@ -25,6 +25,12 @@ class Users extends Controller
     }
 
     private function usersMapperToUsers ($m) {
+        $picture_path = NULL;
+        if ($m->picture_path == NULL) {
+            $picture_path = $this->f3->get('defaultprofilepicture');
+        } else {
+            $picture_path = $m->picture_path;
+        }
         $u = new User(
             $m->id,
             $m->username,
@@ -34,7 +40,8 @@ class Users extends Controller
             $m->email,
             $m->password,
             $m->salt,
-            $m->info
+            $m->info,
+            $picture_path
         );
         return $u;
     }
@@ -50,6 +57,7 @@ class User {
     public $password;
     public $salt;
     public $info;
+    public $picture_path;
 
     /**
      * User constructor.
@@ -62,6 +70,7 @@ class User {
      * @param $password
      * @param $salt
      * @param $info
+     * @param $picture_path
      */
     public function __construct($id = NULL,
                                 $username = NULL,
@@ -71,7 +80,8 @@ class User {
                                 $email = NULL,
                                 $password = NULL,
                                 $salt = NULL,
-                                $info = NULL)
+                                $info = NULL,
+                                $picture_path = NULL)
     {
         $this->id = $id;
         $this->username = $username;
@@ -82,6 +92,7 @@ class User {
         $this->password = $password;
         $this->salt = $salt;
         $this->info = $info;
+        $this->picture_path = $picture_path;
     }
 
 }
