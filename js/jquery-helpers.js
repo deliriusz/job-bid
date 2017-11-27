@@ -65,6 +65,33 @@ jQuery(document).ready(function($) {
         event.preventDefault();
     });
 
+		$("#submitProfileImageUpload").submit (function(event) {
+			event.preventDefault();
+			var form = $(this);
+							 var formdata = false;
+							 if(window.FormData){
+									 formdata = new FormData(form[0]);
+							 }
+
+							 var formAction = form.attr('action');
+
+							 $.ajax({
+									 type        : 'POST',
+									 url         : form.attr('action'),
+									 cache       : false,
+									 data        : formdata ? formdata : form.serialize(),
+									 contentType : false,
+									 processData : false,
+							 }).done(function(data) {
+								 if (data.success === true) {
+									 $('#uploadImgModal').modal('hide');
+			            //location.reload();
+								 } else {
+									 listErrorsOnDoneWithReroute(data, '', 'There was an error during sending file');
+								 }
+							 });
+		});
+
     $("#submitNewJobForm").submit (function (event){
         event.preventDefault();
         console.log($('textarea[name=jobDescription]').val());
