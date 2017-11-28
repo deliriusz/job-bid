@@ -42,7 +42,11 @@ font awesome icons to use on notifications:
                             <a href="{{@notification->url}}"> {{ @notification->name}} </a>
                             {{ @notification->postmessage }}
                         </td>
-                        <td class="col-xs-1 delete-notification" data-href="{{ @notification->id }}"><i class="fa fa-trash"></i> </td>
+                        <td class="col-xs-1" >
+													<button class="btn btn-danger btn-xs delete-notification" data-href="{{ @notification->id }}">
+														<i class="fa fa-trash"></i>
+													</button>
+												</td>
                     </tr>
                 </repeat>
                 </tbody>
