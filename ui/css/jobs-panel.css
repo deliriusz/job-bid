@@ -1,6 +1,6 @@
 .row{
-    margin-top:40px;
-    padding: 0 10px;
+    margin-top:0px;
+    padding: 0;
 }
 
 .clickable{
@@ -10,4 +10,17 @@
 .panel-heading span {
 	margin-top: -20px;
 	font-size: 15px;
+}
+
+.jobs-panel {
+	margin-bottom: 0!important;
+}
+
+.filter-panel-body {
+	padding-top: 0!important;
+	padding-bottom: 0!important;
+}
+
+input, input[type="text"]{
+    border-radius: 10px ;
 }

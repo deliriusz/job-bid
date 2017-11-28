@@ -1,11 +1,7 @@
 jQuery(document).ready(function($) {
-    var docHeight = $(window).height();
-    var footerHeight = $('footer').height();
-    var footerTop = $('footer').position().top + footerHeight;
 
-    if (footerTop < docHeight) {
-        $('footer').css('margin-top', 10 + (docHeight - footerTop) + 'px');
-    }
+		updateFooterOnHeightChange();
+		$(window).on('resize', updateFooterOnHeightChange);
 
     $(".clickable-row").click(function() {
         window.location = $(this).data("href");
@@ -199,5 +195,15 @@ function listErrorsOnDoneWithSettingSucess (data, url, title) {
     } else {
         $(".error-placeholder").html ( "<div class=\"alert alert-success\"><strong>Data successfully updated</strong><br/>"
             + "</div>" );
+    }
+}
+
+function updateFooterOnHeightChange () {
+    var docHeight = $(window).height();
+    var footerHeight = $('footer').height();
+    var footerTop = $('footer').position().top + footerHeight;
+
+    if (footerTop < docHeight) {
+        $('footer').css('margin-top', 10 + (docHeight - footerTop) + 'px');
     }
 }

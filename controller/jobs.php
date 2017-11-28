@@ -68,6 +68,36 @@ class Jobs extends Controller
         $f3->set('content', $content);
     }
 
+		//ajax request
+		function filterJobs($f3) {
+			$this->doRender = false;
+      $pageToDisplay = $f3->get('GET.p') != NULL ? $f3->get('GET.p') : 1;
+      $itemsPerPage = $f3->get('itemsperpage');
+
+			$constrainsArray = array('finished = FALSE');
+
+        $f3->set('jobs', $this->getJobs($constrainsArray, array(
+            'offset' => ($pageToDisplay - 1) * $itemsPerPage,
+            'limit' => $itemsPerPage
+        )));
+
+        $maxPage = ceil($this->countJobs($constrainsArray) / $itemsPerPage);
+				if ($maxPage < 1) {
+					$maxPage = 1;
+				}
+
+        $f3->set('pageNeighbours', Utils::getPageNeighbours($pageToDisplay, $maxPage));
+        $f3->set('maxPage', $maxPage);
+
+        // echo Template::instance()->render('jobs-panel.html');
+				$returnData = array ();
+				$returnData['success'] = true;
+				$returnData['response'] = Template::instance()->render('jobs-panel.html');
+				// $returnData['response'] = "working";
+
+				echo json_encode($returnData);
+		}
+
     function viewSpecificJob ($f3) {
         $jobid = $f3->get('PARAMS.jobid');
         $job = $this->getJobs(array ('id = ?', $jobid), NULL);
