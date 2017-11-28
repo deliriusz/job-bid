@@ -13,13 +13,13 @@ jQuery(document).on('click', '.jobs-panel-heading span.clickable', function(e){
 
 jQuery(document).ready(function($) {
 $(":input").on ('input', function(event) {
-	//event.preventDefault();
         var formData = {
-            'jobName': $('input[name=jobName]').val(),
-            'jobStartDate': $('input[name=jobStartDate]').val(),
-            'jobEndDate': $('input[name=jobEndDate]').val(),
-            'jobInitialPayment': $('input[name=jobInitialPayment]').val(),
-            'jobDescription': $('textarea[name=jobDescription]').val()
+            'price_from': $('input[name=price_from]').val(),
+            'price_to': $('input[name=price_to]').val(),
+            'job_type': $('input[name=job_type]').val(),
+            'date_from': $('input[name=date_from]').val(),
+            'date_to': $('input[name=date_to]').val(),
+            'location': $('input[name=location]').val()
         };
 
 	$.ajax({
