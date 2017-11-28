@@ -1,74 +1,35 @@
 <div class="container">
-		<div class="col-sm-3 col-lg-2">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h5>
-									Filter
-                </h5>
-            </div>
-            <div class="panel-body">
-							min max price
-							<br>
-							type
-							<br>
-							ends in
-							<br>
-							created by
-							<br>
-							location
-							<br>
+	<div class="col-sm-3 col-lg-2">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h5>
+					Filter
+				</h5>
+			</div>
+			<div class="panel-body">
+				min max price
+				<br>
+				type
+				<br>
+				ends in
+				<br>
+				created by
+				<br>
+				location
+				<br>
 
-							return whole table from php on changing any of the filters
-						</div>
-					</div>
+				return whole table from php on changing any of the filters
+			</div>
 		</div>
-    <div class="col-sm-9 col-lg-10">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h4>
-                    Searchbar goes here
-                </h4>
-            </div>
-            <div class="panel-body">
-                <check if="{{ count(@jobs) > 0 }}">
-                    <true>
-                        <table class="table table-hover">
-                            <thead>
-                            <tr>
-                                <th class="col-xs-1">Bids</th>
-                                <th class="col-xs-4">Job name</th>
-                                <th class="col-xs-1">Current offer</th>
-                                <th class="col-xs-2">Ends on</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <repeat group="{{ @jobs }}" value="{{ @job }}">
-                                <tr class="clickable-row" data-href="/PAI-proj/job/{{ @job->id }}">
-                                    <td class="col-xs-1"><span class="badge">{{ count(@job->bids) }}</span></td>
-                                    <td class="col-xs-4">{{ @job->name }}</td>
-                                    <td class="col-xs-1">{{ @job->current_price }}</td>
-                                    <td class="col-xs-2 datetime-counter">{{ @job->job_end_time }}</td>
-                                </tr>
-                            </repeat>
-                            </tbody>
-                        </table>
-                        <div class="text-center">
-                            <ul class="pagination">
-                                <li><a href="{{@SERVER.REDIRECT_URL}}?p=1">&laquo;</a></li>
-                                <repeat group="{{ @pageNeighbours }}" value=" {{ @cp }}">
-                                    <li class="{{ @GET.p == @cp ? 'active' : !isset(@GET.p) && @cp == 1 ? 'active' : '' }}"><a href="{{ @SERVER.REDIRECT_URL }}?p={{ @cp }}">{{ @cp }}</a></li>
-                                </repeat>
-                                <li><a href="{{@SERVER.REDIRECT_URL}}?p={{@maxPage}}">&raquo;</a></li>
-                            </ul>
-                        </div>
-                    </true>
-                    <false>
-                        <div class="jumbotron"><h2>Seems that there is no jobs matching given search criteria.</h2>
-                            <br/> <h4> Please change search criteria or create job yourself! </h4>
-                        </div>
-                    </false>
-                </check>
-            </div>
-        </div>
-    </div>
+	</div>
+	<div class="col-sm-9 col-lg-10">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h4>
+					Searchbar goes here
+				</h4>
+			</div>
+			<include href="jobs-panel.html"></include>
+		</div>
+	</div>
 </div>
