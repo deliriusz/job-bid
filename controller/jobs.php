@@ -99,6 +99,40 @@ class Jobs extends Controller
             ));
     }
 
+    private function handleJobWonDecision ($f3, $isAccepted) {
+        //TODO add check of logged in and permissions and if job is finished
+        Login::handleUserShouldBeLogged($f3);
+        $winner_id = $f3->get('PARAMS.userid');
+        $job_id =  $f3->get('PARAMS.jobid');
+        $jobMapper = new DB\SQL\Mapper($this->db, 'job');
+        $jobMapper->load(array('id = ?', $job_id));
+        $this->doRender = false;
+
+        $event_type = $isAccepted ? 6 : 7;
+
+        $ec = new EventController($f3);
+        $ec->fireEvent($job_id, 'job', $event_type,
+            array(
+                'notify_users' => array($winner_id, $jobMapper->userid)
+            ));
+
+        //TODO implement
+        //$ec->readNotification();
+
+        $returnData = array();
+        $returnData['success'] = true;
+
+        echo json_encode($returnData);
+    }
+
+    function declineJob ($f3) {
+        $this->handleJobWonDecision($f3, false);
+    }
+
+    function confirmJob ($f3) {
+        $this->handleJobWonDecision($f3, true);
+    }
+
     //ajax request
     function postNewJob ($f3) {
         Login::handleUserShouldBeLogged($f3);

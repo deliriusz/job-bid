@@ -39,21 +39,21 @@ class EventController {
         $notificationMapper = new DB\SQL\Mapper($this->db, 'notification');
         $eventSubscriberMapper = new DB\SQL\Mapper($this->db, 'event_subscriber');
         $eventMapper->load (array('source_id = ? AND type = ?', $source_id, $source_type));
-				$constrainsArray = array('event_id = ?', $eventMapper->id);
+        $constrainsArray = array('event_id = ?', $eventMapper->id);
 
-				if (array_key_exists('notify_users', $additional_data)) {
-					$constrainsArray[0] = '1 = 0';
-					unset($constrainsArray[1]);
-					$i = 1;
-					foreach ($additional_data['notify_users'] as $userid) {
-						$constrainsArray[0] = $constrainsArray[0] . ' OR user_id = ? ';
-						$constrainsArray[$i++] = $userid;
-					}
-				}
+        if (array_key_exists('notify_users', $additional_data)) {
+            $constrainsArray[0] = '1 = 0';
+            unset($constrainsArray[1]);
+            $i = 1;
+            foreach ($additional_data['notify_users'] as $userid) {
+                $constrainsArray[0] = $constrainsArray[0] . ' OR user_id = ? ';
+                $constrainsArray[$i++] = $userid;
+            }
+        }
 
         $eventSubscriberMapper->load($constrainsArray);
 
-				//TODO check error
+        //TODO check error
         for ($i =  0; $i < $eventSubscriberMapper->loaded(); $i++) {
             $notificationMapper->reset();
             $notificationMapper->user_id = $eventSubscriberMapper->user_id;
@@ -84,7 +84,7 @@ class EventController {
         $notificationMapper = new DB\SQL\Mapper($this->db, 'notification');
         $jobsMapper = new DB\SQL\Mapper($this->db, 'job');
         $bidsMapper = new DB\SQL\Mapper($this->db, 'bid');
-        $notificationMapper->load (array('user_id = ?', $user_id));
+        $notificationMapper->load (array('user_id = ?', $user_id), array('order' => 'id DESC'));
         $eventMapper = new DB\SQL\Mapper($this->db, 'event');
         $notifications = array();
 
@@ -128,12 +128,39 @@ class EventController {
                     $n->name = $jobName;
                     break;
 
-								case 5: // job won
+                case 5: // job won
                     $jobName = $sourceOfEventMapper->name;
-                    $message = 'You won job ';
+                    if ($sourceOfEventMapper->userid == $user_id) {
+                        $message = 'You have choosen winner of ';
+                        $postmessage = ' job';
+                    } else {
+                        $message = 'You won job ';
+                    }
                     $n->url = sprintf('/PAI-proj/job/%d', $sourceOfEventMapper->id);
                     $n->name = $jobName;
-										break;
+                    break;
+
+                case 6: // user confirmed job
+                    $jobName = $sourceOfEventMapper->name;
+                    if ($sourceOfEventMapper->userid == $user_id) {
+                        $message = 'User confirmed job ';
+                    } else {
+                        $message = 'You confirmed job ';
+                    }
+                    $n->url = sprintf('/PAI-proj/job/%d', $sourceOfEventMapper->id);
+                    $n->name = $jobName;
+                    break;
+
+                case 7: // user declined job
+                    $jobName = $sourceOfEventMapper->name;
+                    if ($sourceOfEventMapper->userid == $user_id) {
+                        $message = 'User declined job ';
+                    } else {
+                        $message = 'You declined job ';
+                    }
+                    $n->url = sprintf('/PAI-proj/job/%d', $sourceOfEventMapper->id);
+                    $n->name = $jobName;
+                    break;
 
                 default:
                     //do nothing
@@ -158,15 +185,15 @@ class EventController {
     public function readNotification($id) {
         $notificationMapper = new DB\SQL\Mapper($this->db, 'notification');
         $notificationMapper->load(array('id = ?', $id));
-				$notificationMapper->is_read = 1;
-				$notificationMapper->save();
+        $notificationMapper->is_read = 1;
+        $notificationMapper->save();
     }
 
     public function isUserSubscribedToEvent ($userid, $eventid, $eventType) {
         $eventMapper = new DB\SQL\Mapper($this->db, 'event');
         $eventMapper->load(
-                array('source_id = ? AND type = ?', $eventid, $eventType)
-            );
+            array('source_id = ? AND type = ?', $eventid, $eventType)
+        );
         $eventSubscriberMapper = new DB\SQL\Mapper($this->db, 'event_subscriber');
         $subscriptionCount = $eventSubscriberMapper->count(
             array('event_id = ? AND user_id = ?',

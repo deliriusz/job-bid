@@ -73,6 +73,8 @@ INSERT INTO `event_type` (`name`) VALUES ('job changed');
 INSERT INTO `event_type` (`name`) VALUES ('job finished');
 INSERT INTO `event_type` (`name`) VALUES ('lower bid');
 INSERT INTO `event_type` (`name`) VALUES ('job winner choosen');
+INSERT INTO `event_type` (`name`) VALUES ('user confirmed job');
+INSERT INTO `event_type` (`name`) VALUES ('user declined job');
 
 CREATE TABLE IF NOT EXISTS `pai`.`event` ( `id` INT AUTO_INCREMENT PRIMARY KEY , `source_id` INT NOT NULL , `type` VARCHAR(10) NOT NULL ) ENGINE = InnoDB;
 

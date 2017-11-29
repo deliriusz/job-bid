@@ -7,7 +7,7 @@ jQuery(document).ready(function($) {
         window.location = $(this).data("href");
     });
 
-    $(".read-notification").click(function() {
+    $(".read-notification .react-to-job-won").click(function() {
         event.preventDefault();
         var formData = {
         };
@@ -162,6 +162,8 @@ jQuery(document).ready(function($) {
 
         var formData = {
         };
+
+        $(":button.select-winning-user").remove();
 
         postForm('post', $(this).attr('data-href'), formData, '', '', reloadPageOnDone);
 

@@ -16,45 +16,53 @@ font awesome icons to use on notifications:
                 <thead>
                 <tr>
                     <th class="col-xs-1"></th>
-                    <th class="col-xs-11">Jobs notifications</th>
-                    <th class="col-xs-1"></th>
-                    <th class="col-xs-1"></th>
+                    <th class="col-xs-9">Jobs notifications</th>
+                    <th class="col-xs-3"></th>
                 </tr>
                 </thead>
                 <tbody>
                 <repeat group="{{ @notifications }}" value="{{ @notification }}">
                     <tr class="notification-tr">
                         <td class="col-xs-1">
-                            <check if="{{ @notification->event_type }} === 1">
+                            <check if="{{ @notification->event_type }} === 1"> <!-- job created -->
                                 <i class="fa fa-check"></i>
                             </check>
-                            <check if="{{ @notification->event_type }} === 2">
+                            <check if="{{ @notification->event_type }} === 2"> <!-- job updated -->
                                 <i class="fa fa-info"></i>
                             </check>
-                            <check if="{{ @notification->event_type }} === 3">
+                            <check if="{{ @notification->event_type }} === 3"> <!-- job finished -->
                                 <i class="fa fa-calendar-check-o"></i>
                             </check>
-                            <check if="{{ @notification->event_type }} === 4">
+                            <check if="{{ @notification->event_type }} === 4"> <!-- lower bid -->
                                 <i class="fa fa-sort-down"></i>
                             </check>
+                            <check if="{{ @notification->event_type }} === 5"> <!-- job won -->
+                                <i class="fa fa-briefcase"></i>
+                            </check>
                         </td>
-                        <td class="col-xs-11 {{ @notification->is_read === 0 ? 'text-bold' : '' }}">
+                        <td class="col-xs-9 {{ @notification->is_read === 0 ? 'text-bold' : '' }}">
                             {{ @notification->premessage }}
                             <a href="{{@notification->url}}"> {{ @notification->name}} </a>
                             {{ @notification->postmessage }}
                         </td>
-                        <td class="col-xs-1" >
-													<button class="btn btn-danger btn-xs delete-notification" data-href="{{ @notification->id }}">
-														<i class="fa fa-trash"></i>
-													</button>
-												</td>
-												<check if="{{@notification->is_read == 0}}">
-                        <td class="col-xs-1" >
-													<button class="btn btn-success btn-xs read-notification" data-href="/PAI-proj/notification/{{ @notification->id }}">
-														<i class="fa fa-check"></i>
-													</button>
-												</td>
-												</check>
+                        <td class="col-xs-3" >
+                            <check if="{{@notification->is_read == 0 && @notification->event_type != 5 }}">
+                                <button class="btn btn-success btn-xs read-notification" data-href="/PAI-proj/notification/{{ @notification->id }}">
+                                    <i class="fa fa-check"></i>
+                                </button>
+                            </check>
+                            <check if="{{ @notification->event_type == 5 && @notification->is_read == false }}">
+                                <button class="btn btn-success btn-xs react-to-job-won read-notification" data-href="/PAI-proj/job/{{ @notification->event_id }}/winner/{{ @SESSION.userid }}/decline">
+                                    <i class="fa fa-check"></i> decline
+                                </button>
+                                <button class="btn btn-success btn-xs react-to-job-won read-notification" data-href="/PAI-proj/job/{{ @notification->event_id }}/winner/{{ @SESSION.userid }}/confirm">
+                                    <i class="fa fa-check"></i> confirm
+                                </button>
+                            </check>
+                            <button class="btn btn-danger btn-xs delete-notification" data-href="{{ @notification->id }}">
+                                <i class="fa fa-trash"></i>
+                            </button>
+                        </td>
                     </tr>
                 </repeat>
                 </tbody>
@@ -80,17 +88,20 @@ font awesome icons to use on notifications:
                 <repeat group="{{ @notifications }}" value="{{ @notification }}">
                     <tr class="clickable-row" data-href="/PAI-proj/notification/{{ @notification->id }}">
                         <td class="col-xs-1">
-                            <check if="{{ @notification->type }} === 0"> <!-- job created -->
+                            <check if="{{ @notification->event_type }} === 1"> <!-- job created -->
                                 <i class="fa fa-check"></i>
                             </check>
-                            <check if="{{ @notification->type }} === 1"> <!-- job updated -->
+                            <check if="{{ @notification->event_type }} === 2"> <!-- job updated -->
                                 <i class="fa fa-info"></i>
                             </check>
-                            <check if="{{ @notification->type }} === 2"> <!-- job finished -->
+                            <check if="{{ @notification->event_type }} === 3"> <!-- job finished -->
                                 <i class="fa fa-calendar-check-o"></i>
                             </check>
-                            <check if="{{ @notification->type }} === 3"> <!-- lower bid -->
+                            <check if="{{ @notification->event_type }} === 4"> <!-- lower bid -->
                                 <i class="fa fa-sort-down"></i>
+                            </check>
+                            <check if="{{ @notification->event_type }} === 5"> <!-- lower bid -->
+                                <i class="fa fa-briefcase"></i>
                             </check>
                         </td>
                         <td class="col-xs-11"> {{ @notification->name }} </td>
