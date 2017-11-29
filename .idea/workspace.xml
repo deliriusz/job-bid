@@ -3,12 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="18e00a4e-4f99-4d1a-97f1-77be50321d51" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TODO.txt" afterPath="$PROJECT_DIR$/TODO.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controller/event.php" afterPath="$PROJECT_DIR$/controller/event.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controller/jobs.php" afterPath="$PROJECT_DIR$/controller/jobs.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/jquery-helpers.js" afterPath="$PROJECT_DIR$/js/jquery-helpers.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes.ini" afterPath="$PROJECT_DIR$/routes.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/table.sql" afterPath="$PROJECT_DIR$/table.sql" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ui/notifications-detail.html" afterPath="$PROJECT_DIR$/ui/notifications-detail.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -31,7 +25,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="jobs.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="jobs.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controller/jobs.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="391">
@@ -61,11 +55,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="notifications-detail.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="notifications-detail.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ui/notifications-detail.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="241">
-              <caret line="53" column="106" lean-forward="false" selection-start-line="53" selection-start-column="106" selection-end-line="53" selection-end-column="106" />
+            <state relative-caret-position="428">
+              <caret line="63" column="58" lean-forward="false" selection-start-line="63" selection-start-column="58" selection-end-line="63" selection-end-column="58" />
               <folding />
             </state>
           </provider>
@@ -200,8 +194,8 @@
         <option value="$PROJECT_DIR$/js/jquery-helpers.js" />
         <option value="$PROJECT_DIR$/table.sql" />
         <option value="$PROJECT_DIR$/controller/event.php" />
-        <option value="$PROJECT_DIR$/ui/notifications-detail.html" />
         <option value="$PROJECT_DIR$/controller/jobs.php" />
+        <option value="$PROJECT_DIR$/ui/notifications-detail.html" />
       </list>
     </option>
   </component>
@@ -360,14 +354,7 @@
       <workItem from="1511517377364" duration="26222000" />
       <workItem from="1511637240468" duration="639000" />
       <workItem from="1511805751511" duration="7381000" />
-      <workItem from="1511978960194" duration="4904000" />
-    </task>
-    <task id="LOCAL-00041" summary="working on detail pane of account">
-      <created>1511102687746</created>
-      <option name="number" value="00041" />
-      <option name="presentableId" value="LOCAL-00041" />
-      <option name="project" value="LOCAL" />
-      <updated>1511102687746</updated>
+      <workItem from="1511978960194" duration="5159000" />
     </task>
     <task id="LOCAL-00042" summary="working on detail pane of account&#10;- working on reroute on log out">
       <created>1511104968690</created>
@@ -705,11 +692,18 @@
       <option name="project" value="LOCAL" />
       <updated>1511979607143</updated>
     </task>
-    <option name="localTasksCounter" value="90" />
+    <task id="LOCAL-00090" summary="working on job finishing">
+      <created>1511984080228</created>
+      <option name="number" value="00090" />
+      <option name="presentableId" value="LOCAL-00090" />
+      <option name="project" value="LOCAL" />
+      <updated>1511984080229</updated>
+    </task>
+    <option name="localTasksCounter" value="91" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="159089000" />
+    <option name="totallyTimeSpent" value="159344000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1080" extended-state="6" />
@@ -764,7 +758,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="adding login protection to perform certain actions" />
     <MESSAGE value="adding new functions to utils" />
     <MESSAGE value="bugsfixes" />
     <MESSAGE value="changing to container-fluid to ocupy more width" />
@@ -789,7 +782,8 @@
     <MESSAGE value="fixing file upload and get" />
     <MESSAGE value="identation fix" />
     <MESSAGE value="fixing problem in table" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixing problem in table" />
+    <MESSAGE value="working on job finishing" />
+    <option name="LAST_COMMIT_MESSAGE" value="working on job finishing" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1183,14 +1177,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ui/notifications-detail.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="241">
-          <caret line="53" column="106" lean-forward="false" selection-start-line="53" selection-start-column="106" selection-end-line="53" selection-end-column="106" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/controller/event.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="84">
@@ -1203,6 +1189,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
           <caret line="118" column="23" lean-forward="false" selection-start-line="118" selection-start-column="23" selection-end-line="118" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ui/notifications-detail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="428">
+          <caret line="63" column="58" lean-forward="false" selection-start-line="63" selection-start-column="58" selection-end-line="63" selection-end-column="58" />
           <folding />
         </state>
       </provider>
