@@ -28,6 +28,14 @@ CREATE TABLE IF NOT EXISTS `bid` (
 --
 -- Table structure for table `job`
 --
+CREATE TABLE `job_type` (
+  `id` int(11) NOT NULL,
+  `name` varchar(40) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+INSERT INTO `job_type` (`name`) VALUES ('Accounting');
+INSERT INTO `job_type` (`name`) VALUES ('Programming');
+INSERT INTO `job_type` (`name`) VALUES ('Copywriting');
 
 CREATE TABLE IF NOT EXISTS `job` (
   `id` int(11) AUTO_INCREMENT PRIMARY KEY,
@@ -60,6 +68,7 @@ CREATE TABLE `pai`.`event_type` (
   `name` VARCHAR(30) NOT NULL
 ) ENGINE = InnoDB;
 
+ALTER TABLE `job` ADD `job_type` INT NOT NULL AFTER `finished`;
 INSERT INTO `event_type` (`name`) VALUES ('job created');
 INSERT INTO `event_type` (`name`) VALUES ('job changed');
 INSERT INTO `event_type` (`name`) VALUES ('job finished');

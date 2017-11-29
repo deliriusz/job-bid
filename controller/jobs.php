@@ -26,6 +26,7 @@ class Jobs extends Controller
 			$constrainsArray = array ('finished = FALSE');
 		}
 
+		//TODO add job type
 		if ($isPost) {
 			var_dump ($f3->get('POST'));
 			if (strlen($f3->get('POST.price_from') > 0)) {
@@ -181,14 +182,17 @@ class Jobs extends Controller
 		$bidsMapper = new DB\SQL\Mapper($this->db, 'bid');
 		$usersMapper = new DB\SQL\Mapper($this->db, 'user');
 		$usersMapper->load(array('id = ?', $m->userid));
+		$username = $usersMapper->username;
 		$bidsMapper->load(array ('job_id = ?', $m->id), NULL);
 		$bidsArray = array();
 
 		for ($i = 0; $i < $bidsMapper->loaded(); $i++) {
+			$usersMapper->load(array('id = ?', $bidsMapper->user_id));
 			$bidsArray[$i] = new Bid(
 				$bidsMapper->id,
 				$bidsMapper->job_id,
 				$bidsMapper->user_id,
+				$usersMapper->username,
 				$bidsMapper->time,
 				$bidsMapper->value
 			);
@@ -198,7 +202,7 @@ class Jobs extends Controller
 		$j = new Job(
 			$m->id,
 			$m->userid,
-			$usersMapper->username,
+			$username,
 			$m->name,
 			$m->description,
 			$m->initial_price,
@@ -214,7 +218,7 @@ class Jobs extends Controller
 
 class Job {
 	public $id;
-	public $userId;
+	public $userid;
 	public $username;
 	public $name;
 	public $description;
@@ -243,7 +247,7 @@ class Job {
 	$creation_time, $job_start_time, $job_end_time, $finished, $bids)
 	{
 		$this->id = $id;
-		$this->userId = $userId;
+		$this->userid = $userId;
 		$this->username = $username;
 		$this->name = $name;
 		$this->description = $description;

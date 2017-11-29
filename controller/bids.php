@@ -96,12 +96,15 @@ class Bids extends Controller {
     function getBids ($constrainsArr = NULL, $paginationSettings = NULL) {
         $bidsMapper = new DB\SQL\Mapper($this->db, 'bid');
         $bidsMapper->load($constrainsArr, $paginationSettings);
+				$usersMapper = new DB\SQL\Mapper($this->db, 'user');
 
         for ($i = 0; $i < $bidsMapper->loaded(); $i++) {
+						$usersMapper->load(array('id = ?', $bidsMapper->user_id));
             $bidsArray[$i] = new Bid(
                 $bidsMapper->id,
                 $bidsMapper->job_id,
                 $bidsMapper->user_id,
+                $usersMapper->username,
                 $bidsMapper->time,
                 $bidsMapper->value
             );
@@ -117,13 +120,15 @@ class Bid {
     public $id,
         $job_id,
         $user_id,
+        $username,
         $time,
         $value;
 
-    public function __construct ($id, $job_id, $user_id, $time, $value){
+    public function __construct ($id, $job_id, $user_id, $username, $time, $value){
         $this->id = $id;
         $this->job_id = $job_id;
         $this->user_id = $user_id;
+        $this->username = $username;
         $this->time = $time;
         $this->value = $value;
     }

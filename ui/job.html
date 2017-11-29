@@ -39,6 +39,7 @@
                                         </div>
                                     </true>
                                     <false>
+																			<check if="{{ @job->userid != @SESSION.userid }}">
                                       <span>
                                         <form class="form-inline" id="placeBidForm">
                                             <div class="error-placeholder"></div>
@@ -50,6 +51,8 @@
                                             <button type="submit" class="btn btn-default" >Submit</button>
                                           </form>
                                         </span>
+																			<hr/>
+																			</check>
                                     </false>
                                 </check>
                             </check>
@@ -60,6 +63,7 @@
                                     <thead>
                                     <tr>
                                         <th>Bid value</th>
+                                        <th>User</th>
                                         <th>Bid time</th>
                                     </tr>
                                     </thead>
@@ -67,6 +71,7 @@
                                     <repeat group="{{ @job->bids }}" value="{{ @bid }}">
                                         <tr>
                                             <td>{{@bid->value}}</td>
+                                            <td><a href="/PAI-proj/user/{{@bid->username}}">{{@bid->username}}</a></td>
                                             <td>{{@bid->time}}</td>
                                         </tr>
                                     </repeat>
