@@ -43,14 +43,17 @@ class EventController {
 
 				if (array_key_exists('notify_users', $additional_data)) {
 					$constrainsArray[0] = '1 = 0';
+					unset($constrainsArray[1]);
+					$i = 1;
 					foreach ($additional_data['notify_users'] as $userid) {
-						$constrainsArray[0] = $constrainsArray[0] . ' OR userid = ? ';
-						array_push($constrainsArray, $userid);
+						$constrainsArray[0] = $constrainsArray[0] . ' OR user_id = ? ';
+						$constrainsArray[$i++] = $userid;
 					}
 				}
 
         $eventSubscriberMapper->load($constrainsArray);
 
+				//TODO check error
         for ($i =  0; $i < $eventSubscriberMapper->loaded(); $i++) {
             $notificationMapper->reset();
             $notificationMapper->user_id = $eventSubscriberMapper->user_id;
@@ -150,6 +153,13 @@ class EventController {
     public function deleteNotification($id) {
         $notificationMapper = new DB\SQL\Mapper($this->db, 'notification');
         $notificationMapper->erase(array('id = ?', $id));
+    }
+
+    public function readNotification($id) {
+        $notificationMapper = new DB\SQL\Mapper($this->db, 'notification');
+        $notificationMapper->load(array('id = ?', $id));
+				$notificationMapper->is_read = 1;
+				$notificationMapper->save();
     }
 
     public function isUserSubscribedToEvent ($userid, $eventid, $eventType) {

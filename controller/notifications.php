@@ -47,4 +47,18 @@ class Notifications extends Controller
         echo json_encode ($returnData);
     }
 
+    //ajax
+		//TODO finish implementation
+    function readNotification ($f3) {
+        Login::handleUserShouldBeLogged($f3);
+        $ec = new EventController($f3);
+        $this->doRender = false;
+        $ec->readNotification($f3->get('PARAMS.notificationid'));
+
+        $returnData = array();
+        $returnData['success'] = true;
+
+        echo json_encode ($returnData);
+    }
+
 }

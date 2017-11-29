@@ -18,6 +18,7 @@ font awesome icons to use on notifications:
                     <th class="col-xs-1"></th>
                     <th class="col-xs-11">Jobs notifications</th>
                     <th class="col-xs-1"></th>
+                    <th class="col-xs-1"></th>
                 </tr>
                 </thead>
                 <tbody>
@@ -47,6 +48,13 @@ font awesome icons to use on notifications:
 														<i class="fa fa-trash"></i>
 													</button>
 												</td>
+												<check if="{{@notification->is_read == 0}}">
+                        <td class="col-xs-1" >
+													<button class="btn btn-success btn-xs read-notification" data-href="/PAI-proj/notification/{{ @notification->id }}">
+														<i class="fa fa-check"></i>
+													</button>
+												</td>
+												</check>
                     </tr>
                 </repeat>
                 </tbody>
