@@ -148,6 +148,16 @@ jQuery(document).ready(function($) {
         postForm('delete', '/PAI-proj/notification/' + $(this).attr('data-href'), formData, '', '', reloadPageOnDone);
 
     });
+
+    $(".select-winning-user").click( function (event) {
+        event.preventDefault();
+
+        var formData = {
+        };
+
+        postForm('post', $(this).attr('data-href'), formData, '', '', reloadPageOnDone);
+
+    });
 });
 
 function postForm (method, url, formData, urlondone, title, doneCallback) {

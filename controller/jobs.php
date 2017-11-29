@@ -62,6 +62,9 @@ class Jobs extends Controller
 		}
 	}
 
+	function viewSpecificJobForUser($f3) {
+		$this->viewSpecificJob($f3);
+	}
 
 	function viewSpecificJob ($f3) {
 		$jobid = $f3->get('PARAMS.jobid');
@@ -81,6 +84,19 @@ class Jobs extends Controller
 		);
 
 		$f3->set('content', $content);
+	}
+
+	//ajax request
+	function selectWinner ($f3) {
+		//TODO add check of logged in and permissions and if job is finished
+		$winner_id = $f3->get('PARAMS.userid');
+		$job_id =  $f3->get('PARAMS.jobid');
+
+		$ec = new EventController($f3);
+		$ec->fireEvent($job_id, 'job', 5,
+		array(
+			'notify_users' => array($winner_id)
+		));
 	}
 
 	//ajax request

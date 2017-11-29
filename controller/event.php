@@ -34,13 +34,22 @@ class EventController {
         }
     }
 
-    public function fireEvent ($source_id, $source_type, $event_type) {
+    public function fireEvent ($source_id, $source_type, $event_type, $additional_data = array()) {
         $eventMapper = new DB\SQL\Mapper($this->db, 'event');
         $notificationMapper = new DB\SQL\Mapper($this->db, 'notification');
         $eventSubscriberMapper = new DB\SQL\Mapper($this->db, 'event_subscriber');
         $eventMapper->load (array('source_id = ? AND type = ?', $source_id, $source_type));
+				$constrainsArray = array('event_id = ?', $eventMapper->id);
 
-        $eventSubscriberMapper->load(array('event_id = ?', $eventMapper->id));
+				if (array_key_exists('notify_users', $additional_data)) {
+					$constrainsArray[0] = '1 = 0';
+					foreach ($additional_data['notify_users'] as $userid) {
+						$constrainsArray[0] = $constrainsArray[0] . ' OR userid = ? ';
+						array_push($constrainsArray, $userid);
+					}
+				}
+
+        $eventSubscriberMapper->load($constrainsArray);
 
         for ($i =  0; $i < $eventSubscriberMapper->loaded(); $i++) {
             $notificationMapper->reset();
@@ -115,6 +124,13 @@ class EventController {
                     $n->url = sprintf('/PAI-proj/job/%d', $sourceOfEventMapper->id);
                     $n->name = $jobName;
                     break;
+
+								case 5: // job won
+                    $jobName = $sourceOfEventMapper->name;
+                    $message = 'You won job ';
+                    $n->url = sprintf('/PAI-proj/job/%d', $sourceOfEventMapper->id);
+                    $n->name = $jobName;
+										break;
 
                 default:
                     //do nothing

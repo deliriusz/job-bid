@@ -65,6 +65,9 @@
                                         <th>Bid value</th>
                                         <th>User</th>
                                         <th>Bid time</th>
+																				<check if="{{ @job->userid == @SESSION.userid && @job->finished == true }}">
+	                                        <th>Action</th>
+																				</check>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -73,6 +76,13 @@
                                             <td>{{@bid->value}}</td>
                                             <td><a href="/PAI-proj/user/{{@bid->username}}">{{@bid->username}}</a></td>
                                             <td>{{@bid->time}}</td>
+																						<check if="{{ @job->userid == @SESSION.userid && @job->finished == true }}">
+																							<td>
+																							<button class="btn btn-success btn-sm select-winning-user" data-href="/PAI-proj/job/{{ @job->id}}/winner/{{ @bid->user_id }}">
+																								<i class="fa fa-handshake-o"></i>
+																							</button>
+																							</td>
+																						</check>
                                         </tr>
                                     </repeat>
                                     </tbody>
