@@ -117,7 +117,7 @@ class Account extends Controller
         }
 
         $returnData['success'] = empty($errors);
-				$returnData['errors'] = $errors;
+        $returnData['errors'] = $errors;
 
         echo json_encode($returnData);
 

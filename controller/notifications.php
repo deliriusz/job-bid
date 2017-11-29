@@ -48,7 +48,7 @@ class Notifications extends Controller
     }
 
     //ajax
-		//TODO finish implementation
+    //TODO finish implementation
     function readNotification ($f3) {
         Login::handleUserShouldBeLogged($f3);
         $ec = new EventController($f3);
