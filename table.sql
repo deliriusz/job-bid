@@ -68,7 +68,6 @@ CREATE TABLE `pai`.`event_type` (
   `name` VARCHAR(30) NOT NULL
 ) ENGINE = InnoDB;
 
-ALTER TABLE `job` ADD `job_type` INT NOT NULL AFTER `finished`;
 INSERT INTO `event_type` (`name`) VALUES ('job created');
 INSERT INTO `event_type` (`name`) VALUES ('job changed');
 INSERT INTO `event_type` (`name`) VALUES ('job finished');
@@ -129,6 +128,6 @@ COMMIT;
 ALTER TABLE `job` CHANGE `initial_price` `initial_price` DOUBLE UNSIGNED NOT NULL;
 ALTER TABLE `job` ADD `finished` BOOLEAN NOT NULL DEFAULT FALSE AFTER `job_end_time`;
 ALTER TABLE `user` ADD `picture_path` VARCHAR(200) NULL DEFAULT NULL AFTER `info`;
-
+ALTER TABLE `job` ADD `job_type` INT NOT NULL AFTER `finished`;
 
 COMMIT;
