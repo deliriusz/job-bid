@@ -200,9 +200,74 @@ class Jobs extends Controller
         echo json_encode ($returnData);
     }
 
+
+		//ajax request
+    function postEditedJob ($f3) {
+        Login::handleUserShouldBeLogged($f3);
+        $this->doRender = false;
+
+        $jobsMapper = new DB\SQL\Mapper($this->db, 'job');
+        $currentDate = Utils::getCurrentDateTime();
+        $jobName = $_POST['jobName'];
+        $jobStartDate = $_POST['jobStartDate'];
+        $jobEndDate = $_POST['jobEndDate'];
+        $jobInitialPayment = $_POST['jobInitialPayment'];
+        $jobDescription = $_POST['jobDescription'];
+        $errors = array();
+        $returnData = array();
+
+        if (!Utils::validateDate($jobStartDate)) {
+            array_push($errors, 'start date passed is not valid date');
+        }
+
+        if (!Utils::validateDate($jobEndDate)) {
+            array_push($errors, 'end date passed is not valid date');
+        }
+
+        if ($jobInitialPayment < 1) {
+            array_push($errors, 'initial payment cannot be lower than 1');
+        }
+
+        if (strlen($jobName) < 4) {
+            array_push($errors, 'job name is too short');
+        }
+
+        if (empty($errors)) {
+            $returnData['success'] = true;
+            $jobsMapper->load(array('id = ?', $f3->get('PARAMS.jobid')));
+            $jobsMapper->name = $jobName;
+            $jobsMapper->description = $jobDescription;
+            $jobsMapper->initial_price = $jobInitialPayment;
+            $jobsMapper->creation_time = $currentDate;
+            $jobsMapper->job_start_time = $jobStartDate;
+            $jobsMapper->job_end_time = $jobEndDate;
+
+            $jobsMapper->save();
+
+            $ec = new EventController($f3);
+            $ec->fireEvent($jobsMapper->id, 'job', 2);
+
+            $returnData['rerouteurl'] = ('/PAI-proj/user/' . $f3->get('SESSION.username') . '/job/' . $jobsMapper->id);
+        } else {
+            $returnData['success'] = false;
+            $returnData['errors'] = $errors;
+        }
+
+        echo json_encode ($returnData);
+    }
+
     function showNewJobEditor ($f3) {
         $this->isPageLoginProtected = true;
         $f3->set('content', 'newjobeditor.html');
+    }
+
+    function editSpecificJob ($f3) {
+        $this->isPageLoginProtected = true;
+				$jobs = $this->getJobs (array('id = ?', $f3->get('PARAMS.jobid')));
+				if (count($jobs) > 0) {
+					$f3->set('job', $jobs[0]);
+				}
+        $f3->set('content', 'editjobeditor.html');
     }
 
     function countJobs ($constrainsArr = NULL) {
@@ -271,6 +336,7 @@ class Jobs extends Controller
             $m->job_start_time,
             $m->job_end_time,
             $m->finished,
+            $m->winner,
             $bidsArray
         );
         return $j;
@@ -302,10 +368,11 @@ class Job {
      * @param $job_start_time
      * @param $job_end_time
      * @param $finished
+     * @param $winner
      * @param $bids
      */
     public function __construct($id, $userId, $username, $name, $description, $initial_price,
-                                $creation_time, $job_start_time, $job_end_time, $finished, $bids)
+                                $creation_time, $job_start_time, $job_end_time, $finished, $winner, $bids)
     {
         $this->id = $id;
         $this->userid = $userId;
@@ -318,6 +385,7 @@ class Job {
         $this->job_end_time = $job_end_time;
         $this->bids = $bids;
         $this->finished = $finished === 1;
+        $this->winner = $winner;
         $bidValues =
             array_map(function($bid){
                 return $bid->value;

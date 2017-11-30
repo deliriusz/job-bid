@@ -4,16 +4,23 @@
             <div>
                 <div class="panel panel-default panel-body">
                     <h1>
-                        <form class="form-inline">
+                                <div class="col-xs-9">{{@job->name}}
+																</div>
+                                <div class="col-xs-3 text-right">
+																	<form class="form-inline">
                             <div class="form-group">
-                                {{@job->name}}
                                 <check if="{{ isset(@SESSION.username) && @job->finished===false }}">
+																	<check if="{{ @job->userid == @SESSION.userid }}">
+																	    <a href="/PAI-proj/job/{{@job->id}}/edit" class="button"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+																		</check>
                                     <input type="hidden" name="notification-subscribe-type" value="job"/>
                                     <input type="hidden" name="notification-subscribe-id" value="{{ @job->id }}"/>
                                     <i type="submit" class="fa {{ @isUserSubscribedToJobEvents ? 'fa-bell-slash-o' : 'fa-bell-o' }} notification-switch-button"></i>
                                 </check>
                             </div>
                         </form>
+																</div>
+
                     </h1>
                 </div>
             </div>

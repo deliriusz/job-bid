@@ -22,7 +22,7 @@ jQuery(document).ready(function($) {
 
         postForm('post', $(this).attr('data-href'), formData, '', '', reloadPageOnDone);
     });
-		
+
     $("#submitRegisterForm").click (function (event){
         var formData = {
             'first_name': $('input[name=inputFirstName]').val(),
@@ -116,6 +116,21 @@ jQuery(document).ready(function($) {
         };
 
         postForm('post', '/PAI-proj/jobs/add', formData, '', 'Please correct following errors: ', listErrorsOnDoneWithReroute);
+
+    });
+
+    $("#submitEditJobForm").submit (function (event){
+        event.preventDefault();
+        console.log($('textarea[name=jobDescription]').val());
+        var formData = {
+            'jobName': $('input[name=jobName]').val(),
+            'jobStartDate': $('input[name=jobStartDate]').val(),
+            'jobEndDate': $('input[name=jobEndDate]').val(),
+            'jobInitialPayment': $('input[name=jobInitialPayment]').val(),
+            'jobDescription': $('textarea[name=jobDescription]').val()
+        };
+
+        postForm('post', $(this).attr('action'), formData, '', 'Please correct following errors: ', listErrorsOnDoneWithReroute);
 
     });
 

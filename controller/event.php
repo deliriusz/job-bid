@@ -110,7 +110,11 @@ class EventController {
                     break;
 
                 case 2: //job updated
-                    $message = sprintf('User %s updated job %s', $sourceOfEventMapper->userid, $sourceOfEventMapper->name);
+                    $message = 'Job ';
+										$postmessage = ' has been updated';
+                    $jobName = $sourceOfEventMapper->name;
+                    $n->name = $jobName;
+                    $n->url = sprintf('/PAI-proj/job/%d', $sourceOfEventMapper->id);
                     break;
 
                 case 3: //job finished
