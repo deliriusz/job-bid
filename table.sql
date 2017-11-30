@@ -131,5 +131,6 @@ ALTER TABLE `job` CHANGE `initial_price` `initial_price` DOUBLE UNSIGNED NOT NUL
 ALTER TABLE `job` ADD `finished` BOOLEAN NOT NULL DEFAULT FALSE AFTER `job_end_time`;
 ALTER TABLE `user` ADD `picture_path` VARCHAR(200) NULL DEFAULT NULL AFTER `info`;
 ALTER TABLE `job` ADD `job_type` INT NOT NULL AFTER `finished`;
+ALTER TABLE `job` ADD `winner` INT NULL DEFAULT NULL AFTER `job_type`;
 
 COMMIT;

@@ -16,8 +16,16 @@ font awesome icons to use on notifications:
                 <thead>
                 <tr>
                     <th class="col-xs-1"></th>
-                    <th class="col-xs-9">Jobs notifications</th>
-                    <th class="col-xs-3"></th>
+                    <th class="col-xs-6">Jobs notifications</th>
+                    <th class="col-xs-5">
+											<button class="btn btn-success btn-xs read-notification" data-href="/PAI-proj/user/notifications/all">
+													<i class="fa fa-check"></i> read all
+											</button>
+											<button class="btn btn-danger btn-xs delete-notification" data-href="/PAI-proj/user/notifications/all">
+													<i class="fa fa-trash"></i> delete all
+											</button>
+
+										</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -46,28 +54,31 @@ font awesome icons to use on notifications:
                                 <i class="fa fa-times"></i>
                             </check>
                         </td>
-                        <td class="col-xs-9 {{ @notification->is_read === 0 ? 'text-bold' : '' }}">
+                        <td class="col-xs-6 {{ @notification->is_read === 0 ? 'text-bold' : '' }}">
                             {{ @notification->premessage }}
                             <a href="{{@notification->url}}"> {{ @notification->name}} </a>
                             {{ @notification->postmessage }}
                         </td>
-                        <td class="col-xs-3" >
+                        <td class="col-xs-5" >
                             <check if="{{@notification->is_read == 0 && @notification->event_type != 5 }}">
                                 <button class="btn btn-success btn-xs read-notification" data-href="/PAI-proj/notification/{{ @notification->id }}">
                                     <i class="fa fa-check"></i>
                                 </button>
                             </check>
                             <check if="{{ @notification->event_type == 5 && @notification->is_read == false }}">
-                                <button class="btn btn-warning btn-xs react-to-job-won read-notification" data-href="/PAI-proj/job/{{ @notification->event_id }}/winner/{{ @SESSION.userid }}/decline">
-                                    <i class="fa fa-times"></i> decline
-                                </button>
                                 <button class="btn btn-info btn-xs react-to-job-won read-notification" data-href="/PAI-proj/job/{{ @notification->event_id }}/winner/{{ @SESSION.userid }}/confirm">
                                     <i class="fa fa-check"></i> confirm
                                 </button>
+                                <button class="btn btn-warning btn-xs react-to-job-won read-notification" data-href="/PAI-proj/job/{{ @notification->event_id }}/winner/{{ @SESSION.userid }}/decline">
+                                    <i class="fa fa-times"></i> decline
+                                </button>
                             </check>
-                            <button class="btn btn-danger btn-xs delete-notification" data-href="{{ @notification->id }}">
+                            <check if="{{ (@notification->event_type != 5)
+														|| (@notification->event_type == 5 && @notification->is_read == true) }}">
+                            <button class="btn btn-danger btn-xs delete-notification" data-href="/PAI-proj/notification/{{ @notification->id }}">
                                 <i class="fa fa-trash"></i>
                             </button>
+														</check>
                         </td>
                     </tr>
                 </repeat>

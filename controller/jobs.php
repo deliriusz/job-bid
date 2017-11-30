@@ -101,6 +101,7 @@ class Jobs extends Controller
 
     private function handleJobWonDecision ($f3, $isAccepted) {
         //TODO add check of logged in and permissions and if job is finished
+				//TODO multiple notifications for not related jobs on confirmation / decline - twice for each job
         Login::handleUserShouldBeLogged($f3);
         $winner_id = $f3->get('PARAMS.userid');
         $job_id =  $f3->get('PARAMS.jobid');
@@ -116,8 +117,18 @@ class Jobs extends Controller
                 'notify_users' => array($winner_id, $jobMapper->userid)
             ));
 
+        $notificationMapper = new DB\SQL\Mapper($this->db, 'notification');
+        $eventMapper = new DB\SQL\Mapper($this->db, 'event');
+        $eventMapper->load (array('source_id = ? AND type = ?', $job_id, 'job'));
+				$notificationMapper->load(array('event_id = ? AND user_id = ? AND event_type = 5', $eventMapper->id, $winner_id));
+
+				if ($isAccepted) {
+					$jobMapper->winner = $winner_id;
+					$jobMapper->save();
+				}
+
         //TODO implement
-        //$ec->readNotification();
+        $ec->readNotification($notificationMapper->id);
 
         $returnData = array();
         $returnData['success'] = true;

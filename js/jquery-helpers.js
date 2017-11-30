@@ -7,14 +7,22 @@ jQuery(document).ready(function($) {
         window.location = $(this).data("href");
     });
 
-    $(".read-notification .react-to-job-won").click(function() {
-        event.preventDefault();
+    $(".read-notification").click(function() {
+        //event.preventDefault();
         var formData = {
         };
 
         postForm('post', $(this).attr('data-href'), formData, '', '', reloadPageOnDone);
     });
 
+    $(".react-to-job-won").click(function() {
+        //event.preventDefault();
+        var formData = {
+        };
+
+        postForm('post', $(this).attr('data-href'), formData, '', '', reloadPageOnDone);
+    });
+		
     $("#submitRegisterForm").click (function (event){
         var formData = {
             'first_name': $('input[name=inputFirstName]').val(),
@@ -153,7 +161,7 @@ jQuery(document).ready(function($) {
         var formData = {
         };
 
-        postForm('delete', '/PAI-proj/notification/' + $(this).attr('data-href'), formData, '', '', reloadPageOnDone);
+        postForm('delete', $(this).attr('data-href'), formData, '', '', reloadPageOnDone);
 
     });
 
