@@ -128,7 +128,7 @@ class Jobs extends Controller
         }
 
         //TODO implement
-        $ec->readNotification($notificationMapper->id);
+        //$ec->readNotification($notificationMapper->id);
 
         $returnData = array();
         $returnData['success'] = true;
@@ -282,7 +282,7 @@ class Jobs extends Controller
     // 'offset'=>5,
     // 'limit'=>3
     // )
-    private function getJobs ($constrainsArr = NULL, $paginationSettings = NULL) {
+    function getJobs ($constrainsArr = NULL, $paginationSettings = NULL) {
         $jobsMapper = new DB\SQL\Mapper($this->db, 'job');
         $jobsMapper->load($constrainsArr, $paginationSettings);
         $jobArray = array();
@@ -340,6 +340,12 @@ class Jobs extends Controller
             $bidsArray
         );
         return $j;
+    }
+
+    public function __construct($f3 = NULL)
+    {
+        $this->f3 = $f3;
+        $this->db = $f3->get('DB');
     }
 }
 

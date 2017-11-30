@@ -39,16 +39,17 @@ class Notifications extends Controller
         Login::handleUserShouldBeLogged($f3);
         $ec = new EventController($f3);
         $this->doRender = false;
-				$readAll = !$f3->exists('PARAMS.notificationid');
+        $deleteAll = !$f3->exists('PARAMS.notificationid');
 
-				if ($readAll) {
-					$notificationsForUser = $ec->getNotificationsForUser($f3->get('SESSION.userid'));
-					foreach ($notificationsForUser as $n) {
-		        $ec->deleteNotification($n->id);
-					}
-				} else {
-	        $ec->deleteNotification($f3->get('PARAMS.notificationid'));
-				}
+        if ($deleteAll) {
+            $notificationsForUser = $ec->getNotificationsForUser($f3->get('SESSION.userid'));
+            foreach ($notificationsForUser as $n) {
+                if ($n->event_type != 5 && $n->is_read == 0) //job win event
+                    $ec->deleteNotification($n->id);
+            }
+        } else {
+            $ec->deleteNotification($f3->get('PARAMS.notificationid'));
+        }
 
         $returnData = array();
         $returnData['success'] = true;
@@ -62,16 +63,17 @@ class Notifications extends Controller
         Login::handleUserShouldBeLogged($f3);
         $ec = new EventController($f3);
         $this->doRender = false;
-				$readAll = !$f3->exists('PARAMS.notificationid');
+        $readAll = !$f3->exists('PARAMS.notificationid');
 
-				if ($readAll) {
-					$notificationsForUser = $ec->getNotificationsForUser($f3->get('SESSION.userid'));
-					foreach ($notificationsForUser as $n) {
-		        $ec->readNotification($n->id);
-					}
-				} else {
-	        $ec->readNotification($f3->get('PARAMS.notificationid'));
-				}
+        if ($readAll) {
+            $notificationsForUser = $ec->getNotificationsForUser($f3->get('SESSION.userid'));
+            foreach ($notificationsForUser as $n) {
+                if ($n->event_type != 5) //job win event
+                    $ec->readNotification($n->id);
+            }
+        } else {
+            $ec->readNotification($f3->get('PARAMS.notificationid'));
+        }
 
         $returnData = array();
         $returnData['success'] = true;

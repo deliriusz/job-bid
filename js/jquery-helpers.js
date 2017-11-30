@@ -16,7 +16,7 @@ jQuery(document).ready(function($) {
     });
 
     $(".react-to-job-won").click(function() {
-        //event.preventDefault();
+        event.preventDefault();
         var formData = {
         };
 

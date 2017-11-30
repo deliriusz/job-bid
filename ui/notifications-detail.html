@@ -66,10 +66,10 @@ font awesome icons to use on notifications:
                                 </button>
                             </check>
                             <check if="{{ @notification->event_type == 5 && @notification->is_read == false }}">
-                                <button class="btn btn-info btn-xs react-to-job-won read-notification" data-href="/PAI-proj/job/{{ @notification->event_id }}/winner/{{ @SESSION.userid }}/confirm">
+                                <button class="btn btn-info btn-xs react-to-job-won" data-href="/PAI-proj/job/{{ @notification->event_id }}/winner/{{ @SESSION.userid }}/confirm">
                                     <i class="fa fa-check"></i> confirm
                                 </button>
-                                <button class="btn btn-warning btn-xs react-to-job-won read-notification" data-href="/PAI-proj/job/{{ @notification->event_id }}/winner/{{ @SESSION.userid }}/decline">
+                                <button class="btn btn-warning btn-xs react-to-job-won" data-href="/PAI-proj/job/{{ @notification->event_id }}/winner/{{ @SESSION.userid }}/decline">
                                     <i class="fa fa-times"></i> decline
                                 </button>
                             </check>

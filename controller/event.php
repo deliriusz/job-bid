@@ -53,7 +53,6 @@ class EventController {
 
         $eventSubscriberMapper->load($constrainsArray);
 
-        //TODO check error
         for ($i =  0; $i < $eventSubscriberMapper->loaded(); $i++) {
             $notificationMapper->reset();
             $notificationMapper->user_id = $eventSubscriberMapper->user_id;
