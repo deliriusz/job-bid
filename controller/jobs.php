@@ -101,7 +101,7 @@ class Jobs extends Controller
 
     private function handleJobWonDecision ($f3, $isAccepted) {
         //TODO add check of logged in and permissions and if job is finished
-				//TODO multiple notifications for not related jobs on confirmation / decline - twice for each job
+        //TODO multiple notifications for not related jobs on confirmation / decline - twice for each job
         Login::handleUserShouldBeLogged($f3);
         $winner_id = $f3->get('PARAMS.userid');
         $job_id =  $f3->get('PARAMS.jobid');
@@ -120,12 +120,12 @@ class Jobs extends Controller
         $notificationMapper = new DB\SQL\Mapper($this->db, 'notification');
         $eventMapper = new DB\SQL\Mapper($this->db, 'event');
         $eventMapper->load (array('source_id = ? AND type = ?', $job_id, 'job'));
-				$notificationMapper->load(array('event_id = ? AND user_id = ? AND event_type = 5', $eventMapper->id, $winner_id));
+        $notificationMapper->load(array('event_id = ? AND user_id = ? AND event_type = 5', $eventMapper->id, $winner_id));
 
-				if ($isAccepted) {
-					$jobMapper->winner = $winner_id;
-					$jobMapper->save();
-				}
+        if ($isAccepted) {
+            $jobMapper->winner = $winner_id;
+            $jobMapper->save();
+        }
 
         //TODO implement
         $ec->readNotification($notificationMapper->id);
@@ -201,7 +201,7 @@ class Jobs extends Controller
     }
 
 
-		//ajax request
+    //ajax request
     function postEditedJob ($f3) {
         Login::handleUserShouldBeLogged($f3);
         $this->doRender = false;
@@ -263,10 +263,10 @@ class Jobs extends Controller
 
     function editSpecificJob ($f3) {
         $this->isPageLoginProtected = true;
-				$jobs = $this->getJobs (array('id = ?', $f3->get('PARAMS.jobid')));
-				if (count($jobs) > 0) {
-					$f3->set('job', $jobs[0]);
-				}
+        $jobs = $this->getJobs (array('id = ?', $f3->get('PARAMS.jobid')));
+        if (count($jobs) > 0) {
+            $f3->set('job', $jobs[0]);
+        }
         $f3->set('content', 'editjobeditor.html');
     }
 
@@ -386,6 +386,7 @@ class Job {
         $this->bids = $bids;
         $this->finished = $finished === 1;
         $this->winner = $winner;
+
         $bidValues =
             array_map(function($bid){
                 return $bid->value;

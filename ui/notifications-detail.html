@@ -18,14 +18,14 @@ font awesome icons to use on notifications:
                     <th class="col-xs-1"></th>
                     <th class="col-xs-6">Jobs notifications</th>
                     <th class="col-xs-5">
-											<button class="btn btn-success btn-xs read-notification" data-href="/PAI-proj/user/notifications/all">
-													<i class="fa fa-check"></i> read all
-											</button>
-											<button class="btn btn-danger btn-xs delete-notification" data-href="/PAI-proj/user/notifications/all">
-													<i class="fa fa-trash"></i> delete all
-											</button>
+                        <button class="btn btn-success btn-xs read-notification" data-href="/PAI-proj/user/notifications/all">
+                            <i class="fa fa-check"></i> read all
+                        </button>
+                        <button class="btn btn-danger btn-xs delete-notification" data-href="/PAI-proj/user/notifications/all">
+                            <i class="fa fa-trash"></i> delete all
+                        </button>
 
-										</th>
+                    </th>
                 </tr>
                 </thead>
                 <tbody>
@@ -75,10 +75,10 @@ font awesome icons to use on notifications:
                             </check>
                             <check if="{{ (@notification->event_type != 5)
 														|| (@notification->event_type == 5 && @notification->is_read == true) }}">
-                            <button class="btn btn-danger btn-xs delete-notification" data-href="/PAI-proj/notification/{{ @notification->id }}">
-                                <i class="fa fa-trash"></i>
-                            </button>
-														</check>
+                                <button class="btn btn-danger btn-xs delete-notification" data-href="/PAI-proj/notification/{{ @notification->id }}">
+                                    <i class="fa fa-trash"></i>
+                                </button>
+                            </check>
                         </td>
                     </tr>
                 </repeat>

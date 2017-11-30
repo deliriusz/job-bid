@@ -13,35 +13,35 @@
 								<label for="jobName" class="col-sm-3 control-label">Name </label>
 								<div class="col-sm-9">
 									<input type="text" class="form-control"
-									name="jobName" id="jobName" value="{{ @job->name }}" required="required" />
+										   name="jobName" id="jobName" value="{{ @job->name }}" required="required" />
 								</div>
 							</div>
 							<div class="form-group">
 								<label for="jobStartDate" class="col-sm-3 control-label">Job start date </label>
 								<div class="col-sm-9">
 									<input type="date" class="form-control"
-									name="jobStartDate" id="jobStartDate" value="{{ @job->job_start_date }}" required="required" />
+										   name="jobStartDate" id="jobStartDate" value="{{ @job->job_start_date }}" required="required" />
 								</div>
 							</div>
 							<div class="form-group">
 								<label for="jobEndDate" class="col-sm-3 control-label">Job end date </label>
 								<div class="col-sm-9">
 									<input type="date" class="form-control"
-									name="jobEndDate" id="jobEndDate" value="{{ @job->job_end_date }}" required="required" />
+										   name="jobEndDate" id="jobEndDate" value="{{ @job->job_end_date }}" required="required" />
 								</div>
 							</div>
 							<div class="form-group">
 								<label for="jobInitialPayment" class="col-sm-3 control-label">Initial payment </label>
 								<div class="col-sm-9">
 									<input type="number" step="0.01" class="form-control"
-									name="jobInitialPayment" id="jobInitialPayment" value="{{ @job->initial_price }}" required="required" />
+										   name="jobInitialPayment" id="jobInitialPayment" value="{{ @job->initial_price }}" required="required" />
 								</div>
 							</div>
 							<div class="form-group">
 								<label for="jobDescription" class="col-sm-3 control-label">Description </label>
 								<div class="col-sm-9">
 									<textarea class="form-control"
-									name="jobDescription" id="jobDescription" required="required" rows="10" >{{ @job->description }}</textarea>
+											  name="jobDescription" id="jobDescription" required="required" rows="10" >{{ @job->description }}</textarea>
 								</div>
 							</div>
 							<div class="form-group">
@@ -51,30 +51,31 @@
 								</div>
 							</div>
 						</form>
-					</true>
-					<false>
-						<check if="isset(@job)">
-							<true>
-								<check if="@job->userid != @SESSION.userid">
-									<div class="alert alert-danger">
-										<i class="fa fa-warning"></i> You cannot edit someone else's job offers
-									</div>
-								</check>
-								<check if=" @job->finished === true ">
-									<div class="alert alert-info">
-										<i class="fa fa-info-circle"></i> This job already finished
-									</div>
-								</check>
-							</true>
-							<false>
+					</div>
+				</true>
+				<false>
+					<check if="isset(@job)">
+						<true>
+							<check if="@job->userid != @SESSION.userid">
 								<div class="alert alert-danger">
-									<i class="fa fa-warning"></i> Job was not found
+									<i class="fa fa-warning"></i> You cannot edit someone else's job offers
 								</div>
-							</false>
-						</check>
-					</false>
-				</check>
-			</div>
+							</check>
+							<check if=" @job->finished === true ">
+								<div class="alert alert-info">
+									<i class="fa fa-info-circle"></i> This job already finished
+								</div>
+							</check>
+						</true>
+						<false>
+							<div class="alert alert-danger">
+								<i class="fa fa-warning"></i> Job was not found
+							</div>
+						</false>
+					</check>
+				</false>
+			</check>
 		</div>
 	</div>
+</div>
 </div>

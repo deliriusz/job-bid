@@ -4,22 +4,22 @@
             <div>
                 <div class="panel panel-default panel-body">
                     <h1>
-                                <div class="col-xs-9">{{@job->name}}
-																</div>
-                                <div class="col-xs-3 text-right">
-																	<form class="form-inline">
-                            <div class="form-group">
-                                <check if="{{ isset(@SESSION.username) && @job->finished===false }}">
-																	<check if="{{ @job->userid == @SESSION.userid }}">
-																	    <a href="/PAI-proj/job/{{@job->id}}/edit" class="button"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
-																		</check>
-                                    <input type="hidden" name="notification-subscribe-type" value="job"/>
-                                    <input type="hidden" name="notification-subscribe-id" value="{{ @job->id }}"/>
-                                    <i type="submit" class="fa {{ @isUserSubscribedToJobEvents ? 'fa-bell-slash-o' : 'fa-bell-o' }} notification-switch-button"></i>
-                                </check>
-                            </div>
-                        </form>
-																</div>
+                        <div class="col-xs-9">{{@job->name}}
+                        </div>
+                        <div class="col-xs-3 text-right">
+                            <form class="form-inline">
+                                <div class="form-group">
+                                    <check if="{{ isset(@SESSION.username) && @job->finished===false }}">
+                                        <check if="{{ @job->userid == @SESSION.userid }}">
+                                            <a href="/PAI-proj/job/{{@job->id}}/edit" class="button"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                                        </check>
+                                        <input type="hidden" name="notification-subscribe-type" value="job"/>
+                                        <input type="hidden" name="notification-subscribe-id" value="{{ @job->id }}"/>
+                                        <i type="submit" class="fa {{ @isUserSubscribedToJobEvents ? 'fa-bell-slash-o' : 'fa-bell-o' }} notification-switch-button"></i>
+                                    </check>
+                                </div>
+                            </form>
+                        </div>
 
                     </h1>
                 </div>
@@ -46,7 +46,7 @@
                                         </div>
                                     </true>
                                     <false>
-																			<check if="{{ @job->userid != @SESSION.userid }}">
+                                        <check if="{{ @job->userid != @SESSION.userid }}">
                                       <span>
                                         <form class="form-inline" id="placeBidForm">
                                             <div class="error-placeholder"></div>
@@ -58,8 +58,8 @@
                                             <button type="submit" class="btn btn-default" >Submit</button>
                                           </form>
                                         </span>
-																			<hr/>
-																			</check>
+                                            <hr/>
+                                        </check>
                                     </false>
                                 </check>
                             </check>
@@ -72,9 +72,9 @@
                                         <th>Bid value</th>
                                         <th>User</th>
                                         <th>Bid time</th>
-																				<check if="{{ @job->userid == @SESSION.userid && @job->finished == true }}">
-	                                        <th>Action</th>
-																				</check>
+                                        <check if="{{ @job->userid == @SESSION.userid && @job->finished == true }}">
+                                            <th>Action</th>
+                                        </check>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -83,13 +83,13 @@
                                             <td>{{@bid->value}}</td>
                                             <td><a href="/PAI-proj/user/{{@bid->username}}">{{@bid->username}}</a></td>
                                             <td>{{@bid->time}}</td>
-																						<check if="{{ @job->userid == @SESSION.userid && @job->finished == true && @job->winner == NULL }}">
-																							<td>
-																							<button class="btn btn-success btn-sm select-winning-user" data-href="/PAI-proj/job/{{ @job->id}}/winner/{{ @bid->user_id }}">
-																								<i class="fa fa-handshake-o"></i>
-																							</button>
-																							</td>
-																						</check>
+                                            <check if="{{ @job->userid == @SESSION.userid && @job->finished == true && @job->winner == NULL }}">
+                                                <td>
+                                                    <button class="btn btn-success btn-sm select-winning-user" data-href="/PAI-proj/job/{{ @job->id}}/winner/{{ @bid->user_id }}">
+                                                        <i class="fa fa-handshake-o"></i>
+                                                    </button>
+                                                </td>
+                                            </check>
                                         </tr>
                                     </repeat>
                                     </tbody>
