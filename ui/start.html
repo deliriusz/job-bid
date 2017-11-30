@@ -1,5 +1,4 @@
-<check if="{{ @SESSION['username'] }}">
-  <false>
+<check if="{{ !isset(@SESSION.username) }}">
     <div class="container">
       <div class="col-md-7">
         <h1>Looking for a job? <br/>
@@ -19,7 +18,6 @@
         </div>
       </div>
     </div>
-  </false>
 </check>
 
 <div class="container">
@@ -27,34 +25,6 @@
     <div class="panel-heading">
       <h4>Find jobs around</h4>
     </div>
-    <div class="panel-body">
-      <table class="table table-hover">
-        <caption>Find some of the best job offers in our system</caption>
-        <thead>
-        <tr>
-          <th>Localization</th>
-          <th>Job offer</th>
-          <th>Prognozed payment</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-          <td>Massetchusets</td>
-          <td>Housekeeping</td>
-          <td>$20.00</td>
-        </tr>
-        <tr>
-          <td>Myszyniec</td>
-          <td>Gangbang</td>
-          <td>$120.00</td>
-        </tr>
-        <tr>
-          <td>Ohio</td>
-          <td>Killing Trump</td>
-          <td>$152590.99</td>
-        </tr>
-        </tbody>
-      </table>
-    </div>
+    <include href="{{ @content }}">
   </div>
 </div>
