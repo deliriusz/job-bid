@@ -1,7 +1,5 @@
 //TODO add mail notifications
 //TODO add possibility of tracking user
-//TODO add possibility of using HTML in job offers
-//TODO add real jobs on the main page
 //TODO think about implementation of payments
 //TODO add filtering for jobs page
 //TODO implement searchbar in jobs

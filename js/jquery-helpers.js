@@ -35,32 +35,6 @@ jQuery(document).ready(function($) {
         event.preventDefault();
     });
 
-    $("#submitUpdateUserDataForm").click (function (event){
-        var formData = {
-            'first_name': $('input[name=inputFirstName]').val(),
-            'last_name': $('input[name=inputLastName]').val(),
-            'username': $('input[name=inputUsername]').val(),
-            'email': $('input[name=inputEmail]').val(),
-            'info': $('textarea[name=inputInfo]').val(),
-            'birth_date': $('input[name=inputBirthDate]').val()
-        };
-
-        postForm('post', '/PAI-proj/user/account', formData, '', 'Please correct following errors: ', listErrorsOnDoneWithSettingSucess);
-
-        event.preventDefault();
-    });
-
-    $("#submitUpdateUserPasswordForm").click (function (event){
-        var formData = {
-            'password': $('input[name=inputPassword]').val(),
-            'repeated_password': $('input[name=inputRepeatPassword]').val()
-        };
-
-        postForm('post', '/PAI-proj/user/account', formData, '', 'Please correct following errors: ', listErrorsOnDoneWithSettingSucess);
-
-        event.preventDefault();
-    });
-
 		$("#submitProfileImageUpload").submit (function(event) {
 			event.preventDefault();
 			var form = $(this);
@@ -87,36 +61,6 @@ jQuery(document).ready(function($) {
 								 }
 							 });
 		});
-
-    $("#submitNewJobForm").submit (function (event){
-        event.preventDefault();
-        console.log($('textarea[name=jobDescription]').val());
-        var formData = {
-            'jobName': $('input[name=jobName]').val(),
-            'jobStartDate': $('input[name=jobStartDate]').val(),
-            'jobEndDate': $('input[name=jobEndDate]').val(),
-            'jobInitialPayment': $('input[name=jobInitialPayment]').val(),
-            'jobDescription': $('textarea[name=jobDescription]').val()
-        };
-
-        postForm('post', '/PAI-proj/jobs/add', formData, '', 'Please correct following errors: ', listErrorsOnDoneWithReroute);
-
-    });
-
-    $("#submitEditJobForm").submit (function (event){
-        event.preventDefault();
-        console.log($('textarea[name=jobDescription]').val());
-        var formData = {
-            'jobName': $('input[name=jobName]').val(),
-            'jobStartDate': $('input[name=jobStartDate]').val(),
-            'jobEndDate': $('input[name=jobEndDate]').val(),
-            'jobInitialPayment': $('input[name=jobInitialPayment]').val(),
-            'jobDescription': $('textarea[name=jobDescription]').val()
-        };
-
-        postForm('post', $(this).attr('action'), formData, '', 'Please correct following errors: ', listErrorsOnDoneWithReroute);
-
-    });
 
     $("#placeBidForm").submit (function (event){
         event.preventDefault();
