@@ -22,9 +22,12 @@ $f3->route ('GET /',
 // 'limit'=>3
         $jobsController = new Jobs ($f3);
         $jobs = $jobsController->getJobs (
-            NULL, array (
+            array(
+							'finished = 0'
+						)
+						, array (
                 'order' => 'initial_price DESC',
-                'limit' => 5
+                'limit' => 10
             )
         );
         $f3->set('jobs', $jobs);
