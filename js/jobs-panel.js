@@ -19,7 +19,8 @@ $(":input").on ('input', function(event) {
             'job_type': $('input[name=job_type]').val(),
             'date_from': $('input[name=date_from]').val(),
             'date_to': $('input[name=date_to]').val(),
-            'location': $('input[name=location]').val()
+            'location': $('input[name=location]').val(),
+            'name': $('input[name=searchJobByName]').val()
         };
 
 	$.ajax({
