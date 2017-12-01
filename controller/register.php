@@ -6,7 +6,7 @@
  * Time: 22:20
  */
 
-
+require_once('controller/event.php');
 class Register extends Controller
 {
     function view ($f3) {
@@ -95,17 +95,19 @@ class Register extends Controller
         }
 
         if (empty ($errors)) {
+          $userMapper->reset();
+          $userMapper->username = $user;
+          $userMapper->password = $calculatedPass;
+          $userMapper->email = $email;
+          $userMapper->salt = $saltForUser;
+          $userMapper->birth_date = $_POST['birth_date'];
+          $userMapper->first_name = $_POST['first_name'];
+          $userMapper->last_name = $_POST['last_name'];
+          $userMapper->save();
 
-            $this->db->exec ('INSERT INTO user (username, password, email, salt, birth_date, first_name, last_name) values (?, ?, ?, ?, ?, ?, ?)',
-                array (
-                    $user,
-                    $calculatedPass,
-                    $email,
-                    $saltForUser,
-                    $_POST['birth_date'],
-                    $_POST['first_name'],
-                    $_POST['last_name']
-                ));
+          $ec = new EventController($f3);
+          $ec->createNewEvent($userMapper->id, 'user');
+
         }
 
         return $errors;

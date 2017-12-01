@@ -23,14 +23,14 @@
 								<label for="jobStartDate" class="col-sm-3 control-label">Job start date </label>
 								<div class="col-sm-9">
 									<input type="date" class="form-control"
-										   name="jobStartDate" id="jobStartDate" value="{{ @job->job_start_date }}" required="required" />
+										   name="jobStartDate" id="jobStartDate" value="{{ Utils::datetimeToDate(@job->job_start_time) }}" required="required" />
 								</div>
 							</div>
 							<div class="form-group">
 								<label for="jobEndDate" class="col-sm-3 control-label">Job end date </label>
 								<div class="col-sm-9">
 									<input type="date" class="form-control"
-										   name="jobEndDate" id="jobEndDate" value="{{ @job->job_end_date }}" required="required" />
+										   name="jobEndDate" id="jobEndDate" value="{{ Utils::datetimeToDate(@job->job_end_time) }}" required="required"></input>
 								</div>
 							</div>
 							<div class="form-group">
