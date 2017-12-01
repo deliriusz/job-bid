@@ -105,6 +105,7 @@ class Register extends Controller
           $userMapper->last_name = $_POST['last_name'];
           $userMapper->save();
 
+          //TODO still error here
           $ec = new EventController($f3);
           $ec->createNewEvent($userMapper->id, 'user');
 
