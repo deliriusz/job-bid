@@ -7,22 +7,6 @@ jQuery(document).ready(function($) {
         window.location = $(this).data("href");
     });
 
-    $(".read-notification").click(function() {
-        //event.preventDefault();
-        var formData = {
-        };
-
-        postForm('post', $(this).attr('data-href'), formData, '', '', reloadPageOnDone);
-    });
-
-    $(".react-to-job-won").click(function() {
-        event.preventDefault();
-        var formData = {
-        };
-
-        postForm('post', $(this).attr('data-href'), formData, '', '', reloadPageOnDone);
-    });
-
     $("#submitRegisterForm").click (function (event){
         var formData = {
             'first_name': $('input[name=inputFirstName]').val(),
@@ -151,12 +135,6 @@ jQuery(document).ready(function($) {
 
     });
 
-    $(".notification-master-list").click( function () {
-
-        location.href = '/PAI-proj/user/notifications?tab=' + $(this).attr('data-option');
-
-    });
-
     $(".notification-switch-button").click( function (event) {
         event.preventDefault();
 
@@ -169,16 +147,6 @@ jQuery(document).ready(function($) {
 
     });
 
-
-    $(".delete-notification").click( function (event) {
-        event.preventDefault();
-
-        var formData = {
-        };
-
-        postForm('delete', $(this).attr('data-href'), formData, '', '', reloadPageOnDone);
-
-    });
 
     $(".select-winning-user").click( function (event) {
         event.preventDefault();
