@@ -8,6 +8,7 @@ SET time_zone = "+00:00";
 --
 DROP DATABASE IF EXISTS pai;
 CREATE DATABASE  IF NOT EXISTS pai;
+GRANT SELECT,INSERT,UPDATE,DELETE,CREATE ON pai.* TO 'pai'@'localhost';
 USE pai;
 -- --------------------------------------------------------
 
