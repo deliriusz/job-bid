@@ -7,22 +7,6 @@ jQuery(document).ready(function($) {
         window.location = $(this).data("href");
     });
 
-    $(".read-notification").click(function() {
-        //event.preventDefault();
-        var formData = {
-        };
-
-        postForm('post', $(this).attr('data-href'), formData, '', '', reloadPageOnDone);
-    });
-
-    $(".react-to-job-won").click(function() {
-        event.preventDefault();
-        var formData = {
-        };
-
-        postForm('post', $(this).attr('data-href'), formData, '', '', reloadPageOnDone);
-    });
-
     $("#submitRegisterForm").click (function (event){
         var formData = {
             'first_name': $('input[name=inputFirstName]').val(),
@@ -47,32 +31,6 @@ jQuery(document).ready(function($) {
 
         // postForm('post', '/PAI-proj/login', formData, data.rerouteAfterLogin, 'Username or password not matched', listErrorsOnDoneWithReroute);
         postForm('post', '/PAI-proj/login', formData, '/PAI-proj/', 'Username or password not matched', listErrorsOnDoneWithReroute);
-
-        event.preventDefault();
-    });
-
-    $("#submitUpdateUserDataForm").click (function (event){
-        var formData = {
-            'first_name': $('input[name=inputFirstName]').val(),
-            'last_name': $('input[name=inputLastName]').val(),
-            'username': $('input[name=inputUsername]').val(),
-            'email': $('input[name=inputEmail]').val(),
-            'info': $('textarea[name=inputInfo]').val(),
-            'birth_date': $('input[name=inputBirthDate]').val()
-        };
-
-        postForm('post', '/PAI-proj/user/account', formData, '', 'Please correct following errors: ', listErrorsOnDoneWithSettingSucess);
-
-        event.preventDefault();
-    });
-
-    $("#submitUpdateUserPasswordForm").click (function (event){
-        var formData = {
-            'password': $('input[name=inputPassword]').val(),
-            'repeated_password': $('input[name=inputRepeatPassword]').val()
-        };
-
-        postForm('post', '/PAI-proj/user/account', formData, '', 'Please correct following errors: ', listErrorsOnDoneWithSettingSucess);
 
         event.preventDefault();
     });
@@ -104,36 +62,6 @@ jQuery(document).ready(function($) {
 							 });
 		});
 
-    $("#submitNewJobForm").submit (function (event){
-        event.preventDefault();
-        console.log($('textarea[name=jobDescription]').val());
-        var formData = {
-            'jobName': $('input[name=jobName]').val(),
-            'jobStartDate': $('input[name=jobStartDate]').val(),
-            'jobEndDate': $('input[name=jobEndDate]').val(),
-            'jobInitialPayment': $('input[name=jobInitialPayment]').val(),
-            'jobDescription': $('textarea[name=jobDescription]').val()
-        };
-
-        postForm('post', '/PAI-proj/jobs/add', formData, '', 'Please correct following errors: ', listErrorsOnDoneWithReroute);
-
-    });
-
-    $("#submitEditJobForm").submit (function (event){
-        event.preventDefault();
-        console.log($('textarea[name=jobDescription]').val());
-        var formData = {
-            'jobName': $('input[name=jobName]').val(),
-            'jobStartDate': $('input[name=jobStartDate]').val(),
-            'jobEndDate': $('input[name=jobEndDate]').val(),
-            'jobInitialPayment': $('input[name=jobInitialPayment]').val(),
-            'jobDescription': $('textarea[name=jobDescription]').val()
-        };
-
-        postForm('post', $(this).attr('action'), formData, '', 'Please correct following errors: ', listErrorsOnDoneWithReroute);
-
-    });
-
     $("#placeBidForm").submit (function (event){
         event.preventDefault();
         var formData = {
@@ -151,12 +79,6 @@ jQuery(document).ready(function($) {
 
     });
 
-    $(".notification-master-list").click( function () {
-
-        location.href = '/PAI-proj/user/notifications?tab=' + $(this).attr('data-option');
-
-    });
-
     $(".notification-switch-button").click( function (event) {
         event.preventDefault();
 
@@ -169,16 +91,6 @@ jQuery(document).ready(function($) {
 
     });
 
-
-    $(".delete-notification").click( function (event) {
-        event.preventDefault();
-
-        var formData = {
-        };
-
-        postForm('delete', $(this).attr('data-href'), formData, '', '', reloadPageOnDone);
-
-    });
 
     $(".select-winning-user").click( function (event) {
         event.preventDefault();

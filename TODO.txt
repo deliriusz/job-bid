@@ -1,11 +1,10 @@
 //TODO add mail notifications
 //TODO add possibility of tracking user
-//TODO add update job feature
-//TODO add possibility of using HTML in job offers
-//TODO add real jobs on the main page
 //TODO think about implementation of payments
-//TODO add filtering and pagination for jobs page
+//TODO add filtering for jobs page
 //TODO implement searchbar in jobs
 //TODO change "ends on" to "ends in" and calculate how much time left. Maybe use ajax to diminish counter
 //TODO think about what to do when job finishes and (1) noone was interested (2) someone won
 //TODO disallow user from bidding over own offers
+
+//TODO fix notifications

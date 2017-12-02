@@ -6,6 +6,11 @@ class Utils {
         return date($format,$currentTime);
     }
 
+    static function datetimeToDate($datetime, $dateformat = "Y-m-d", $datetimeformat = "Y-m-d H:i:s") {
+      $ts = self::getTimestampFromDateTime($datetime, $datetimeformat);
+      return date($dateformat, $ts);
+    }
+
     static function getDateTimeFromTimestamp ($timestamp, $format = "Y-m-d H:i:s") {
         return date($format, $timestamp);
     }

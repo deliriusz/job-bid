@@ -1,4 +1,7 @@
 <div class="container">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
+  <script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
+  <script src="/PAI-proj/js/markdown-editor-jquery-helpers.js"></script>
 	<div class="panel panel-default panel-body">
 		<h1>Edit job</h1>
 	</div>
@@ -20,14 +23,14 @@
 								<label for="jobStartDate" class="col-sm-3 control-label">Job start date </label>
 								<div class="col-sm-9">
 									<input type="date" class="form-control"
-										   name="jobStartDate" id="jobStartDate" value="{{ @job->job_start_date }}" required="required" />
+										   name="jobStartDate" id="jobStartDate" value="{{ Utils::datetimeToDate(@job->job_start_time) }}" required="required" />
 								</div>
 							</div>
 							<div class="form-group">
 								<label for="jobEndDate" class="col-sm-3 control-label">Job end date </label>
 								<div class="col-sm-9">
 									<input type="date" class="form-control"
-										   name="jobEndDate" id="jobEndDate" value="{{ @job->job_end_date }}" required="required" />
+										   name="jobEndDate" id="jobEndDate" value="{{ Utils::datetimeToDate(@job->job_end_time) }}" required="required"></input>
 								</div>
 							</div>
 							<div class="form-group">
@@ -40,8 +43,8 @@
 							<div class="form-group">
 								<label for="jobDescription" class="col-sm-3 control-label">Description </label>
 								<div class="col-sm-9">
-									<textarea class="form-control"
-											  name="jobDescription" id="jobDescription" required="required" rows="10" >{{ @job->description }}</textarea>
+									<textarea class="form-control markdown-textarea"
+											  name="jobDescription" id="jobDescription" rows="10" >{{ @job->description }}</textarea>
 								</div>
 							</div>
 							<div class="form-group">

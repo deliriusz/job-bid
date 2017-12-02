@@ -63,7 +63,7 @@
                                     </false>
                                 </check>
                             </check>
-                            <p>{{@job->description}}</p>
+                            <p>{{Markdown::instance()->convert(  @job->description ) }}</p>
                             <hr>
                             <div class="panel-body">
                                 <table class="table table-hover">

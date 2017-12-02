@@ -5,6 +5,7 @@
  * Date: 19.11.2017
  * Time: 11:55
  */
+ require_once('controller/event.php');
 
 class Account extends Controller
 {
@@ -14,6 +15,16 @@ class Account extends Controller
         $users = $userController->getUsers(array('username = ?', $f3->get('PARAMS.username')), NULL);
 
         $f3->set('user', $users[0]);
+
+        $ec = new EventController($f3);
+
+        $f3->set('isUserSubscribedToUserEvents',
+            $ec->isUserSubscribedToEvent(
+                $f3->get('SESSION.userid'),
+                $users[0]->id,
+                'user'
+            )
+        );
 
         $f3->set('content', 'account.html');
     }
