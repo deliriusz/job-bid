@@ -1,5 +1,5 @@
 {
-  "name": "PAI-proj",
+  "name": "JobBid",
   "version": "0.0.1",
   "autoload": {
     "files": ["lib/base.php"]

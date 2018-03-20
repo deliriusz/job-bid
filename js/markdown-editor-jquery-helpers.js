@@ -26,7 +26,7 @@ jQuery(document).ready(function($) {
       'birth_date': $('input[name=inputBirthDate]').val()
     };
 
-    postForm('post', '/PAI-proj/user/account', formData, '', 'Please correct following errors: ', listErrorsOnDoneWithSettingSucess);
+    postForm('post', '/user/account', formData, '', 'Please correct following errors: ', listErrorsOnDoneWithSettingSucess);
 
     event.preventDefault();
   });
@@ -37,7 +37,7 @@ jQuery(document).ready(function($) {
       'repeated_password': $('input[name=inputRepeatPassword]').val()
     };
 
-    postForm('post', '/PAI-proj/user/account', formData, '', 'Please correct following errors: ', listErrorsOnDoneWithSettingSucess);
+    postForm('post', '/user/account', formData, '', 'Please correct following errors: ', listErrorsOnDoneWithSettingSucess);
 
     event.preventDefault();
   });
@@ -52,7 +52,7 @@ jQuery(document).ready(function($) {
       'jobDescription': simplemdeditor.value()
     };
 
-    postForm('post', '/PAI-proj/jobs/add', formData, '', 'Please correct following errors: ', listErrorsOnDoneWithReroute);
+    postForm('post', '/jobs/add', formData, '', 'Please correct following errors: ', listErrorsOnDoneWithReroute);
 
   });
 

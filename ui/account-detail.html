@@ -3,7 +3,7 @@
     <div class="modal fade" id="uploadImgModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
-          <form id="submitProfileImageUpload" enctype="multipart/form-data" role="form" action="/PAI-proj/user/{{@user->id}}/prof_picture">
+          <form id="submitProfileImageUpload" enctype="multipart/form-data" role="form" action="/user/{{@user->id}}/prof_picture">
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
               <h4 class="modal-title">Upload Photo</h4>
@@ -35,7 +35,7 @@
           <div class="form-group">
             <check if="{{ isset(@SESSION.username) && @SESSION.username != @user->username }}">
               <check if="{{ @job->userid == @SESSION.userid }}">
-                <a href="/PAI-proj/job/{{@job->id}}/edit" class="button"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                <a href="/job/{{@job->id}}/edit" class="button"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
               </check>
               <input type="hidden" name="notification-subscribe-type" value="user"/>
               <input type="hidden" name="notification-subscribe-id" value="{{ @user->id }}"/>
@@ -72,8 +72,8 @@
     <check if="{{ @GET.tab === 'data' }}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
     <script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
-    <script src="/PAI-proj/js/markdown-editor-jquery-helpers.js"></script>
-      <form class="form-horizontal" id="updateUserDataForm" action="/PAI-proj/user/register" method="post">
+    <script src="/js/markdown-editor-jquery-helpers.js"></script>
+      <form class="form-horizontal" id="updateUserDataForm" action="/user/register" method="post">
         <div class="error-placeholder"></div>
         <div class="form-group">
           <label for="inputFirstName" class="col-sm-3 control-label">First name</label>
@@ -122,7 +122,7 @@
       billing
     </check>
     <check if="{{ @GET.tab === 'password' }}">
-      <form class="form-horizontal" id="udpateUserPasswordForm" action="/PAI-proj/user/register" method="post">
+      <form class="form-horizontal" id="udpateUserPasswordForm" action="/user/register" method="post">
         <div class="error-placeholder"></div>
         <div class="form-group">
           <label for="inputPassword" class="col-sm-3 control-label">New password</label>

@@ -25,7 +25,7 @@ $(":input").on ('input', function(event) {
 
 	$.ajax({
 			type        : 'POST',
-			url         : '/PAI-proj/jobs/filter',
+			url         : '/jobs/filter',
 			data        : formData,
       dataType    : 'json',
       encode      : true

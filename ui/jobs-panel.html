@@ -12,7 +12,7 @@
 				</thead>
 				<tbody>
 				<repeat group="{{ @jobs }}" value="{{ @job }}">
-					<tr class="clickable-row" data-href="/PAI-proj/job/{{ @job->id }}">
+					<tr class="clickable-row" data-href="/job/{{ @job->id }}">
 						<td class="col-xs-1"><span class="badge">{{ count(@job->bids) }}</span></td>
 						<td class="col-xs-4">{{ @job->name }}</td>
 						<td class="col-xs-1">{{ @job->current_price }}</td>

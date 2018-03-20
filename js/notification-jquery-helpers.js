@@ -16,7 +16,7 @@ jQuery(document).ready(function($) {
 
     $(".notification-master-list").click( function () {
 
-        location.href = '/PAI-proj/user/notifications?tab=' + $(this).attr('data-option');
+        location.href = '/user/notifications?tab=' + $(this).attr('data-option');
 
     });
 

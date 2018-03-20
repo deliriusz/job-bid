@@ -14,13 +14,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>PAI projekt</title>
 
-  <link rel="stylesheet" href="/PAI-proj/ui/css/bootstrap.css" />
+  <link rel="stylesheet" href="/ui/css/bootstrap.css" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.js"></script>
-  <script src="/PAI-proj/js/validators.js"></script>
-  <script src="/PAI-proj/js/jquery-helpers.js"></script>
-  <script src="/PAI-proj/js/bootstrap.js"></script>
+  <script src="/js/validators.js"></script>
+  <script src="/js/jquery-helpers.js"></script>
+  <script src="/js/bootstrap.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="/PAI-proj/ui/css/main.css">
+  <link rel="stylesheet" href="/ui/css/main.css">
 </head>
 <body>
 <nav class="navbar navbar-default">
@@ -33,15 +33,15 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="/PAI-proj/">PAI project</a>
+      <a class="navbar-brand" href="/">PAI project</a>
     </div>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <div class="navbar-header">
       </div>
       <ul class="nav navbar-nav">
-        <li><a href="/PAI-proj/jobs">Jobs</a></li>
-        <li><a href="/PAI-proj/how-it-works">How it works</a></li>
-        <li><a href="/PAI-proj/about">About us</a></li>
+        <li><a href="/jobs">Jobs</a></li>
+        <li><a href="/how-it-works">How it works</a></li>
+        <li><a href="/about">About us</a></li>
       </ul>
       <check if="{{ @SESSION.username }}">
         <true>
@@ -51,26 +51,26 @@
               <a class="dropdown-toggle" data-toggle="dropdown" href="#"> {{ @SESSION.username }}
                 <span class="caret"></span></a>
               <ul class="dropdown-menu">
-                <li><a href="/PAI-proj/user/{{@SESSION.username}}"><i class="fa fa-address-card-o"></i> My account</a></li>
-                <li><a href="/PAI-proj/bids"><i class="fa fa-usd"></i> My bids</a></li>
-                <li><a href="/PAI-proj/user/{{@SESSION.username}}/jobs"><i class="fa fa-gavel"></i> My jobs</a></li>
-                <li><a href="/PAI-proj/user/notifications">
+                <li><a href="/user/{{@SESSION.username}}"><i class="fa fa-address-card-o"></i> My account</a></li>
+                <li><a href="/bids"><i class="fa fa-usd"></i> My bids</a></li>
+                <li><a href="/user/{{@SESSION.username}}/jobs"><i class="fa fa-gavel"></i> My jobs</a></li>
+                <li><a href="/user/notifications">
                   <check if="{{ @SESSION.unreadNotificationCount }} > 0">
                     <true><span class="badge">{{ @SESSION.unreadNotificationCount }}</span></true>
                     <false><i class="fa fa-envelope-o"></i></false>
                   </check>
                   Notifications</a>
                 </li>
-                <li><a href="/PAI-proj/jobs/add"><i class="fa fa-plus"></i> Create new job</a></li>
+                <li><a href="/jobs/add"><i class="fa fa-plus"></i> Create new job</a></li>
               </ul>
             </li>
-            <li><a href="/PAI-proj/logout"><span class="fa fa-sign-in"></span> Logout</a></li>
+            <li><a href="/logout"><span class="fa fa-sign-in"></span> Logout</a></li>
           </ul>
         </true>
         <false>
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="/PAI-proj/register"><span class="fa fa-user"></span> Sign Up</a></li>
-            <li><a href="/PAI-proj/login"><span class="fa fa-sign-out"></span> Login</a></li>
+            <li><a href="/register"><span class="fa fa-user"></span> Sign Up</a></li>
+            <li><a href="/login"><span class="fa fa-sign-out"></span> Login</a></li>
           </ul>
         </false>
       </check>

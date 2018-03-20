@@ -18,7 +18,7 @@ jQuery(document).ready(function($) {
             'birth_date': $('input[name=inputBirthDate]').val()
         };
 
-        postForm('post', '/PAI-proj/register', formData, '/PAI-proj/register/welcome', 'Please correct following errors: ', listErrorsOnDoneWithReroute);
+        postForm('post', '/register', formData, '/register/welcome', 'Please correct following errors: ', listErrorsOnDoneWithReroute);
 
         event.preventDefault();
     });
@@ -29,8 +29,8 @@ jQuery(document).ready(function($) {
             'password': $('input[name=inputPassword]').val()
         };
 
-        // postForm('post', '/PAI-proj/login', formData, data.rerouteAfterLogin, 'Username or password not matched', listErrorsOnDoneWithReroute);
-        postForm('post', '/PAI-proj/login', formData, '/PAI-proj/', 'Username or password not matched', listErrorsOnDoneWithReroute);
+        // postForm('post', '/login', formData, data.rerouteAfterLogin, 'Username or password not matched', listErrorsOnDoneWithReroute);
+        postForm('post', '/login', formData, '/', 'Username or password not matched', listErrorsOnDoneWithReroute);
 
         event.preventDefault();
     });
@@ -69,7 +69,7 @@ jQuery(document).ready(function($) {
             'job_id': $('input[name=jobid]').val()
         };
 
-        postForm('post', '/PAI-proj/bid', formData, '', 'Please correct following errors: ', listErrorsOnDoneWithReroute);
+        postForm('post', '/bid', formData, '', 'Please correct following errors: ', listErrorsOnDoneWithReroute);
 
     });
 
@@ -87,7 +87,7 @@ jQuery(document).ready(function($) {
             'notification-subscribe-id': $('input[name=notification-subscribe-id]').val()
         };
 
-        postForm('post', '/PAI-proj/eventsubscriber/set', formData, '', '', reloadPageOnDone);
+        postForm('post', '/eventsubscriber/set', formData, '', '', reloadPageOnDone);
 
     });
 

@@ -190,10 +190,10 @@ class Jobs extends Controller
             $ec = new EventController($f3);
             $ec->createNewEvent($jobsMapper->id, 'job');
             $ec->subscribeNewUser($jobsMapper->id, 'job', $f3->get('SESSION.userid'));
-            //TODO think if this should be user or job 
+            //TODO think if this should be user or job
             $ec->fireEvent($jobsMapper->id, 'user', 1);
 
-            $returnData['rerouteurl'] = ('/PAI-proj/user/' . $f3->get('SESSION.username') . '/job/' . $jobsMapper->id);
+            $returnData['rerouteurl'] = ('/user/' . $f3->get('SESSION.username') . '/job/' . $jobsMapper->id);
         } else {
             $returnData['success'] = false;
             $returnData['errors'] = $errors;
@@ -249,7 +249,7 @@ class Jobs extends Controller
             $ec = new EventController($f3);
             $ec->fireEvent($jobsMapper->id, 'job', 2);
 
-            $returnData['rerouteurl'] = ('/PAI-proj/user/' . $f3->get('SESSION.username') . '/job/' . $jobsMapper->id);
+            $returnData['rerouteurl'] = ('/user/' . $f3->get('SESSION.username') . '/job/' . $jobsMapper->id);
         } else {
             $returnData['success'] = false;
             $returnData['errors'] = $errors;

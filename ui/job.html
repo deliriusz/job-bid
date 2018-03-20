@@ -11,7 +11,7 @@
                                 <div class="form-group">
                                     <check if="{{ isset(@SESSION.username) && @job->finished===false }}">
                                         <check if="{{ @job->userid == @SESSION.userid }}">
-                                            <a href="/PAI-proj/job/{{@job->id}}/edit" class="button"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                                            <a href="/job/{{@job->id}}/edit" class="button"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
                                         </check>
                                         <input type="hidden" name="notification-subscribe-type" value="job"/>
                                         <input type="hidden" name="notification-subscribe-id" value="{{ @job->id }}"/>
@@ -30,7 +30,7 @@
                         <div class="panel-heading row">
                             <div class="col-md-6">
                                 <p>Current price: {{@job->current_price}} $</p>
-                                <p>Created by: <a href="/PAI-proj/user/{{ @job->username }}">{{ @job->username }}</a> </p>
+                                <p>Created by: <a href="/user/{{ @job->username }}">{{ @job->username }}</a> </p>
                             </div>
                             <div class="col-md-6">
                                 <p>Creation time: {{@job->creation_time}}</p>
@@ -81,11 +81,11 @@
                                     <repeat group="{{ @job->bids }}" value="{{ @bid }}">
                                         <tr>
                                             <td>{{@bid->value}}</td>
-                                            <td><a href="/PAI-proj/user/{{@bid->username}}">{{@bid->username}}</a></td>
+                                            <td><a href="/user/{{@bid->username}}">{{@bid->username}}</a></td>
                                             <td>{{@bid->time}}</td>
                                             <check if="{{ @job->userid == @SESSION.userid && @job->finished == true && @job->winner == NULL }}">
                                                 <td>
-                                                    <button class="btn btn-success btn-sm select-winning-user" data-href="/PAI-proj/job/{{ @job->id}}/winner/{{ @bid->user_id }}">
+                                                    <button class="btn btn-success btn-sm select-winning-user" data-href="/job/{{ @job->id}}/winner/{{ @bid->user_id }}">
                                                         <i class="fa fa-handshake-o"></i>
                                                     </button>
                                                 </td>

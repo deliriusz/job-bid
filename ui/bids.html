@@ -20,7 +20,7 @@
                             </thead>
                             <tbody>
                             <repeat group="{{ @bids }}" value="{{ @bid }}">
-                                <tr class="clickable-row" data-href="/PAI-proj/job/{{ @bid->job_id }}">
+                                <tr class="clickable-row" data-href="/job/{{ @bid->job_id }}">
                                     <td class="col-xs-1"><span class="badge">{{ @bid->id }}</span></td>
                                     <td class="col-xs-4">{{ @bid->job_id }}</td>
                                     <td class="col-xs-1">{{ @bid->value }}</td>
@@ -32,7 +32,7 @@
                     </true>
                     <false>
                         <div class="jumbotron"><h2>You did not participate in any job offer. </h2>
-                            <br/> <h4>Go to <a href="/PAI-proj/jobs">Jobs</a> to find jobs that suit you.</h4>
+                            <br/> <h4>Go to <a href="/jobs">Jobs</a> to find jobs that suit you.</h4>
                         </div>
                     </false>
                 </check>

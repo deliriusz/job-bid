@@ -18,10 +18,10 @@ font awesome icons to use on notifications:
                     <th class="col-xs-1"></th>
                     <th class="col-xs-6">Jobs notifications</th>
                     <th class="col-xs-5 text-right">
-                        <button class="btn btn-success btn-xs read-notification" data-href="/PAI-proj/user/notifications/all">
+                        <button class="btn btn-success btn-xs read-notification" data-href="/user/notifications/all">
                             <i class="fa fa-check"></i> read all
                         </button>
-                        <button class="btn btn-danger btn-xs delete-notification" data-href="/PAI-proj/user/notifications/all">
+                        <button class="btn btn-danger btn-xs delete-notification" data-href="/user/notifications/all">
                             <i class="fa fa-trash"></i> delete all
                         </button>
 
@@ -61,21 +61,21 @@ font awesome icons to use on notifications:
                         </td>
                         <td class="col-xs-5 text-right" >
                             <check if="{{@notification->is_read == 0 && @notification->event_type != 5 }}">
-                                <button class="btn btn-success btn-xs read-notification" data-href="/PAI-proj/notification/{{ @notification->id }}">
+                                <button class="btn btn-success btn-xs read-notification" data-href="/notification/{{ @notification->id }}">
                                     <i class="fa fa-check"></i>
                                 </button>
                             </check>
                             <check if="{{ @notification->event_type == 5 && @notification->is_read == false }}">
-                                <button class="btn btn-info btn-xs react-to-job-won" data-href="/PAI-proj/job/{{ @notification->event_id }}/winner/{{ @SESSION.userid }}/confirm">
+                                <button class="btn btn-info btn-xs react-to-job-won" data-href="/job/{{ @notification->event_id }}/winner/{{ @SESSION.userid }}/confirm">
                                     <i class="fa fa-check"></i> confirm
                                 </button>
-                                <button class="btn btn-warning btn-xs react-to-job-won" data-href="/PAI-proj/job/{{ @notification->event_id }}/winner/{{ @SESSION.userid }}/decline">
+                                <button class="btn btn-warning btn-xs react-to-job-won" data-href="/job/{{ @notification->event_id }}/winner/{{ @SESSION.userid }}/decline">
                                     <i class="fa fa-times"></i> decline
                                 </button>
                             </check>
                             <check if="{{ (@notification->event_type != 5)
 														|| (@notification->event_type == 5 && @notification->is_read == true) }}">
-                                <button class="btn btn-danger btn-xs delete-notification" data-href="/PAI-proj/notification/{{ @notification->id }}">
+                                <button class="btn btn-danger btn-xs delete-notification" data-href="/notification/{{ @notification->id }}">
                                     <i class="fa fa-trash"></i>
                                 </button>
                             </check>
@@ -103,7 +103,7 @@ font awesome icons to use on notifications:
                 </thead>
                 <tbody>
                 <repeat group="{{ @notifications }}" value="{{ @notification }}">
-                    <tr class="clickable-row" data-href="/PAI-proj/notification/{{ @notification->id }}">
+                    <tr class="clickable-row" data-href="/notification/{{ @notification->id }}">
                         <td class="col-xs-1">
                             <check if="{{ @notification->event_type }} === 1"> <!-- job created -->
                                 <i class="fa fa-check"></i>

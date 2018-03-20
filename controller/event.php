@@ -113,12 +113,12 @@ class EventController {
 										$postmessage = ' has been updated';
                     $jobName = $sourceOfEventMapper->name;
                     $n->name = $jobName;
-                    $n->url = sprintf('/PAI-proj/job/%d', $sourceOfEventMapper->id);
+                    $n->url = sprintf('/job/%d', $sourceOfEventMapper->id);
                     break;
 
                 case 3: //job finished
                     $jobName = $sourceOfEventMapper->name;
-                    $n->url = sprintf('/PAI-proj/job/%d', $sourceOfEventMapper->id);
+                    $n->url = sprintf('/job/%d', $sourceOfEventMapper->id);
                     $message = 'Job ';
                     $postmessage = ' finished';
                     $n->name = $jobName;
@@ -127,7 +127,7 @@ class EventController {
                 case 4: //lower bid
                     $jobName = $sourceOfEventMapper->name;
                     $message = 'New bid id in job ';
-                    $n->url = sprintf('/PAI-proj/job/%d', $sourceOfEventMapper->id);
+                    $n->url = sprintf('/job/%d', $sourceOfEventMapper->id);
                     $n->name = $jobName;
                     break;
 
@@ -139,7 +139,7 @@ class EventController {
                     } else {
                         $message = 'You won job ';
                     }
-                    $n->url = sprintf('/PAI-proj/job/%d', $sourceOfEventMapper->id);
+                    $n->url = sprintf('/job/%d', $sourceOfEventMapper->id);
                     $n->name = $jobName;
                     break;
 
@@ -150,7 +150,7 @@ class EventController {
                     } else {
                         $message = 'You confirmed job ';
                     }
-                    $n->url = sprintf('/PAI-proj/job/%d', $sourceOfEventMapper->id);
+                    $n->url = sprintf('/job/%d', $sourceOfEventMapper->id);
                     $n->name = $jobName;
                     break;
 
@@ -161,7 +161,7 @@ class EventController {
                     } else {
                         $message = 'You declined job ';
                     }
-                    $n->url = sprintf('/PAI-proj/job/%d', $sourceOfEventMapper->id);
+                    $n->url = sprintf('/job/%d', $sourceOfEventMapper->id);
                     $n->name = $jobName;
                     break;
 
